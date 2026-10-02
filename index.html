@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Barrandodger — The Record Exists</title>
+
+<meta name="description" content="The Barrandodger documentary archive: evidence, records, chronology, accountability, preservation and the continuing pursuit of justice.">
+
+<style>
+:root {
+  --bg: #08090b;
+  --panel: #111318;
+  --panel2: #171a20;
+  --text: #f2f2f2;
+  --muted: #a7abb3;
+  --line: #292d35;
+  --accent: #e6c36a;
+  --accent2: #ffffff;
+  --danger: #d85c5c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1180px, 92%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8,9,11,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .8px;
+}
+
+.nav-links a {
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 80% 30%, rgba(230,195,106,.10), transparent 35%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,.04), transparent 30%);
+}
+
+.hero-content {
+  max-width: 900px;
+  padding: 90px 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(55px, 10vw, 120px);
+  line-height: .9;
+  letter-spacing: -5px;
+  margin: 0 0 30px;
+  font-weight: 900;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-lead {
+  max-width: 760px;
+  color: #d1d4d9;
+  font-size: clamp(19px, 3vw, 27px);
+  line-height: 1.4;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 23px;
+  border: 1px solid var(--accent);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: #08090b;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+/* SECTIONS */
+
+section {
+  padding: 90px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-label {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: clamp(34px, 6vw, 60px);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: 0 0 25px;
+}
+
+.intro {
+  max-width: 800px;
+  color: var(--muted);
+  font-size: 19px;
+}
+
+/* CARDS */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 45px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 32px;
+  min-height: 230px;
+  transition: .2s ease;
+}
+
+.card:hover {
+  border-color: #50545d;
+  transform: translateY(-2px);
+}
+
+.card-number {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.card h3 {
+  font-size: 26px;
+  margin: 20px 0 12px;
+}
+
+.card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* STATS */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  margin-top: 45px;
+}
+
+.stat {
+  padding: 30px;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat strong {
+  display: block;
+  font-size: 42px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* TIMELINE */
+
+.timeline {
+  margin-top: 45px;
+  border-left: 2px solid var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 45px 35px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+}
+
+.timeline-date {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.timeline h3 {
+  margin: 8px 0;
+  font-size: 24px;
+}
+
+.timeline p {
+  color: var(--muted);
+  max-width: 750px;
+}
+
+/* SUPPORT */
+
+.support {
+  background:
+    linear-gradient(135deg, rgba(230,195,106,.08), transparent 60%);
+}
+
+.support-box {
+  max-width: 850px;
+}
+
+.support-box p {
+  color: #c5c8ce;
+  font-size: 19px;
+}
+
+.support-actions {
+  margin-top: 30px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 50px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+footer h4 {
+  color: var(--text);
+  margin-top: 0;
+}
+
+footer a {
+  display: block;
+  margin: 7px 0;
+}
+
+.disclaimer {
+  border-top: 1px solid var(--line);
+  margin-top: 35px;
+  padding-top: 25px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .nav-inner {
+    padding: 14px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+  }
+
+  h1 {
+    letter-spacing: -3px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat:nth-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .hero-content {
+    padding: 70px 0;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stat:last-child {
+    border-bottom: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="#" class="logo">
+      BARRAN<span>DODGER</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#case">THE CASE</a>
+      <a href="#evidence">EVIDENCE</a>
+      <a href="#timeline">TIMELINE</a>
+      <a href="#accountability">ACCOUNTABILITY</a>
+      <a href="#justice">JUSTICE</a>
+      <a href="#support">SUPPORT</a>
+    </div>
+
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="eyebrow">
+      Documentary Archive · Evidence · Accountability
+    </div>
+
+    <h1>
+      THE<br>
+      RECORD<br>
+      <span>EXISTS.</span>
+    </h1>
+
+    <p class="hero-lead">
+      A preserved documentary record of claims, correspondence,
+      official responses, evidence, chronology and unresolved questions.
+      The archive exists so the record cannot simply disappear.
+    </p>
+
+    <div class="buttons">
+      <a class="button primary" href="#evidence">
+        Enter the Evidence
+      </a>
+
+      <a class="button" href="#case">
+        Understand the Case
+      </a>
+
+      <a class="button" href="#support">
+        Support Preservation
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CASE -->
+
+<section id="case">
+  <div class="container">
+
+    <div class="section-label">
+      01 · THE CASE
+    </div>
+
+    <h2>
+      Start with the record.
+    </h2>
+
+    <p class="intro">
+      This site is being rebuilt around the documentary material itself:
+      what was alleged, what was communicated, what was answered,
+      what was documented, what remains unresolved, and where the
+      underlying records can be examined directly.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-number">CASE / 001</div>
+        <h3>The Story</h3>
+        <p>
+          The central narrative, reconstructed from the documentary
+          record rather than isolated statements.
+        </p>
+        <a class="card-link" href="#timeline">
+          VIEW CHRONOLOGY →
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card-number">CASE / 002</div>
+        <h3>The Questions</h3>
+        <p>
+          The questions raised by the evidence, official correspondence,
+          responses and unresolved documentary gaps.
+        </p>
+        <a class="card-link" href="#accountability">
+          VIEW QUESTIONS →
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card-number">CASE / 003</div>
+        <h3>The Documentary Record</h3>
+        <p>
+          Original preserved pages, PDFs, hyperlinks, metadata and
+          archival records are retained for examination.
+        </p>
+        <a class="card-link" href="#evidence">
+          ENTER ARCHIVE →
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card-number">CASE / 004</div>
+        <h3>What Remains</h3>
+        <p>
+          Unanswered questions and matters requiring further
+          investigation, review or independent examination.
+        </p>
+        <a class="card-link" href="#justice">
+          VIEW JUSTICE SECTION →
+        </a>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- EVIDENCE -->
+
+<section id="evidence">
+  <div class="container">
+
+    <div class="section-label">
+      02 · THE EVIDENCE
+    </div>
+
+    <h2>
+      660 pages preserved.
+    </h2>
+
+    <p class="intro">
+      The preservation copy contains the public pages of the former
+      barrandodger.com site, captured as rendered HTML together with
+      PDF records, hyperlinks, metadata and SHA-256 hashes.
+    </p>
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong>660</strong>
+        <span>Indexed pages</span>
+      </div>
+
+      <div class="stat">
+        <strong>660+</strong>
+        <span>Rendered HTML records</span>
+      </div>
+
+      <div class="stat">
+        <strong>660+</strong>
+        <span>PDF records</span>
+      </div>
+
+      <div class="stat">
+        <strong>SHA</strong>
+        <span>Integrity hashes preserved</span>
+      </div>
+
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-number">ARCHIVE / HTML</div>
+        <h3>Rendered Pages</h3>
+        <p>
+          The preserved HTML records contain the rendered text and
+          hyperlinks from the archived pages.
+        </p>
+
+        <a
+          class="card-link"
+          href="barrandodger.com%20website%20backup/html/"
+        >
+          OPEN HTML ARCHIVE →
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card-number">ARCHIVE / PDF</div>
+        <h3>PDF Records</h3>
+        <p>
+          A corresponding PDF record exists for the preserved pages,
+          providing another stable documentary format.
+        </p>
+
+        <a
+          class="card-link"
+          href="barrandodger.com%20website%20backup/pdf/"
+        >
+          OPEN PDF ARCHIVE →
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card-number">ARCHIVE / LINKS</div>
+        <h3>Link Records</h3>
+        <p>
+          The archive separately preserves the hyperlinks contained
+          within each captured page.
+        </p>
+
+        <a
+          class="card-link"
+          href="barrandodger.com%20website%20backup/links/"
+        >
+          OPEN LINK ARCHIVE →
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card-number">ARCHIVE / INDEX</div>
+        <h3>Manifest</h3>
+        <p>
+          The preservation manifest records page identifiers,
+          titles, character counts, link counts and file hashes.
+        </p>
+
+        <a
+          class="card-link"
+          href="barrandodger.com%20website%20backup/manifest.jsonl"
+        >
+          OPEN MANIFEST →
+        </a>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TIMELINE -->
+
+<section id="timeline">
+  <div class="container">
+
+    <div class="section-label">
+      03 · CHRONOLOGY
+    </div>
+
+    <h2>
+      Follow the sequence.
+    </h2>
+
+    <p class="intro">
+      A future chronological interface will connect the major events,
+      correspondence, claims, responses and documentary records so
+      individual documents can be understood within their context.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">DOCUMENTARY RECORD</div>
+        <h3>Events and communications</h3>
+        <p>
+          Key events and communications will be arranged chronologically
+          and linked directly to the underlying preserved records.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">OFFICIAL RESPONSES</div>
+        <h3>Government and agency correspondence</h3>
+        <p>
+          Official correspondence and responses will be presented
+          alongside the claims or requests to which they relate.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">EVIDENCE</div>
+        <h3>Corroboration and contradiction</h3>
+        <p>
+          Documentary material can then be examined against the
+          propositions made about what occurred.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">PRESENT</div>
+        <h3>The archive continues</h3>
+        <p>
+          The preservation project continues to organise, verify,
+          publish and protect the documentary record.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ACCOUNTABILITY -->
+
+<section id="accountability">
+  <div class="container">
+
+    <div class="section-label">
+      04 · ACCOUNTABILITY
+    </div>
+
+    <h2>
+      Evidence first.
+    </h2>
+
+    <p class="intro">
+      The purpose of this section is to make the underlying material
+      easier to inspect: who said what, when it was said, what response
+      followed, what documents support the proposition, and what remains
+      unanswered.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-number">ACCOUNTABILITY / 001</div>
+        <h3>Official Correspondence</h3>
+        <p>
+          Government, agency and institutional communications will be
+          indexed and connected to the relevant documentary material.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">ACCOUNTABILITY / 002</div>
+        <h3>Claims & Findings</h3>
+        <p>
+          Claims will be separated from documentary findings so readers
+          can distinguish allegation, evidence and interpretation.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">ACCOUNTABILITY / 003</div>
+        <h3>Contradictions</h3>
+        <p>
+          Conflicting statements, unexplained discrepancies and
+          unresolved documentary questions can be examined directly.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">ACCOUNTABILITY / 004</div>
+        <h3>Primary Sources</h3>
+        <p>
+          Wherever possible, conclusions and narratives will point
+          directly back to the preserved source material.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- JUSTICE -->
+
+<section id="justice">
+  <div class="container">
+
+    <div class="section-label">
+      05 · JUSTICE
+    </div>
+
+    <h2>
+      From preservation to action.
+    </h2>
+
+    <p class="intro">
+      Preservation is only the beginning. The rebuilt site will provide
+      a structured place for documenting outstanding issues, identifying
+      requested remedies, preserving supporting material and making the
+      documentary record accessible to people who may be able to assist.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-number">JUSTICE / 001</div>
+        <h3>What is being sought</h3>
+        <p>
+          A clear statement of the remedies, assistance, accountability
+          and outcomes being requested.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">JUSTICE / 002</div>
+        <h3>Outstanding matters</h3>
+        <p>
+          A structured record of questions and issues that remain
+          unresolved.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">JUSTICE / 003</div>
+        <h3>Independent examination</h3>
+        <p>
+          Material organised so journalists, researchers, lawyers,
+          advocates and other appropriate reviewers can examine it.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">JUSTICE / 004</div>
+        <h3>Preservation</h3>
+        <p>
+          Continued preservation protects the documentary record against
+          future loss, alteration or disappearance.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SUPPORT -->
+
+<section id="support" class="support">
+  <div class="container">
+
+    <div class="section-label">
+      06 · SUPPORT
+    </div>
+
+    <div class="support-box">
+
+      <h2>
+        Help preserve the record.
+      </h2>
+
+      <p>
+        Maintaining a large documentary archive requires hosting,
+        preservation, technical work, research, documentation and
+        continued publication.
+      </p>
+
+      <p>
+        Support can help keep the archive online, expand its
+        accessibility, preserve source material and continue the work
+        of organising the documentary record.
+      </p>
+
+      <div class="buttons support-actions">
+
+        <a class="button primary" href="#">
+          Support / Donate
+        </a>
+
+        <a class="button" href="#">
+          Become a Supporter
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="logo">
+          BARRAN<span>DODGER</span>
+        </div>
+
+        <p>
+          Documentary archive · preservation · evidence · accountability
+        </p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <a href="#case">The Case</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#accountability">Accountability</a>
+      </div>
+
+      <div>
+        <h4>Action</h4>
+        <a href="#justice">Justice</a>
+        <a href="#support">Support</a>
+        <a href="#evidence">Archive</a>
+      </div>
+
+    </div>
+
+    <div class="disclaimer">
+      Finding aid and documentary archive. Not a court. Not a verdict.
+      Readers should examine the underlying records and distinguish
+      documented fact, allegation, interpretation and unresolved question.
+    </div>
+
+    <p>
+      © 2026 Barrandodger Archive
+    </p>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
