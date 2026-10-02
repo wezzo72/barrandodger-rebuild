@@ -1,0 +1,35 @@
+name: Import preservation archive
+
+on:
+  workflow_dispatch:
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout rebuild repository
+        uses: actions/checkout@v4
+
+      - name: Checkout original repository
+        uses: actions/checkout@v4
+        with:
+          repository: wezzo72/Barrandodger
+          path: original
+          fetch-depth: 1
+
+      - name: Copy preservation archive
+        run: |
+          rm -rf "barrandodger.com website backup"
+          cp -R "original/barrandodger.com website backup" "barrandodger.com website backup"
+          rm -rf original
+
+      - name: Commit archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Import 660-page preservation archive"
+          git push
