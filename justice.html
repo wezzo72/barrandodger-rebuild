@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justice — Barrandodger</title>
+
+<style>
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #090b0f;
+  color: #e8eaed;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+a { color: inherit; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9,11,15,.96);
+  border-bottom: 1px solid #272b32;
+  backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  overflow-x: auto;
+}
+
+.logo {
+  margin-right: auto;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.nav-inner a:not(.logo) {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #aeb4bd;
+  white-space: nowrap;
+}
+
+.nav-inner a:hover { color: #fff; }
+
+.hero {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 24px 80px;
+}
+
+.kicker {
+  color: #8e98a6;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(48px, 9vw, 110px);
+  line-height: .95;
+  letter-spacing: -4px;
+}
+
+.hero p {
+  max-width: 800px;
+  color: #aeb4bd;
+  font-size: 19px;
+  margin-top: 28px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px 100px;
+}
+
+.section {
+  border-top: 1px solid #272b32;
+  padding: 70px 0;
+}
+
+.section-number {
+  color: #6f7782;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: clamp(30px, 5vw, 52px);
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+p { color: #b9bec6; }
+
+.lead {
+  max-width: 850px;
+  font-size: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.card {
+  border: 1px solid #2b3038;
+  background: #0e1116;
+  padding: 28px;
+}
+
+.card p { font-size: 15px; }
+
+.notice {
+  border-left: 3px solid #7d8794;
+  background: #10141a;
+  padding: 24px 26px;
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+.notice p { margin: 0; }
+
+.path {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid #272b32;
+}
+
+.path-number {
+  color: #707985;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.path h3 { margin-bottom: 8px; }
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid #454c56;
+  padding: 12px 17px;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.button:hover {
+  background: #fff;
+  color: #090b0f;
+}
+
+footer {
+  border-top: 1px solid #272b32;
+  padding: 40px 24px;
+  color: #707985;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+
+  .path {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero { padding-top: 70px; }
+
+  .nav-inner { gap: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">BARRANDODGER</a>
+    <a href="case.html">CASE</a>
+    <a href="evidence.html">EVIDENCE</a>
+    <a href="timeline.html">TIMELINE</a>
+    <a href="barrandodger.com%20website%20backup/archive.html">ARCHIVE</a>
+    <a href="accountability.html">ACCOUNTABILITY</a>
+    <a href="justice.html">JUSTICE</a>
+    <a href="support.html">SUPPORT</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">DOCUMENTARY ARCHIVE · JUSTICE</div>
+  <h1>JUSTICE.</h1>
+
+  <p>
+    A structured record of the remedies, recognition, accountability and
+    unresolved issues identified within the Barrandodger documentary record.
+  </p>
+</header>
+
+<main class="container">
+
+<section class="section">
+  <div class="section-number">01 · PURPOSE</div>
+  <h2>What justice means in the record.</h2>
+
+  <p class="lead">
+    Justice can involve recognition of what occurred, access to an appropriate
+    process, correction of an inaccurate record, accountability where warranted,
+    and appropriate remedy where harm is established.
+  </p>
+
+  <div class="notice">
+    <p>
+      This page records matters raised by the documentary archive. It does not
+      determine whether a legal wrong has occurred or whether a particular
+      remedy is legally available. Those questions depend upon evidence,
+      applicable law and the relevant decision-making process.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">02 · REMEDIES</div>
+  <h2>What can a remedy involve?</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Recognition</h3>
+      <p>
+        Acknowledging the existence and significance of documented events,
+        correspondence, decisions or unresolved issues.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Correction</h3>
+      <p>
+        Where an official record is demonstrated to be inaccurate or incomplete,
+        appropriate correction or clarification may become an issue for examination.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Accountability</h3>
+      <p>
+        Where evidence establishes that conduct requires review, the appropriate
+        accountability mechanism can be identified and pursued.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Redress</h3>
+      <p>
+        Where harm is established, the relevant legal or administrative framework
+        may determine whether compensation or another form of redress is available.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Independent Review</h3>
+      <p>
+        Matters that cannot be resolved from the existing record may require
+        examination by an appropriate independent body.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Preservation</h3>
+      <p>
+        Preserving the documentary record ensures that future examination does
+        not depend solely upon recollection or incomplete summaries.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">03 · DOCUMENTARY PATH</div>
+  <h2>From record to remedy.</h2>
+
+  <div class="path">
+    <div class="path-number">01</div>
+    <div>
+      <h3>ESTABLISH THE RECORD</h3>
+      <p>
+        Identify the primary documents, chronology, correspondence and other
+        material relevant to the issue.
+      </p>
+    </div>
+  </div>
+
+  <div class="path">
+    <div class="path-number">02</div>
+    <div>
+      <h3>TEST THE CLAIM</h3>
+      <p>
+        Compare assertions with the underlying evidence and distinguish
+        documented facts from statements, interpretation and allegation.
+      </p>
+    </div>
+  </div>
+
+  <div class="path">
+    <div class="path-number">03</div>
+    <div>
+      <h3>IDENTIFY THE PROCESS</h3>
+      <p>
+        Determine which legal, administrative, review or accountability process,
+        if any, is relevant to the issue.
+      </p>
+    </div>
+  </div>
+
+  <div class="path">
+    <div class="path-number">04</div>
+    <div>
+      <h3>SEEK AN OUTCOME</h3>
+      <p>
+        Present the established record and the requested remedy to the appropriate
+        decision-maker or review mechanism.
+      </p>
+    </div>
+  </div>
+
+  <div class="path">
+    <div class="path-number">05</div>
+    <div>
+      <h3>PRESERVE THE RESULT</h3>
+      <p>
+        Preserve subsequent correspondence, decisions and outcomes alongside the
+        existing documentary record.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">04 · UNRESOLVED MATTERS</div>
+  <h2>Questions requiring further examination.</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Evidence gaps</h3>
+      <p>
+        Which relevant documents or records remain unavailable, incomplete or
+        otherwise requiring verification?
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Procedural questions</h3>
+      <p>
+        What processes were available, which were used, and what documentary
+        record exists concerning those processes?
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Outstanding issues</h3>
+      <p>
+        Which questions remain unanswered after examination of the preserved
+        material?
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">05 · PRIMARY EVIDENCE</div>
+  <h2>Return to the record.</h2>
+
+  <p class="lead">
+    Any assessment of justice or remedy should begin with the underlying
+    documentary evidence. The preservation archive provides the captured pages,
+    PDFs, links and manifest information necessary to locate the source material.
+  </p>
+
+  <div class="buttons">
+
+    <a class="button"
+       href="barrandodger.com%20website%20backup/archive.html">
+       SEARCH 660 RECORDS
+    </a>
+
+    <a class="button"
+       href="barrandodger.com%20website%20backup/index.html">
+       OPEN ARCHIVE
+    </a>
+
+    <a class="button" href="evidence.html">
+       VIEW EVIDENCE
+    </a>
+
+    <a class="button" href="accountability.html">
+       VIEW ACCOUNTABILITY
+    </a>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">06 · DOCUMENTARY LIMIT</div>
+  <h2>The archive records. It does not adjudicate.</h2>
+
+  <p class="lead">
+    Preservation allows the evidence to remain available for examination.
+    Determining liability, entitlement, compensation or other legal consequences
+    belongs to the appropriate independent process.
+  </p>
+
+  <div class="notice">
+    <p>
+      The archive is a finding aid and preservation resource. It is not a court,
+      not a verdict and not a substitute for independent legal or factual
+      determination.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  BARRANDODGER · DOCUMENTARY PRESERVATION ARCHIVE
+</footer>
+
+</body>
+</html>
