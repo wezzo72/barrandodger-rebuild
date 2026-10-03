@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Evidence — Barrandodger</title>
+
+<meta name="description" content="Barrandodger evidence hub — documentary records, preserved pages, PDFs, links, metadata and archive verification.">
+
+<style>
+:root{
+  --bg:#080a0d;
+  --panel:#10141a;
+  --panel2:#151a21;
+  --text:#f1f3f5;
+  --muted:#9ba4ae;
+  --line:#27303a;
+  --accent:#d8b36a;
+  --max:1180px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(var(--max),92%);
+  margin:auto;
+}
+
+/* NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(8,10,13,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.logo{
+  font-weight:800;
+  letter-spacing:.16em;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.nav-links a{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+  color:var(--text);
+}
+
+/* HERO */
+
+.hero{
+  padding:110px 0 80px;
+  border-bottom:1px solid var(--line);
+}
+
+.eyebrow{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:clamp(48px,9vw,100px);
+  line-height:.92;
+  letter-spacing:-.045em;
+  margin:0 0 30px;
+  max-width:900px;
+}
+
+.hero p{
+  max-width:820px;
+  color:var(--muted);
+  font-size:19px;
+  margin:0;
+}
+
+/* CONTENT */
+
+section{
+  padding:75px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.section-label{
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+h2{
+  font-size:clamp(30px,5vw,52px);
+  line-height:1.05;
+  letter-spacing:-.03em;
+  margin:0 0 24px;
+}
+
+h3{
+  font-size:21px;
+  margin:0 0 12px;
+}
+
+p{
+  color:var(--muted);
+  max-width:850px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:28px;
+}
+
+.card p{
+  font-size:15px;
+  margin-bottom:0;
+}
+
+.number{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.1em;
+  margin-bottom:20px;
+}
+
+/* ARCHIVE STAT */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);
+  margin-top:40px;
+}
+
+.stat{
+  padding:30px;
+  border-right:1px solid var(--line);
+}
+
+.stat:last-child{
+  border-right:none;
+}
+
+.stat-number{
+  display:block;
+  font-size:38px;
+  font-weight:800;
+  line-height:1;
+  margin-bottom:10px;
+}
+
+.stat-label{
+  color:var(--muted);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+/* PRINCIPLE */
+
+.principle{
+  margin-top:40px;
+  padding:32px;
+  background:var(--panel2);
+  border-left:3px solid var(--accent);
+}
+
+.principle strong{
+  display:block;
+  color:var(--text);
+  margin-bottom:10px;
+  letter-spacing:.04em;
+}
+
+/* BUTTONS */
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:35px;
+}
+
+.button{
+  display:inline-block;
+  padding:14px 20px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.button:hover{
+  border-color:var(--accent);
+}
+
+.button.primary{
+  background:var(--text);
+  color:#080a0d;
+}
+
+/* FOOTER */
+
+footer{
+  padding:45px 0;
+  color:#69737e;
+  font-size:12px;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .nav-inner{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:18px 0;
+  }
+
+  .nav-links{
+    gap:13px 17px;
+  }
+
+  .hero{
+    padding:75px 0 60px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stat{
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .stat:nth-child(2){
+    border-right:none;
+  }
+
+  .stat:nth-child(3),
+  .stat:nth-child(4){
+    border-bottom:none;
+  }
+
+  .stat:nth-child(4){
+    border-right:none;
+  }
+
+  section{
+    padding:55px 0;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="index.html" class="logo">BARRANDODGER</a>
+
+    <div class="nav-links">
+      <a href="case.html">CASE</a>
+      <a href="evidence.html" class="active">EVIDENCE</a>
+      <a href="timeline.html">TIMELINE</a>
+      <a href="barrandodger.com%20website%20backup/archive.html">ARCHIVE</a>
+      <a href="accountability.html">ACCOUNTABILITY</a>
+      <a href="justice.html">JUSTICE</a>
+      <a href="support.html">SUPPORT</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<main>
+
+<section class="hero">
+  <div class="container">
+
+    <div class="eyebrow">
+      Documentary Archive · Evidence
+    </div>
+
+    <h1>
+      THE EVIDENCE.
+    </h1>
+
+    <p>
+      The documentary layer beneath the Barrandodger record:
+      preserved pages, PDFs, hyperlinks, metadata and verification
+      information maintained so that the underlying material can be
+      independently examined.
+    </p>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      01 · Archive Scale
+    </div>
+
+    <h2>
+      660 records preserved.
+    </h2>
+
+    <p>
+      The preservation archive contains a 660-page index of the public
+      Barrandodger website, with each captured page preserved in multiple
+      documentary formats.
+    </p>
+
+    <div class="stats">
+
+      <div class="stat">
+        <span class="stat-number">660</span>
+        <span class="stat-label">Indexed records</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-number">660+</span>
+        <span class="stat-label">HTML records</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-number">660+</span>
+        <span class="stat-label">PDF records</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-number">SHA-256</span>
+        <span class="stat-label">Integrity metadata</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      02 · Evidence Structure
+    </div>
+
+    <h2>
+      Every record has multiple documentary layers.
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="number">01 · HTML</div>
+
+        <h3>Rendered pages</h3>
+
+        <p>
+          The preserved HTML contains the rendered page content and
+          hyperlinks captured from the original public website.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="number">02 · PDF</div>
+
+        <h3>Document copies</h3>
+
+        <p>
+          A corresponding PDF provides a stable document representation
+          of the rendered page.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="number">03 · LINKS</div>
+
+        <h3>Link records</h3>
+
+        <p>
+          Links extracted from each preserved page are stored separately,
+          allowing the relationships between documents and external
+          destinations to be examined.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="number">04 · MANIFEST</div>
+
+        <h3>Archive metadata</h3>
+
+        <p>
+          The manifest records titles, paths, character counts, link
+          counts, file sizes, timestamps and SHA-256 values.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="number">05 · URL INDEX</div>
+
+        <h3>Source order</h3>
+
+        <p>
+          The URL list preserves the order in which the 660-page source
+          index was supplied and archived.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="number">06 · METHOD</div>
+
+        <h3>Preservation process</h3>
+
+        <p>
+          The archive includes the crawl instructions and supporting
+          material describing how the preservation copy was produced.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      03 · Search the Record
+    </div>
+
+    <h2>
+      Find the underlying documents.
+    </h2>
+
+    <p>
+      The archive catalogue provides a searchable finding aid across the
+      preserved records. Search by title, original URL, archive ID,
+      path or other indexed metadata, then open the corresponding
+      HTML, PDF or link record.
+    </p>
+
+    <div class="actions">
+
+      <a class="button primary"
+         href="barrandodger.com%20website%20backup/archive.html">
+        Search 660 Records
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      04 · Verification
+    </div>
+
+    <h2>
+      Preservation is separate from interpretation.
+    </h2>
+
+    <p>
+      The purpose of the archive is to preserve a documentary record.
+      The existence of a preserved document does not, by itself,
+      establish the truth of every claim made within that document.
+    </p>
+
+    <p>
+      Evidence should therefore be distinguished from interpretation,
+      allegation, inference and conclusion. The preserved material is
+      provided so that those distinctions can be examined rather than
+      hidden.
+    </p>
+
+    <div class="principle">
+
+      <strong>
+        DOCUMENTARY PRINCIPLE
+      </strong>
+
+      The archive is a finding aid and preservation record. It is not
+      presented as a court, verdict or independent determination of the
+      truth of every assertion contained within the archived material.
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      05 · Primary Archive
+    </div>
+
+    <h2>
+      Go directly to the preserved record.
+    </h2>
+
+    <p>
+      The archive remains the underlying documentary layer of this
+      website. The redesigned public pages provide structure and
+      navigation; the preservation archive provides access to the
+      captured records themselves.
+    </p>
+
+    <div class="actions">
+
+      <a class="button primary"
+         href="barrandodger.com%20website%20backup/archive.html">
+        Open Archive Catalogue
+      </a>
+
+      <a class="button"
+         href="barrandodger.com%20website%20backup/">
+        Open Archive Home
+      </a>
+
+      <a class="button"
+         href="index.html">
+        Return Home
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-inner">
+
+    <div>
+      BARRANDODGER · DOCUMENTARY ARCHIVE
+    </div>
+
+    <div>
+      Evidence · Preservation · Independent examination
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
