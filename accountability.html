@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accountability — Barrandodger</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #090b0f;
+  color: #e8eaed;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9,11,15,.96);
+  border-bottom: 1px solid #272b32;
+  backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  overflow-x: auto;
+}
+
+.logo {
+  margin-right: auto;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.nav-inner a:not(.logo) {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #aeb4bd;
+  white-space: nowrap;
+}
+
+.nav-inner a:hover {
+  color: #fff;
+}
+
+.hero {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 24px 80px;
+}
+
+.kicker {
+  color: #8e98a6;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(48px, 9vw, 110px);
+  line-height: .95;
+  letter-spacing: -4px;
+}
+
+.hero p {
+  max-width: 780px;
+  color: #aeb4bd;
+  font-size: 19px;
+  margin-top: 28px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px 100px;
+}
+
+.section {
+  border-top: 1px solid #272b32;
+  padding: 70px 0;
+}
+
+.section-number {
+  color: #6f7782;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: clamp(30px, 5vw, 52px);
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+p {
+  color: #b9bec6;
+}
+
+.lead {
+  max-width: 850px;
+  font-size: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.card {
+  border: 1px solid #2b3038;
+  background: #0e1116;
+  padding: 28px;
+}
+
+.card p {
+  font-size: 15px;
+}
+
+.card strong {
+  color: #fff;
+}
+
+.notice {
+  border-left: 3px solid #7d8794;
+  background: #10141a;
+  padding: 24px 26px;
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+.notice p {
+  margin: 0;
+}
+
+.sequence {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid #272b32;
+}
+
+.sequence-number {
+  color: #707985;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.sequence h3 {
+  margin-bottom: 8px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid #454c56;
+  padding: 12px 17px;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.button:hover {
+  background: #fff;
+  color: #090b0f;
+}
+
+footer {
+  border-top: 1px solid #272b32;
+  padding: 40px 24px;
+  color: #707985;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sequence {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .nav-inner {
+    gap: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">BARRANDODGER</a>
+    <a href="case.html">CASE</a>
+    <a href="evidence.html">EVIDENCE</a>
+    <a href="timeline.html">TIMELINE</a>
+    <a href="barrandodger.com%20website%20backup/archive.html">ARCHIVE</a>
+    <a href="accountability.html">ACCOUNTABILITY</a>
+    <a href="justice.html">JUSTICE</a>
+    <a href="support.html">SUPPORT</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">DOCUMENTARY ARCHIVE · ACCOUNTABILITY</div>
+  <h1>ACCOUNTABILITY.</h1>
+
+  <p>
+    A documentary examination of official responses, institutional pathways,
+    correspondence, decisions and unresolved questions recorded within the archive.
+  </p>
+</header>
+
+<main class="container">
+
+<section class="section">
+  <div class="section-number">01 · PURPOSE</div>
+  <h2>What accountability means here.</h2>
+
+  <p class="lead">
+    Accountability begins with establishing what happened, what was communicated,
+    who responded, what records exist, and what remains unresolved.
+  </p>
+
+  <div class="notice">
+    <p>
+      This archive distinguishes between documentary evidence, statements made
+      by participants, interpretation and questions requiring further examination.
+      The existence of a record does not by itself establish that an allegation
+      has been proven.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">02 · OFFICIAL RESPONSES</div>
+  <h2>The institutional record.</h2>
+
+  <p class="lead">
+    The preserved material contains correspondence and responses involving
+    institutions and public authorities. These records can be examined in their
+    original context rather than relying solely on later summaries.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Correspondence</h3>
+      <p>
+        Letters, emails and other communications form part of the primary
+        documentary record preserved in the archive.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Responses</h3>
+      <p>
+        Official responses can be compared with the issues raised in the
+        preceding correspondence and with the documentary record surrounding them.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Process</h3>
+      <p>
+        The record can also be examined for the pathways through which matters
+        were referred, redirected, answered or left unresolved.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">03 · DOCUMENTARY SEQUENCE</div>
+  <h2>Follow the record.</h2>
+
+  <div class="sequence">
+    <div class="sequence-number">01</div>
+    <div>
+      <h3>THE CLAIM</h3>
+      <p>
+        Identify what was alleged, requested or communicated and locate the
+        relevant primary document.
+      </p>
+    </div>
+  </div>
+
+  <div class="sequence">
+    <div class="sequence-number">02</div>
+    <div>
+      <h3>THE RESPONSE</h3>
+      <p>
+        Examine what response was actually provided, by whom, and in what
+        documentary context.
+      </p>
+    </div>
+  </div>
+
+  <div class="sequence">
+    <div class="sequence-number">03</div>
+    <div>
+      <h3>THE RECORD</h3>
+      <p>
+        Compare the response with the surrounding correspondence, evidence,
+        chronology and other preserved records.
+      </p>
+    </div>
+  </div>
+
+  <div class="sequence">
+    <div class="sequence-number">04</div>
+    <div>
+      <h3>THE UNRESOLVED QUESTION</h3>
+      <p>
+        Where the available documents do not establish an answer, the question
+        remains identified as unresolved rather than being presented as fact.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">04 · DOCUMENTARY QUESTIONS</div>
+  <h2>What should be examined?</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>What was received?</h3>
+      <p>
+        Establish which communications and supporting materials entered an
+        institutional record.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>What was answered?</h3>
+      <p>
+        Identify the substantive responses and distinguish them from
+        acknowledgements, referrals and administrative correspondence.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>What remains?</h3>
+      <p>
+        Identify gaps, unanswered questions, missing documents and matters
+        requiring further independent examination.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">05 · PRIMARY RECORD</div>
+  <h2>Examine the source material.</h2>
+
+  <p class="lead">
+    The strongest way to evaluate an assertion is to return to the underlying
+    record. The preservation archive provides access to the captured pages,
+    PDFs, links and manifest data.
+  </p>
+
+  <div class="buttons">
+    <a class="button"
+       href="barrandodger.com%20website%20backup/archive.html">
+       SEARCH 660 RECORDS
+    </a>
+
+    <a class="button"
+       href="barrandodger.com%20website%20backup/index.html">
+       OPEN ARCHIVE
+    </a>
+
+    <a class="button" href="evidence.html">
+       VIEW EVIDENCE
+    </a>
+
+    <a class="button" href="timeline.html">
+       VIEW TIMELINE
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">06 · LIMITS OF THE RECORD</div>
+  <h2>Evidence has boundaries.</h2>
+
+  <p class="lead">
+    A preserved document demonstrates that the document existed in the captured
+    record. It does not automatically establish the truth of every statement
+    contained within it.
+  </p>
+
+  <div class="notice">
+    <p>
+      The archive is a finding aid and preservation resource. It is not a court,
+      not a verdict and not a substitute for independent investigation,
+      corroboration or formal legal determination.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  BARRANDODGER · DOCUMENTARY PRESERVATION ARCHIVE
+</footer>
+
+</body>
+</html>
