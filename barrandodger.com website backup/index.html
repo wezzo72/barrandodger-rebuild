@@ -3,273 +3,435 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barrandodger — The Record Exists</title>
+
+<title>Barrandodger — Documentary Archive</title>
+
+<meta name="description" content="Barrandodger documentary preservation archive — 660 indexed pages, rendered HTML, PDF records, hyperlinks, metadata and preservation documentation.">
 
 <style>
 :root {
-  --bg: #0b0d10;
-  --panel: #12161b;
-  --panel2: #181d23;
-  --text: #f4f4f1;
-  --muted: #aeb5bd;
-  --line: #30363d;
-  --accent: #e7b85c;
-  --accent2: #d96b52;
+  --bg:#070809;
+  --panel:#101216;
+  --panel2:#171a20;
+  --text:#f4f4f2;
+  --muted:#a9adb5;
+  --soft:#d5d7dc;
+  --line:#292d35;
+  --accent:#e6c36a;
+  --max:1180px;
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing:border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color:inherit;
+  text-decoration:none;
 }
 
+.container {
+  width:min(var(--max),92%);
+  margin:auto;
+}
+
+/* NAV */
+
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(11,13,16,.96);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(12px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,8,9,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
 }
 
 .nav-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: .08em;
+  font-size:19px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.logo span {
+  color:var(--accent);
 }
 
 .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  font-size: 13px;
-  color: var(--muted);
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 18px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.8px;
+}
+
+.nav-links a {
+  color:var(--muted);
 }
 
 .nav-links a:hover {
-  color: var(--text);
+  color:var(--accent);
 }
+
+/* HERO */
 
 .hero {
-  min-height: 78vh;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
+  border-bottom:1px solid var(--line);
   background:
-    radial-gradient(circle at 80% 20%, rgba(231,184,92,.13), transparent 32%),
-    radial-gradient(circle at 20% 80%, rgba(217,107,82,.08), transparent 30%);
+    radial-gradient(circle at 80% 20%,rgba(230,195,106,.12),transparent 35%),
+    radial-gradient(circle at 20% 80%,rgba(255,255,255,.04),transparent 30%);
 }
 
-.hero-inner {
-  max-width: 1200px;
-  width: 100%;
-  margin: auto;
-  padding: 90px 22px;
+.hero-content {
+  padding:100px 0 90px;
+  max-width:950px;
 }
 
 .kicker {
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:20px;
 }
 
 h1 {
-  max-width: 900px;
-  margin: 18px 0;
-  font-size: clamp(54px, 11vw, 130px);
-  line-height: .9;
-  letter-spacing: -.06em;
+  font-size:clamp(52px,9vw,105px);
+  line-height:.9;
+  letter-spacing:-5px;
+  margin:0 0 30px;
 }
 
-.hero p {
-  max-width: 720px;
-  color: var(--muted);
-  font-size: clamp(18px, 2.5vw, 25px);
+h1 span {
+  color:var(--accent);
+}
+
+.lead {
+  max-width:820px;
+  color:var(--soft);
+  font-size:clamp(18px,2.5vw,24px);
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 35px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:32px;
 }
 
 .button {
-  display: inline-block;
-  padding: 14px 20px;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  font-weight: 700;
-  font-size: 14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:13px 20px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
 .button.primary {
-  background: var(--accent);
-  color: #111;
-  border-color: var(--accent);
+  background:var(--accent);
+  color:#08090b;
+  border-color:var(--accent);
 }
 
 .button:hover {
-  transform: translateY(-1px);
+  transform:translateY(-2px);
 }
 
+/* SECTIONS */
+
 section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 90px 22px;
+  padding:85px 0;
+  border-bottom:1px solid var(--line);
 }
 
 .section-label {
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .15em;
-  text-transform: uppercase;
+  color:var(--accent);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  margin-bottom:12px;
 }
 
 h2 {
-  margin: 8px 0 35px;
-  font-size: clamp(34px, 6vw, 64px);
-  line-height: 1;
-  letter-spacing: -.04em;
+  font-size:clamp(36px,6vw,62px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin:0 0 24px;
 }
 
 .intro {
-  max-width: 760px;
-  color: var(--muted);
-  font-size: 19px;
+  max-width:820px;
+  color:var(--muted);
+  font-size:18px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--line);
-  margin-top: 45px;
-}
-
-.card {
-  background: var(--panel);
-  padding: 32px;
-  min-height: 220px;
-}
-
-.card:hover {
-  background: var(--panel2);
-}
-
-.card-number {
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.card h3 {
-  margin: 18px 0 8px;
-  font-size: 27px;
-}
-
-.card p {
-  color: var(--muted);
-}
+/* STATS */
 
 .stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--line);
-  margin-top: 45px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);
+  margin-top:45px;
 }
 
 .stat {
-  background: var(--panel);
-  padding: 28px;
+  padding:28px;
+  background:var(--panel);
+  border-right:1px solid var(--line);
+}
+
+.stat:last-child {
+  border-right:none;
 }
 
 .stat strong {
-  display: block;
-  font-size: 42px;
+  display:block;
+  font-size:36px;
+  line-height:1;
+  margin-bottom:8px;
 }
 
 .stat span {
-  color: var(--muted);
-  font-size: 13px;
+  color:var(--muted);
+  font-size:12px;
 }
 
-.action {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+/* ARCHIVE CARDS */
+
+.archive-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:50px;
 }
 
-.support {
+.archive-card {
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:32px;
+  min-height:230px;
+  transition:.2s ease;
+}
+
+.archive-card:hover {
+  border-color:#555b66;
+  transform:translateY(-2px);
+}
+
+.archive-number {
+  color:var(--accent);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.archive-card h3 {
+  font-size:27px;
+  margin:18px 0 10px;
+}
+
+.archive-card p {
+  color:var(--muted);
+  margin:0;
+}
+
+.archive-link {
+  display:inline-block;
+  margin-top:22px;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+/* FINDING AID */
+
+.finding-aid {
   background:
-    linear-gradient(135deg, rgba(231,184,92,.12), transparent 55%),
-    var(--panel);
+    linear-gradient(135deg,rgba(230,195,106,.07),transparent 65%);
 }
+
+.list {
+  margin-top:40px;
+  border:1px solid var(--line);
+}
+
+.list-row {
+  display:grid;
+  grid-template-columns:100px 1fr auto;
+  gap:20px;
+  align-items:center;
+  padding:22px 25px;
+  background:var(--panel);
+  border-bottom:1px solid var(--line);
+}
+
+.list-row:last-child {
+  border-bottom:none;
+}
+
+.list-number {
+  color:var(--accent);
+  font-size:11px;
+  font-weight:900;
+}
+
+.list-row h3 {
+  margin:0 0 5px;
+  font-size:18px;
+}
+
+.list-row p {
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.open {
+  color:var(--accent);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+/* NOTICE */
+
+.notice {
+  margin-top:40px;
+  padding:25px;
+  border-left:3px solid var(--accent);
+  background:var(--panel);
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* FOOTER */
 
 footer {
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  padding:55px 0 35px;
+  color:var(--muted);
+  font-size:13px;
 }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 22px;
+.footer-grid {
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:35px;
 }
 
-@media (max-width: 750px) {
+footer h4 {
+  color:var(--text);
+  margin-top:0;
+}
+
+footer a {
+  display:block;
+  margin:7px 0;
+}
+
+.disclaimer {
+  border-top:1px solid var(--line);
+  margin-top:40px;
+  padding-top:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
   .nav-inner {
-    align-items: flex-start;
-    flex-direction: column;
+    padding:14px 0;
+    align-items:flex-start;
+    flex-direction:column;
   }
 
   .nav-links {
-    gap: 10px 14px;
+    gap:9px 13px;
   }
 
-  .grid,
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .hero {
-    min-height: auto;
+  .stat:nth-child(2) {
+    border-right:none;
   }
 
-  .hero-inner {
-    padding: 75px 22px;
+  .stat:nth-child(-n+2) {
+    border-bottom:1px solid var(--line);
+  }
+
+  .footer-grid {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:600px) {
+
+  .hero-content {
+    padding:70px 0;
   }
 
   section {
-    padding: 65px 22px;
+    padding:65px 0;
+  }
+
+  .archive-grid {
+    grid-template-columns:1fr;
+  }
+
+  .stats {
+    grid-template-columns:1fr;
+  }
+
+  .stat {
+    border-right:none;
+    border-bottom:1px solid var(--line);
+  }
+
+  .stat:last-child {
+    border-bottom:none;
+  }
+
+  .list-row {
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .footer-grid {
+    grid-template-columns:1fr;
+  }
+
+  .button {
+    width:100%;
   }
 }
 </style>
@@ -278,231 +440,552 @@ footer {
 <body>
 
 <nav>
-  <div class="nav-inner">
-    <a class="logo" href="#">BARRANDODGER</a>
+  <div class="container nav-inner">
+
+    <a class="logo" href="../../index.html">
+      BARRAN<span>DODGER</span>
+    </a>
 
     <div class="nav-links">
-      <a href="#case">THE CASE</a>
-      <a href="#evidence">EVIDENCE</a>
-      <a href="#timeline">TIMELINE</a>
-      <a href="#accountability">ACCOUNTABILITY</a>
-      <a href="#justice">JUSTICE</a>
-      <a href="#support">SUPPORT</a>
+      <a href="#archive">ARCHIVE</a>
+      <a href="#formats">FORMATS</a>
+      <a href="#finding-aid">FINDING AID</a>
+      <a href="../../index.html">MAIN SITE</a>
     </div>
+
   </div>
 </nav>
 
+
 <header class="hero">
-  <div class="hero-inner">
 
-    <div class="kicker">The documentary archive</div>
+  <div class="container hero-content">
 
-    <h1>THE RECORD<br>EXISTS.</h1>
+    <div class="kicker">
+      Barrandodger · Preservation Archive
+    </div>
 
-    <p>
-      A preserved documentary archive containing 660 indexed pages,
-      underlying records, PDFs, hyperlinks and source material.
-      Explore the record. Examine the evidence. Follow the chronology.
+    <h1>
+      THE<br>
+      ARCHIVE<br>
+      <span>EXISTS.</span>
+    </h1>
+
+    <p class="lead">
+      A preserved documentary copy of the public Barrandodger
+      website, organised as a finding aid for the underlying
+      records, rendered pages, PDFs, hyperlinks and preservation
+      metadata.
     </p>
 
     <div class="buttons">
-      <a class="button primary" href="#evidence">
-        EXPLORE THE EVIDENCE →
+
+      <a class="button primary" href="#archive">
+        ENTER ARCHIVE
       </a>
 
-      <a class="button" href="#support">
-        SUPPORT THE ARCHIVE
+      <a class="button" href="../../index.html">
+        RETURN TO MAIN SITE
       </a>
+
     </div>
 
   </div>
+
 </header>
 
-<section id="case">
 
-  <div class="section-label">01 / The Case</div>
+<!-- ARCHIVE OVERVIEW -->
 
-  <h2>What is this?</h2>
+<section id="archive">
 
-  <p class="intro">
-    Barrandodger is being rebuilt as an organised public archive.
-    The purpose is to make the underlying documentary record easier
-    to navigate, preserve and independently examine.
-  </p>
+  <div class="container">
 
-  <div class="grid">
-
-    <a class="card" href="#">
-      <div class="card-number">01</div>
-      <h3>The Story →</h3>
-      <p>
-        A clear chronological account of the events and the documentary
-        material surrounding them.
-      </p>
-    </a>
-
-    <a class="card" href="#">
-      <div class="card-number">02</div>
-      <h3>The Timeline →</h3>
-      <p>
-        Follow the documented sequence of events and responses.
-      </p>
-    </a>
-
-    <a class="card" href="#evidence">
-      <div class="card-number">03</div>
-      <h3>The Evidence →</h3>
-      <p>
-        Go beyond summaries and examine the underlying preserved records.
-      </p>
-    </a>
-
-    <a class="card" href="#accountability">
-      <div class="card-number">04</div>
-      <h3>Accountability →</h3>
-      <p>
-        Examine correspondence, official responses and unresolved questions.
-      </p>
-    </a>
-
-  </div>
-
-</section>
-
-<section id="evidence">
-
-  <div class="section-label">02 / The Archive</div>
-
-  <h2>660 pages.<br>Preserved.</h2>
-
-  <p class="intro">
-    The preservation copy contains rendered HTML pages, PDFs,
-    hyperlinks, metadata and the original source index.
-  </p>
-
-  <div class="stats">
-
-    <div class="stat">
-      <strong>660</strong>
-      <span>INDEXED PAGES</span>
+    <div class="section-label">
+      01 · ARCHIVE OVERVIEW
     </div>
 
-    <div class="stat">
-      <strong>660+</strong>
-      <span>HTML RECORDS</span>
-    </div>
+    <h2>
+      The preserved record.
+    </h2>
 
-    <div class="stat">
-      <strong>660+</strong>
-      <span>PDF RECORDS</span>
-    </div>
+    <p class="intro">
+      The preservation copy was created to retain the public
+      documentary material and make it available after the original
+      site was being unpublished. The archive contains the rendered
+      pages together with corresponding PDF and hyperlink records.
+    </p>
 
-    <div class="stat">
-      <strong>SHA</strong>
-      <span>PRESERVATION HASHES</span>
+    <div class="stats">
+
+      <div class="stat">
+        <strong>660</strong>
+        <span>INDEXED PAGES</span>
+      </div>
+
+      <div class="stat">
+        <strong>660+</strong>
+        <span>HTML RECORDS</span>
+      </div>
+
+      <div class="stat">
+        <strong>660+</strong>
+        <span>PDF RECORDS</span>
+      </div>
+
+      <div class="stat">
+        <strong>SHA-256</strong>
+        <span>INTEGRITY HASHES</span>
+      </div>
+
     </div>
 
   </div>
 
-  <div class="buttons">
-    <a class="button primary" href="barrandodger.com%20website%20backup/html/">
-      BROWSE HTML ARCHIVE →
-    </a>
+</section>
 
-    <a class="button" href="barrandodger.com%20website%20backup/pdf/">
-      BROWSE PDF ARCHIVE →
-    </a>
+
+<!-- ARCHIVE FORMATS -->
+
+<section id="formats">
+
+  <div class="container">
+
+    <div class="section-label">
+      02 · ARCHIVE FORMATS
+    </div>
+
+    <h2>
+      Four ways to examine it.
+    </h2>
+
+    <p class="intro">
+      Each part of the preservation copy serves a different
+      documentary purpose. The records are retained separately
+      rather than reducing the archive to a summary.
+    </p>
+
+    <div class="archive-grid">
+
+      <article class="archive-card">
+
+        <div class="archive-number">
+          ARCHIVE / 001
+        </div>
+
+        <h3>
+          Rendered HTML
+        </h3>
+
+        <p>
+          The captured pages after their own JavaScript had rendered.
+          The HTML preserves the words and hyperlinks present on
+          the pages.
+        </p>
+
+        <a class="archive-link"
+           href="html/">
+          BROWSE HTML →
+        </a>
+
+      </article>
+
+
+      <article class="archive-card">
+
+        <div class="archive-number">
+          ARCHIVE / 002
+        </div>
+
+        <h3>
+          PDF Records
+        </h3>
+
+        <p>
+          Corresponding PDF records provide another documentary
+          representation of the preserved pages.
+        </p>
+
+        <a class="archive-link"
+           href="pdf/">
+          BROWSE PDF →
+        </a>
+
+      </article>
+
+
+      <article class="archive-card">
+
+        <div class="archive-number">
+          ARCHIVE / 003
+        </div>
+
+        <h3>
+          Link Records
+        </h3>
+
+        <p>
+          Hyperlinks extracted from each preserved page are retained
+          separately, with anchor text and destination URLs.
+        </p>
+
+        <a class="archive-link"
+           href="links/">
+          BROWSE LINKS →
+        </a>
+
+      </article>
+
+
+      <article class="archive-card">
+
+        <div class="archive-number">
+          ARCHIVE / 004
+        </div>
+
+        <h3>
+          Preservation Manifest
+        </h3>
+
+        <p>
+          The machine-readable manifest records identifiers,
+          URLs, titles, counts and SHA-256 information associated
+          with the preserved records.
+        </p>
+
+        <a class="archive-link"
+           href="manifest.jsonl">
+          OPEN MANIFEST →
+        </a>
+
+      </article>
+
+    </div>
+
   </div>
 
 </section>
 
-<section id="timeline" class="action">
 
-  <div class="section-label">03 / The Record</div>
+<!-- FINDING AID -->
 
-  <h2>Follow the record.</h2>
+<section id="finding-aid" class="finding-aid">
 
-  <p class="intro">
-    The redesigned site will connect the chronology, documents,
-    correspondence and individual archive records rather than
-    leaving the material as an unstructured collection of pages.
-  </p>
+  <div class="container">
 
-</section>
+    <div class="section-label">
+      03 · FINDING AID
+    </div>
 
-<section id="accountability">
+    <h2>
+      Navigate the preservation copy.
+    </h2>
 
-  <div class="section-label">04 / Accountability</div>
+    <p class="intro">
+      These supporting records explain the archive and provide
+      additional ways to locate and understand the preserved
+      material.
+    </p>
 
-  <h2>Questions deserve records.</h2>
+    <div class="list">
 
-  <p class="intro">
-    Official correspondence, agency responses, source documents and
-    unresolved questions will be organised here so that visitors can
-    move from an assertion to the underlying documentary material.
-  </p>
+      <div class="list-row">
 
-  <div class="buttons">
-    <a class="button" href="#evidence">
-      EXAMINE THE RECORD →
-    </a>
+        <div class="list-number">
+          F / 01
+        </div>
+
+        <div>
+          <h3>
+            Complete URL Index
+          </h3>
+
+          <p>
+            The ordered list of the 660 source page addresses used
+            for the preservation copy.
+          </p>
+        </div>
+
+        <a class="open" href="urls.txt">
+          OPEN →
+        </a>
+
+      </div>
+
+
+      <div class="list-row">
+
+        <div class="list-number">
+          F / 02
+        </div>
+
+        <div>
+          <h3>
+            Preservation README
+          </h3>
+
+          <p>
+            Documentation describing what the preservation copy
+            contains and how the crawl was performed.
+          </p>
+        </div>
+
+        <a class="open" href="README.md">
+          OPEN →
+        </a>
+
+      </div>
+
+
+      <div class="list-row">
+
+        <div class="list-number">
+          F / 03
+        </div>
+
+        <div>
+          <h3>
+            Crawl Source
+          </h3>
+
+          <p>
+            The preserved crawl script associated with the archive.
+          </p>
+        </div>
+
+        <a class="open" href="crawl.mjs">
+          OPEN →
+        </a>
+
+      </div>
+
+
+      <div class="list-row">
+
+        <div class="list-number">
+          F / 04
+        </div>
+
+        <div>
+          <h3>
+            Pages That Did Not Render
+          </h3>
+
+          <p>
+            The preserved record identifying pages that did not
+            successfully render during the capture process.
+          </p>
+        </div>
+
+        <a class="open"
+           href="PAGES-THAT-DID-NOT-RENDER.txt">
+          OPEN →
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>Preservation principle:</strong><br><br>
+      This presentation page is an interface to the archive.
+      It does not replace the underlying records. The preserved
+      HTML, PDFs, hyperlinks, manifest and source lists remain
+      available for direct examination.
+    </div>
+
   </div>
 
 </section>
 
-<section id="justice">
 
-  <div class="section-label">05 / Justice</div>
+<!-- DOCUMENTARY METHOD -->
 
-  <h2>What happens next?</h2>
+<section>
 
-  <p class="intro">
-    This section will set out the assistance, investigation,
-    accountability and other outcomes being sought, together with
-    the documentary material relevant to those requests.
-  </p>
+  <div class="container">
 
-</section>
+    <div class="section-label">
+      04 · PRESERVATION METHOD
+    </div>
 
-<section id="support" class="support">
+    <h2>
+      What was preserved?
+    </h2>
 
-  <div class="section-label">06 / Support</div>
+    <p class="intro">
+      According to the archive documentation, a raw download of
+      the original site could leave only an empty shell because
+      some content was produced by JavaScript. The preservation
+      process therefore captured pages after their content had
+      rendered.
+    </p>
 
-  <h2>Help preserve the record.</h2>
+    <div class="archive-grid">
 
-  <p class="intro">
-    Contributions can help support preservation, research,
-    documentation and the continuing work required to make this
-    archive accessible.
-  </p>
+      <article class="archive-card">
 
-  <div class="buttons">
+        <div class="archive-number">
+          METHOD / 001
+        </div>
 
-    <a class="button primary" href="#">
-      DONATE / SUPPORT →
-    </a>
+        <h3>
+          Rendered Pages
+        </h3>
 
-    <a class="button" href="#">
-      BECOME A SUPPORTER →
-    </a>
+        <p>
+          Pages were captured after their own JavaScript had
+          rendered so that the resulting HTML contained the
+          visible documentary material.
+        </p>
+
+      </article>
+
+
+      <article class="archive-card">
+
+        <div class="archive-number">
+          METHOD / 002
+        </div>
+
+        <h3>
+          Multiple Formats
+        </h3>
+
+        <p>
+          Each page was retained as rendered HTML, PDF and a
+          separate hyperlink record.
+        </p>
+
+      </article>
+
+
+      <article class="archive-card">
+
+        <div class="archive-number">
+          METHOD / 003
+        </div>
+
+        <h3>
+          Metadata
+        </h3>
+
+        <p>
+          The manifest records information including page
+          identifiers, titles, character counts, link counts
+          and hashes.
+        </p>
+
+      </article>
+
+
+      <article class="archive-card">
+
+        <div class="archive-number">
+          METHOD / 004
+        </div>
+
+        <h3>
+          Finding Aid
+        </h3>
+
+        <p>
+          The archive is structured as a finding aid rather than
+          presented as a court finding or legal verdict.
+        </p>
+
+      </article>
+
+    </div>
 
   </div>
 
 </section>
+
+
+<!-- NOTICE -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      05 · IMPORTANT
+    </div>
+
+    <h2>
+      Read the source.
+    </h2>
+
+    <p class="intro">
+      The archive preserves documentary material for examination.
+      Readers should distinguish source records from claims,
+      allegations, interpretation and conclusions, and should
+      consult the underlying material wherever possible.
+    </p>
+
+    <div class="notice">
+      <strong>FINDING AID · NOT A COURT · NOT A VERDICT</strong><br><br>
+      This archive organises and preserves documentary material.
+      It does not itself constitute a judicial determination.
+    </div>
+
+  </div>
+
+</section>
+
 
 <footer>
 
-  <div class="footer-inner">
+  <div class="container">
 
-    <strong>BARRANDODGER</strong>
+    <div class="footer-grid">
+
+      <div>
+        <div class="logo">
+          BARRAN<span>DODGER</span>
+        </div>
+
+        <p>
+          Documentary archive · preservation · evidence ·
+          accountability.
+        </p>
+      </div>
+
+
+      <div>
+
+        <h4>Archive</h4>
+
+        <a href="#archive">Overview</a>
+        <a href="#formats">Formats</a>
+        <a href="#finding-aid">Finding Aid</a>
+
+      </div>
+
+
+      <div>
+
+        <h4>Navigate</h4>
+
+        <a href="html/">HTML</a>
+        <a href="pdf/">PDF</a>
+        <a href="links/">Links</a>
+        <a href="manifest.jsonl">Manifest</a>
+
+      </div>
+
+    </div>
+
+    <div class="disclaimer">
+      Barrandodger documentary preservation archive.
+      Finding aid. Not a court. Not a verdict.
+    </div>
 
     <p>
-      A documentary preservation and finding-aid project.
-    </p>
-
-    <p>
-      The archive is a finding aid and documentary record.
-      It is not a court and does not itself constitute a verdict.
+      <a href="../../index.html">
+        ← Return to Barrandodger main site
+      </a>
     </p>
 
   </div>
