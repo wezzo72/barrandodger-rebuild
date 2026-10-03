@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Barrandodger</title>
+
+<style>
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #090b0f;
+  color: #e8eaed;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+a { color: inherit; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9,11,15,.96);
+  border-bottom: 1px solid #272b32;
+  backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  overflow-x: auto;
+}
+
+.logo {
+  margin-right: auto;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.nav-inner a:not(.logo) {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #aeb4bd;
+  white-space: nowrap;
+}
+
+.nav-inner a:hover { color: #fff; }
+
+.hero {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 24px 80px;
+}
+
+.kicker {
+  color: #8e98a6;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(48px, 9vw, 110px);
+  line-height: .95;
+  letter-spacing: -4px;
+}
+
+.hero p {
+  max-width: 800px;
+  color: #aeb4bd;
+  font-size: 19px;
+  margin-top: 28px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px 100px;
+}
+
+.section {
+  border-top: 1px solid #272b32;
+  padding: 70px 0;
+}
+
+.section-number {
+  color: #6f7782;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: clamp(30px, 5vw, 52px);
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+p { color: #b9bec6; }
+
+.lead {
+  max-width: 850px;
+  font-size: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.card {
+  border: 1px solid #2b3038;
+  background: #0e1116;
+  padding: 28px;
+}
+
+.card p { font-size: 15px; }
+
+.notice {
+  border-left: 3px solid #7d8794;
+  background: #10141a;
+  padding: 24px 26px;
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+.notice p { margin: 0; }
+
+.steps {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid #272b32;
+}
+
+.step-number {
+  color: #707985;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.steps h3 { margin-bottom: 8px; }
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid #454c56;
+  padding: 12px 17px;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.button:hover {
+  background: #fff;
+  color: #090b0f;
+}
+
+footer {
+  border-top: 1px solid #272b32;
+  padding: 40px 24px;
+  color: #707985;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero { padding-top: 70px; }
+
+  .nav-inner { gap: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">BARRANDODGER</a>
+    <a href="case.html">CASE</a>
+    <a href="evidence.html">EVIDENCE</a>
+    <a href="timeline.html">TIMELINE</a>
+    <a href="barrandodger.com%20website%20backup/archive.html">ARCHIVE</a>
+    <a href="accountability.html">ACCOUNTABILITY</a>
+    <a href="justice.html">JUSTICE</a>
+    <a href="support.html">SUPPORT</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">DOCUMENTARY ARCHIVE · SUPPORT</div>
+  <h1>SUPPORT.</h1>
+
+  <p>
+    Ways to preserve, examine, understand and responsibly share the documentary
+    record contained within the Barrandodger archive.
+  </p>
+</header>
+
+<main class="container">
+
+<section class="section">
+  <div class="section-number">01 · THE PURPOSE</div>
+  <h2>Support the record.</h2>
+
+  <p class="lead">
+    The central purpose of this archive is preservation. Supporting the project
+    means helping keep the underlying documentary material accessible, searchable
+    and available for independent examination.
+  </p>
+
+  <div class="notice">
+    <p>
+      Support does not require accepting every claim contained within the archive.
+      Independent examination, corroboration and disagreement are compatible with
+      preservation of the underlying record.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">02 · HOW TO HELP</div>
+  <h2>Practical support.</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Preserve</h3>
+      <p>
+        Keep copies of important documents, correspondence and other primary
+        records so they remain available for future examination.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Verify</h3>
+      <p>
+        Compare claims against primary documents and identify corroborating or
+        contradictory evidence wherever possible.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Document</h3>
+      <p>
+        Record dates, sources, correspondence and outcomes carefully so that
+        later examination can follow the documentary sequence.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Review</h3>
+      <p>
+        Read the underlying material rather than relying solely upon summaries,
+        interpretations or secondary descriptions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Share responsibly</h3>
+      <p>
+        When sharing material, preserve its source and context and distinguish
+        documented facts from allegations or interpretation.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Identify gaps</h3>
+      <p>
+        Missing documents, uncertain dates and unanswered questions are useful
+        findings when they are clearly identified and preserved.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">03 · EXAMINATION</div>
+  <h2>Start with the source.</h2>
+
+  <div class="steps">
+
+    <div class="step-number">01</div>
+    <div>
+      <h3>SEARCH</h3>
+      <p>
+        Use the archive catalogue to locate a particular page, document, URL
+        or subject.
+      </p>
+    </div>
+  </div>
+
+  <div class="steps">
+
+    <div class="step-number">02</div>
+    <div>
+      <h3>READ</h3>
+      <p>
+        Examine the preserved HTML or PDF and consider the surrounding
+        documentary context.
+      </p>
+    </div>
+  </div>
+
+  <div class="steps">
+
+    <div class="step-number">03</div>
+    <div>
+      <h3>COMPARE</h3>
+      <p>
+        Compare correspondence, chronology and official responses with the
+        underlying evidence.
+      </p>
+    </div>
+  </div>
+
+  <div class="steps">
+
+    <div class="step-number">04</div>
+    <div>
+      <h3>REPORT</h3>
+      <p>
+        Where a discrepancy or significant unanswered question is identified,
+        preserve the source and describe the issue precisely.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <div class="section-number">04 · ARCHIVE ACCESS</div>
+  <h2>Everything begins with the record.</h2>
+
+  <p class="lead">
+    The preservation archive contains 660 indexed records, including rendered
+    HTML pages, PDFs, extracted links and manifest information.
+  </p>
+
+  <div class="buttons">
+
+    <a class="button"
+       href="barrandodger.com%20website%20backup/archive.html">
+       SEARCH 660 RECORDS
+    </a>
+
+    <a class="button"
+       href="barrandodger.com%20website%20backup/index.html">
+       OPEN ARCHIVE
+    </a>
+
+    <a class="button" href="evidence.html">
+       VIEW EVIDENCE
+    </a>
+
+    <a class="button" href="timeline.html">
+       VIEW TIMELINE
+    </a>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">05 · DOCUMENTARY STANDARD</div>
+  <h2>Preserve context.</h2>
+
+  <p class="lead">
+    A useful documentary record should make it possible for another person to
+    locate the source, understand its context and reach their own assessment.
+  </p>
+
+  <div class="notice">
+    <p>
+      The archive is a finding aid and preservation resource. It is not a court,
+      not a verdict and not a substitute for independent investigation,
+      corroboration or formal legal determination.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-number">06 · THE RECORD REMAINS</div>
+  <h2>Preservation is participation.</h2>
+
+  <p class="lead">
+    The most durable form of support is ensuring that the documentary record
+    remains accessible, traceable and capable of being independently examined.
+  </p>
+
+  <div class="buttons">
+    <a class="button" href="index.html">
+      RETURN HOME
+    </a>
+
+    <a class="button" href="accountability.html">
+      ACCOUNTABILITY
+    </a>
+
+    <a class="button" href="justice.html">
+      JUSTICE
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  BARRANDODGER · DOCUMENTARY PRESERVATION ARCHIVE
+</footer>
+
+</body>
+</html>
