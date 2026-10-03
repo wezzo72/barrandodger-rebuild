@@ -1,0 +1,57 @@
+name: Verify preservation archive
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify manifest and preserved files
+        shell: bash
+        run: |
+          set -e
+
+          ARCHIVE="barrandodger.com website backup"
+          MANIFEST="$ARCHIVE/manifest.jsonl"
+
+          echo "Checking preservation archive..."
+
+          test -f "$MANIFEST"
+
+          TOTAL=$(wc -l < "$MANIFEST")
+          echo "Manifest records: $TOTAL"
+
+          if [ "$TOTAL" -ne 660 ]; then
+            echo "ERROR: Expected 660 manifest records."
+            exit 1
+          fi
+
+          HTML_COUNT=$(find "$ARCHIVE/html" -type f -name '*.html' | wc -l)
+          PDF_COUNT=$(find "$ARCHIVE/pdf" -type f -name '*.pdf' | wc -l)
+          LINKS_COUNT=$(find "$ARCHIVE/links" -type f | wc -l)
+
+          echo "HTML files: $HTML_COUNT"
+          echo "PDF files: $PDF_COUNT"
+          echo "LINK files: $LINKS_COUNT"
+
+          if [ "$HTML_COUNT" -ne 660 ]; then
+            echo "ERROR: HTML count does not equal 660."
+            exit 1
+          fi
+
+          if [ "$PDF_COUNT" -ne 660 ]; then
+            echo "ERROR: PDF count does not equal 660."
+            exit 1
+          fi
+
+          if [ "$LINKS_COUNT" -ne 660 ]; then
+            echo "ERROR: LINKS count does not equal 660."
+            exit 1
+          fi
+
+          echo "Archive integrity check passed."
