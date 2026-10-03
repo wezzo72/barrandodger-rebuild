@@ -580,6 +580,52 @@ footer .footer-inner{
     </div>
 
   </div>
+
+<p id="bd-live-counts" style="margin:.6rem 0 0;font-size:.85rem;letter-spacing:.04em;color:#d8b36a">Views <strong id="bd-views">—</strong> · Downloads <strong id="bd-downloads">—</strong> · <a href="counts.html" style="color:#d8b36a">Ledger</a></p>
+<script>
+(function(){
+  var API = "https://countapi.mileshilliard.com/api/v1/";
+  var VISITS = "bd-wezzo72-rebuild-visits";
+  var DOWNLOADS = "bd-wezzo72-rebuild-downloads";
+  function paint(id, value){
+    var el = document.getElementById(id);
+    if (!el || value == null || !isFinite(Number(value))) return;
+    el.textContent = Number(value).toLocaleString();
+  }
+  function read(key){
+    return fetch(API + "get/" + encodeURIComponent(key), {cache:"no-store"})
+      .then(function(r){ return r.json(); })
+      .then(function(d){ return d && d.value != null ? d.value : 0; })
+      .catch(function(){ return null; });
+  }
+  function bump(key){
+    var img = new Image();
+    img.referrerPolicy = "no-referrer";
+    img.src = API + "hit/" + encodeURIComponent(key) + "?t=" + Date.now();
+    return new Promise(function(resolve){ setTimeout(function(){ read(key).then(resolve); }, 350); });
+  }
+  var seen = false;
+  try { seen = sessionStorage.getItem("bd-rebuild-visit") === "1"; } catch(e) {}
+  (seen ? read(VISITS) : bump(VISITS)).then(function(v){ paint("bd-views", v); });
+  if (!seen){ try { sessionStorage.setItem("bd-rebuild-visit", "1"); } catch(e) {} }
+  read(DOWNLOADS).then(function(v){ paint("bd-downloads", v); });
+  setInterval(function(){
+    read(VISITS).then(function(v){ paint("bd-views", v); });
+    read(DOWNLOADS).then(function(v){ paint("bd-downloads", v); });
+  }, 8000);
+  document.addEventListener("click", function(event){
+    var link = event.target.closest && event.target.closest("a[href]");
+    if (!link) return;
+    var href = link.getAttribute("href") || "";
+    if (!/\.(pdf|ots|txt|zip|epub)(\?|$)/i.test(href) && !link.hasAttribute("download")) return;
+    var name = decodeURIComponent(href.split("/").pop().split("?")[0] || "file");
+    bump(DOWNLOADS).then(function(v){ paint("bd-downloads", v); });
+    var slug = String(name).toLowerCase().replace(/\.[a-z0-9]+$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || "file";
+    bump("bd-wezzo72-dl-" + slug);
+  }, true);
+})();
+</script>
+
 </footer>
 
 </body>
