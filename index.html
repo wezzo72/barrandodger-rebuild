@@ -1377,10 +1377,7 @@ interpretation and subsequent analysis may develop over time.
     img.src = API + "hit/" + encodeURIComponent(key) + "?t=" + Date.now();
     return new Promise(function(resolve){ setTimeout(function(){ read(key).then(resolve); }, 350); });
   }
-  var seen = false;
-  try { seen = sessionStorage.getItem("bd-rebuild-visit") === "1"; } catch(e) {}
-  (seen ? read(VISITS) : bump(VISITS)).then(function(v){ paint("bd-views", v); });
-  if (!seen){ try { sessionStorage.setItem("bd-rebuild-visit", "1"); } catch(e) {} }
+  bump(VISITS).then(function(v){ paint("bd-views", v); });
   read(DOWNLOADS).then(function(v){ paint("bd-downloads", v); });
   setInterval(function(){
     read(VISITS).then(function(v){ paint("bd-views", v); });
