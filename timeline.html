@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Timeline — Barrandodger</title>
+
+<meta name="description" content="Barrandodger documentary timeline — chronology, correspondence, official responses, events and preserved records.">
+
+<style>
+:root{
+  --bg:#080a0d;
+  --panel:#10141a;
+  --panel2:#151a21;
+  --text:#f1f3f5;
+  --muted:#9ba4ae;
+  --line:#27303a;
+  --accent:#d8b36a;
+  --max:1180px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(var(--max),92%);
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(8,10,13,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.logo{
+  font-weight:800;
+  letter-spacing:.16em;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.nav-links a{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+  color:var(--text);
+}
+
+/* HERO */
+
+.hero{
+  padding:110px 0 80px;
+  border-bottom:1px solid var(--line);
+}
+
+.eyebrow{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:clamp(48px,9vw,100px);
+  line-height:.92;
+  letter-spacing:-.045em;
+  margin:0 0 30px;
+  max-width:900px;
+}
+
+.hero p{
+  max-width:820px;
+  color:var(--muted);
+  font-size:19px;
+  margin:0;
+}
+
+/* SECTIONS */
+
+section{
+  padding:75px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.section-label{
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+h2{
+  font-size:clamp(30px,5vw,52px);
+  line-height:1.05;
+  letter-spacing:-.03em;
+  margin:0 0 24px;
+}
+
+h3{
+  font-size:21px;
+  margin:0 0 12px;
+}
+
+p{
+  color:var(--muted);
+  max-width:850px;
+}
+
+/* TIMELINE */
+
+.timeline{
+  position:relative;
+  margin-top:55px;
+  padding-left:38px;
+  border-left:1px solid var(--line);
+}
+
+.event{
+  position:relative;
+  padding:0 0 55px 35px;
+}
+
+.event:last-child{
+  padding-bottom:0;
+}
+
+.event::before{
+  content:"";
+  position:absolute;
+  left:-44px;
+  top:5px;
+  width:17px;
+  height:17px;
+  border:2px solid var(--accent);
+  background:var(--bg);
+}
+
+.event-date{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.event h3{
+  margin-bottom:10px;
+}
+
+.event p{
+  margin:0;
+}
+
+.event-note{
+  margin-top:15px;
+  padding:15px 18px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:28px;
+}
+
+.card p{
+  font-size:15px;
+  margin-bottom:0;
+}
+
+.number{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.1em;
+  margin-bottom:20px;
+}
+
+/* PRINCIPLE */
+
+.principle{
+  margin-top:40px;
+  padding:32px;
+  background:var(--panel2);
+  border-left:3px solid var(--accent);
+}
+
+.principle strong{
+  display:block;
+  color:var(--text);
+  margin-bottom:10px;
+  letter-spacing:.04em;
+}
+
+/* BUTTONS */
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:35px;
+}
+
+.button{
+  display:inline-block;
+  padding:14px 20px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.button:hover{
+  border-color:var(--accent);
+}
+
+.button.primary{
+  background:var(--text);
+  color:#080a0d;
+}
+
+/* FOOTER */
+
+footer{
+  padding:45px 0;
+  color:#69737e;
+  font-size:12px;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .nav-inner{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:18px 0;
+  }
+
+  .nav-links{
+    gap:13px 17px;
+  }
+
+  .hero{
+    padding:75px 0 60px;
+  }
+
+  .timeline{
+    padding-left:25px;
+  }
+
+  .event{
+    padding-left:25px;
+  }
+
+  .event::before{
+    left:-34px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:55px 0;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="index.html" class="logo">BARRANDODGER</a>
+
+    <div class="nav-links">
+      <a href="case.html">CASE</a>
+      <a href="evidence.html">EVIDENCE</a>
+      <a href="timeline.html" class="active">TIMELINE</a>
+      <a href="barrandodger.com%20website%20backup/archive.html">ARCHIVE</a>
+      <a href="accountability.html">ACCOUNTABILITY</a>
+      <a href="justice.html">JUSTICE</a>
+      <a href="support.html">SUPPORT</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<main>
+
+<section class="hero">
+  <div class="container">
+
+    <div class="eyebrow">
+      Documentary Archive · Chronology
+    </div>
+
+    <h1>
+      THE TIMELINE.
+    </h1>
+
+    <p>
+      A chronological framework for understanding the events,
+      correspondence, institutional responses and documentary records
+      contained within the archive.
+    </p>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      01 · Chronology
+    </div>
+
+    <h2>
+      The record unfolds over time.
+    </h2>
+
+    <p>
+      The timeline is designed to distinguish chronology from
+      interpretation. Events are presented as points in the documentary
+      record, with links back to the underlying material wherever
+      appropriate.
+    </p>
+
+    <div class="principle">
+
+      <strong>
+        CHRONOLOGICAL PRINCIPLE
+      </strong>
+
+      Dates and events should be understood in the context of the
+      underlying documents. Where the available record does not establish
+      a precise date or sequence, that uncertainty should remain visible
+      rather than being filled by assumption.
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      02 · Major Periods
+    </div>
+
+    <h2>
+      A framework for the record.
+    </h2>
+
+    <div class="timeline">
+
+      <div class="event">
+
+        <div class="event-date">
+          Earlier period
+        </div>
+
+        <h3>
+          Events preceding the preserved website record
+        </h3>
+
+        <p>
+          Earlier events, experiences and communications described within
+          the archived material provide the background to the later
+          documentary record.
+        </p>
+
+        <div class="event-note">
+          The underlying archive should be consulted for the specific
+          dates and source documents associated with individual events.
+        </div>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="event-date">
+          2026
+        </div>
+
+        <h3>
+          Documentary record expands
+        </h3>
+
+        <p>
+          The preserved website contains a substantial body of pages,
+          reports, correspondence, claims and supporting material
+          documenting the matters raised by the author.
+        </p>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="event-date">
+          August 2026
+        </div>
+
+        <h3>
+          Support and institutional correspondence
+        </h3>
+
+        <p>
+          The archive contains records concerning support arrangements,
+          communications and interactions with institutions and other
+          parties during this period.
+        </p>
+
+        <div class="event-note">
+          Individual archived records should be used to establish the
+          precise content and date of each communication.
+        </div>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="event-date">
+          September 2026
+        </div>
+
+        <h3>
+          Preservation of the public record
+        </h3>
+
+        <p>
+          A 660-page preservation copy of the public website was created,
+          including rendered HTML, PDFs, extracted links and preservation
+          metadata.
+        </p>
+
+      </div>
+
+
+      <div class="event">
+
+        <div class="event-date">
+          Ongoing
+        </div>
+
+        <h3>
+          Preservation and examination
+        </h3>
+
+        <p>
+          The redesigned site provides a structured route into the
+          preserved record while maintaining the underlying archive as a
+          separate documentary layer.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      03 · Documentary Sequence
+    </div>
+
+    <h2>
+      Events, correspondence and responses.
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="number">EVENTS</div>
+
+        <h3>What happened</h3>
+
+        <p>
+          Identify the event, its date and the documents that describe
+          or record it.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="number">CORRESPONDENCE</div>
+
+        <h3>What was communicated</h3>
+
+        <p>
+          Follow letters, emails, submissions and other communications
+          through the preserved record.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="number">RESPONSES</div>
+
+        <h3>What was answered</h3>
+
+        <p>
+          Examine official and institutional responses alongside the
+          communications that preceded them.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      04 · Evidence
+    </div>
+
+    <h2>
+      Every important date should lead back to evidence.
+    </h2>
+
+    <p>
+      The timeline is a navigation layer. The preserved documents remain
+      the underlying source material. Where a specific event is important,
+      the corresponding archive record should be examined directly.
+    </p>
+
+    <div class="actions">
+
+      <a class="button primary"
+         href="evidence.html">
+        Explore Evidence
+      </a>
+
+      <a class="button"
+         href="barrandodger.com%20website%20backup/archive.html">
+        Search 660 Records
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      05 · Unresolved Chronology
+    </div>
+
+    <h2>
+      Where the sequence remains incomplete.
+    </h2>
+
+    <p>
+      A responsible chronology should preserve uncertainty where the
+      available documentary record does not establish the complete
+      sequence of events.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>Missing dates</h3>
+
+        <p>
+          Some events may be described without a precise date in the
+          available material.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>Incomplete sequences</h3>
+
+        <p>
+          Correspondence may establish that communications occurred
+          without establishing everything that happened between them.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>Further examination</h3>
+
+        <p>
+          Additional documentary material may clarify parts of the
+          chronology as the archive is examined.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">
+      06 · Primary Archive
+    </div>
+
+    <h2>
+      Examine the records yourself.
+    </h2>
+
+    <p>
+      The complete preservation archive provides the underlying pages,
+      PDFs, links and metadata from which this chronology can be examined.
+    </p>
+
+    <div class="actions">
+
+      <a class="button primary"
+         href="barrandodger.com%20website%20backup/archive.html">
+        Open 660-Page Archive
+      </a>
+
+      <a class="button"
+         href="index.html">
+        Return Home
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-inner">
+
+    <div>
+      BARRANDODGER · DOCUMENTARY ARCHIVE
+    </div>
+
+    <div>
+      Chronology · Correspondence · Documentary record
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
