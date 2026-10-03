@@ -2,6 +2,9 @@ name: Verify preservation archive
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   verify:
