@@ -12,472 +12,405 @@
 :root{
   --bg:#070809;
   --panel:#101216;
-  --panel2:#171a20;
-  --text:#f4f4f2;
-  --muted:#a9adb5;
-  --soft:#d5d7dc;
-  --line:#292d35;
-  --accent:#e6c36a;
-  --max:1250px;
+  --panel2:#15181d;
+  --line:#292d34;
+  --text:#f2f4f7;
+  --muted:#9da5b0;
+  --accent:#d8b36a;
+  --accent2:#8fb7d9;
+  --danger:#c97878;
+  --max:1400px;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.5;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
 }
 
 a{
   color:inherit;
-  text-decoration:none;
 }
 
-.container{
-  width:min(var(--max),94%);
-  margin:auto;
-}
-
-/* NAV */
-
-nav{
+header{
   position:sticky;
   top:0;
-  z-index:100;
-  background:rgba(7,8,9,.96);
-  backdrop-filter:blur(14px);
+  z-index:20;
+  background:rgba(7,8,9,.94);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
 }
 
-.nav-inner{
-  min-height:68px;
+.nav{
+  max-width:var(--max);
+  margin:auto;
+  padding:16px 22px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:20px;
 }
 
-.logo{
-  font-size:18px;
-  font-weight:900;
-  letter-spacing:2px;
+.brand{
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:.16em;
+  font-size:14px;
 }
 
-.logo span{color:var(--accent)}
-
-.nav-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 18px;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.8px;
-}
-
-.nav-links a{
-  color:var(--muted);
-}
-
-.nav-links a:hover{
+.brand span{
   color:var(--accent);
 }
 
-/* HERO */
-
-.hero{
-  border-bottom:1px solid var(--line);
-  background:
-    radial-gradient(circle at 80% 20%,rgba(230,195,106,.12),transparent 35%),
-    radial-gradient(circle at 20% 80%,rgba(255,255,255,.04),transparent 30%);
+.navlinks{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
-.hero-content{
-  padding:80px 0 65px;
-  max-width:1000px;
+.navlinks a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+}
+
+.navlinks a:hover{
+  color:var(--text);
+}
+
+main{
+  max-width:var(--max);
+  margin:auto;
+  padding:0 22px 80px;
+}
+
+.hero{
+  padding:80px 0 55px;
+  max-width:1050px;
 }
 
 .kicker{
   color:var(--accent);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:3px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.18em;
   text-transform:uppercase;
   margin-bottom:18px;
 }
 
 h1{
-  font-size:clamp(45px,8vw,88px);
-  line-height:.92;
-  letter-spacing:-4px;
-  margin:0 0 25px;
+  margin:0;
+  font-size:clamp(42px,7vw,86px);
+  line-height:.95;
+  letter-spacing:-.055em;
 }
 
-h1 span{color:var(--accent)}
-
-.lead{
+.hero p{
   max-width:850px;
-  color:var(--soft);
-  font-size:clamp(17px,2.2vw,22px);
+  margin:28px 0 0;
+  color:var(--muted);
+  font-size:18px;
 }
 
-.buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:28px;
+.notice{
+  margin-top:30px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:18px 20px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.notice strong{
+  color:var(--text);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:10px 0 40px;
+}
+
+.stat{
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:24px;
+}
+
+.stat strong{
+  display:block;
+  font-size:32px;
+  letter-spacing:-.03em;
+}
+
+.stat span{
+  color:var(--muted);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.controls{
+  position:sticky;
+  top:62px;
+  z-index:10;
+  background:rgba(7,8,9,.96);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:16px 0;
+  margin-bottom:28px;
+}
+
+.control-grid{
+  display:grid;
+  grid-template-columns:1fr 220px auto;
+  gap:12px;
+}
+
+input,
+select{
+  width:100%;
+  border:1px solid var(--line);
+  background:var(--panel);
+  color:var(--text);
+  border-radius:8px;
+  padding:14px 15px;
+  font-size:15px;
+  outline:none;
+}
+
+input:focus,
+select:focus{
+  border-color:var(--accent);
 }
 
 .button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:46px;
-  padding:12px 18px;
   border:1px solid var(--line);
-  background:var(--panel);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1px;
-  text-transform:uppercase;
+  background:var(--panel2);
+  color:var(--text);
+  text-decoration:none;
+  border-radius:7px;
+  padding:10px 13px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.button:hover{
+  border-color:var(--accent);
+  color:var(--accent);
 }
 
 .button.primary{
   background:var(--accent);
-  color:#08090b;
+  color:#090a0b;
   border-color:var(--accent);
 }
 
-/* STATS */
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--line);
-  margin:35px 0;
-}
-
-.stat{
-  padding:22px;
-  background:var(--panel);
-  border-right:1px solid var(--line);
-}
-
-.stat:last-child{border-right:none}
-
-.stat strong{
-  display:block;
-  font-size:30px;
-  line-height:1;
-  margin-bottom:6px;
-}
-
-.stat span{
-  color:var(--muted);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.7px;
-}
-
-/* SEARCH */
-
-.search-area{
-  padding:35px 0;
-  border-bottom:1px solid var(--line);
-  background:#0b0c0f;
-}
-
-.search-box{
-  display:grid;
-  grid-template-columns:1fr auto auto;
-  gap:10px;
-}
-
-input,select{
-  width:100%;
-  min-height:52px;
-  border:1px solid var(--line);
-  background:var(--panel);
-  color:var(--text);
-  padding:0 16px;
-  font-size:15px;
-  outline:none;
-}
-
-input:focus,select:focus{
-  border-color:var(--accent);
-}
-
-.search-button{
-  min-height:52px;
-  padding:0 22px;
-  border:1px solid var(--accent);
-  background:var(--accent);
-  color:#08090b;
-  font-weight:900;
-  cursor:pointer;
-}
-
-/* RESULTS */
-
-.catalogue{
-  padding:55px 0 90px;
-}
-
-.catalogue-header{
+.resultsbar{
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   justify-content:space-between;
-  gap:20px;
-  margin-bottom:25px;
-}
-
-.section-label{
-  color:var(--accent);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-h2{
-  font-size:clamp(30px,5vw,52px);
-  line-height:1;
-  letter-spacing:-2px;
-  margin:8px 0 0;
-}
-
-.result-count{
+  gap:15px;
+  margin:0 0 16px;
   color:var(--muted);
-  font-size:12px;
+  font-size:13px;
 }
 
-/* RECORD */
+.records{
+  display:grid;
+  gap:12px;
+}
 
 .record{
   border:1px solid var(--line);
   background:var(--panel);
-  margin-bottom:14px;
+  padding:24px;
   transition:.15s ease;
 }
 
 .record:hover{
-  border-color:#555b66;
-}
-
-.record-main{
-  padding:25px;
+  border-color:#454b55;
+  background:#12151a;
 }
 
 .record-top{
   display:flex;
-  align-items:flex-start;
   justify-content:space-between;
+  align-items:flex-start;
   gap:20px;
 }
 
 .record-number{
   color:var(--accent);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1.5px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
   white-space:nowrap;
 }
 
-.record h3{
-  margin:9px 0 10px;
+.record h2{
+  margin:5px 0 10px;
   font-size:20px;
   line-height:1.25;
+  letter-spacing:-.02em;
 }
 
 .record-url{
   color:var(--muted);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
   font-size:12px;
   overflow-wrap:anywhere;
 }
 
-.record-meta{
+.meta{
   display:flex;
   flex-wrap:wrap;
   gap:8px 18px;
-  margin-top:18px;
+  margin:18px 0;
+  padding-top:15px;
+  border-top:1px solid var(--line);
   color:var(--muted);
-  font-size:11px;
+  font-size:12px;
 }
 
-.record-actions{
+.meta strong{
+  color:var(--text);
+}
+
+.actions{
   display:flex;
   flex-wrap:wrap;
-  border-top:1px solid var(--line);
+  gap:8px;
 }
 
-.record-actions a{
-  flex:1;
-  min-width:100px;
-  padding:13px 15px;
+.loading,
+.empty,
+.error{
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:35px;
   text-align:center;
-  border-right:1px solid var(--line);
-  color:var(--accent);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1px;
+  color:var(--muted);
 }
 
-.record-actions a:last-child{
-  border-right:none;
+.error{
+  border-color:#583838;
+  color:#e0aaaa;
 }
-
-.record-actions a:hover{
-  background:var(--panel2);
-}
-
-/* PAGINATION */
 
 .pagination{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:8px;
-  margin-top:35px;
-  flex-wrap:wrap;
+  gap:10px;
+  margin-top:30px;
 }
 
-.page-button{
-  min-width:42px;
-  height:42px;
+.pagination button{
   border:1px solid var(--line);
   background:var(--panel);
-  color:var(--soft);
+  color:var(--text);
+  padding:10px 15px;
+  border-radius:7px;
   cursor:pointer;
-  font-weight:800;
 }
 
-.page-button:hover,
-.page-button.active{
-  background:var(--accent);
-  color:#08090b;
+.pagination button:hover{
   border-color:var(--accent);
 }
 
-.page-button:disabled{
+.pagination button:disabled{
   opacity:.35;
   cursor:not-allowed;
 }
 
-/* NOTICE */
-
-.notice{
-  margin:0 0 35px;
-  padding:20px 22px;
-  border-left:3px solid var(--accent);
-  background:var(--panel);
+.page-info{
   color:var(--muted);
   font-size:13px;
 }
 
-/* FOOTER */
-
 footer{
   border-top:1px solid var(--line);
-  padding:45px 0 30px;
+  margin-top:60px;
+  padding:35px 0;
   color:var(--muted);
   font-size:12px;
 }
 
-.footer-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 22px;
+footer strong{
+  color:var(--text);
 }
 
-.footer-links a:hover{
-  color:var(--accent);
-}
-
-/* EMPTY */
-
-.empty{
-  display:none;
-  padding:60px 20px;
-  text-align:center;
-  border:1px solid var(--line);
-  background:var(--panel);
-}
-
-.empty h3{
-  margin:0 0 8px;
-}
-
-.empty p{
-  color:var(--muted);
-}
-
-/* LOADING */
-
-.loading{
-  padding:60px 20px;
-  text-align:center;
-  color:var(--muted);
-  border:1px solid var(--line);
-  background:var(--panel);
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-  .nav-inner{
-    padding:13px 0;
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
+@media(max-width:850px){
   .stats{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .stat:nth-child(2){
-    border-right:none;
-  }
-
-  .stat:nth-child(-n+2){
-    border-bottom:1px solid var(--line);
-  }
-
-  .search-box{
+  .control-grid{
     grid-template-columns:1fr;
   }
 
-  .catalogue-header{
-    display:block;
-  }
-
-  .result-count{
-    margin-top:12px;
+  .controls{
+    top:56px;
   }
 }
 
 @media(max-width:600px){
+  .nav{
+    padding:13px 16px;
+  }
 
-  .hero-content{
-    padding:60px 0;
+  .navlinks{
+    display:none;
+  }
+
+  main{
+    padding:0 16px 60px;
+  }
+
+  .hero{
+    padding:60px 0 40px;
+  }
+
+  h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:16px;
   }
 
   .stats{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1fr;
   }
 
   .stat{
-    border-right:none;
-    border-bottom:1px solid var(--line);
+    padding:17px;
   }
 
-  .stat:last-child{
-    border-bottom:none;
+  .stat strong{
+    font-size:25px;
+  }
+
+  .record{
+    padding:18px;
   }
 
   .record-top{
@@ -489,22 +422,8 @@ footer{
     margin-bottom:8px;
   }
 
-  .record-actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-  }
-
-  .record-actions a{
-    border-bottom:1px solid var(--line);
-  }
-
-  .record-actions a:nth-child(2){
-    border-right:none;
-  }
-
-  .record-actions a:last-child{
-    grid-column:1/-1;
-    border-right:none;
+  .button{
+    flex:1 1 auto;
   }
 }
 </style>
@@ -512,295 +431,362 @@ footer{
 
 <body>
 
-<nav>
-  <div class="container nav-inner">
+<header>
+  <nav class="nav">
+    <a class="brand" href="../../index.html">BARRAN<span>DODGER</span></a>
 
-    <a class="logo" href="../../index.html">
-      BARRAN<span>DODGER</span>
-    </a>
-
-    <div class="nav-links">
-      <a href="../../index.html">MAIN SITE</a>
-      <a href="index.html">ARCHIVE HOME</a>
-      <a href="html/">HTML</a>
-      <a href="pdf/">PDF</a>
+    <div class="navlinks">
+      <a href="../../index.html">HOME</a>
+      <a href="#catalogue">CATALOGUE</a>
+      <a href="index.html">ARCHIVE</a>
+      <a href="README.md">README</a>
       <a href="manifest.jsonl">MANIFEST</a>
     </div>
-
-  </div>
-</nav>
-
-
-<header class="hero">
-
-  <div class="container hero-content">
-
-    <div class="kicker">
-      Documentary Preservation Archive · Finding Aid
-    </div>
-
-    <h1>
-      THE 660-PAGE<br>
-      <span>RECORD.</span>
-    </h1>
-
-    <p class="lead">
-      Search the preserved documentary catalogue. Each record
-      connects the original page address with its captured HTML,
-      PDF, hyperlink record and preservation metadata.
-    </p>
-
-    <div class="buttons">
-
-      <a class="button primary" href="#catalogue">
-        SEARCH THE ARCHIVE
-      </a>
-
-      <a class="button" href="index.html">
-        ARCHIVE HOME
-      </a>
-
-    </div>
-
-  </div>
-
+  </nav>
 </header>
 
+<main>
 
-<section class="search-area" id="search">
+<section class="hero">
+  <div class="kicker">Documentary Preservation Archive</div>
 
-  <div class="container">
+  <h1>THE 660-PAGE RECORD.</h1>
 
-    <div class="stats">
+  <p>
+    A searchable catalogue of the preserved Barrandodger documentary record.
+    Each indexed page is retained as rendered HTML, PDF and hyperlink data,
+    with preservation metadata and SHA-256 hashes recorded in the manifest.
+  </p>
 
-      <div class="stat">
-        <strong id="totalRecords">660</strong>
-        <span>INDEXED RECORDS</span>
-      </div>
+  <div class="notice">
+    <strong>FINDING AID · NOT A COURT · NOT A VERDICT</strong><br>
+    This catalogue describes and provides access to preserved records.
+    It does not independently determine the truth of claims contained within
+    those records.
+  </div>
+</section>
 
-      <div class="stat">
-        <strong>HTML</strong>
-        <span>RENDERED PAGES</span>
-      </div>
+<section class="stats" id="catalogue">
 
-      <div class="stat">
-        <strong>PDF</strong>
-        <span>DOCUMENTARY COPIES</span>
-      </div>
+  <div class="stat">
+    <strong id="totalRecords">660</strong>
+    <span>Indexed records</span>
+  </div>
 
-      <div class="stat">
-        <strong>SHA-256</strong>
-        <span>INTEGRITY DATA</span>
-      </div>
+  <div class="stat">
+    <strong>660+</strong>
+    <span>Rendered HTML records</span>
+  </div>
 
-    </div>
+  <div class="stat">
+    <strong>660+</strong>
+    <span>Preservation PDFs</span>
+  </div>
 
-    <div class="search-box">
+  <div class="stat">
+    <strong>SHA-256</strong>
+    <span>Integrity metadata</span>
+  </div>
 
-      <input
-        id="searchInput"
-        type="search"
-        placeholder="Search titles, URLs, paths or record IDs..."
-        autocomplete="off"
-      >
+</section>
 
-      <select id="sortSelect">
-        <option value="number">Archive order</option>
-        <option value="title">Title A–Z</option>
-        <option value="title-desc">Title Z–A</option>
-        <option value="largest">Largest HTML</option>
-        <option value="links">Most links</option>
-      </select>
+<section class="controls">
 
-      <button class="search-button" onclick="runSearch()">
-        SEARCH
-      </button>
+  <div class="control-grid">
 
-    </div>
+    <input
+      id="search"
+      type="search"
+      placeholder="Search title, URL, archive ID, path or record number..."
+      autocomplete="off"
+    >
+
+    <select id="sort">
+      <option value="number">Archive order</option>
+      <option value="title">Title A–Z</option>
+      <option value="links">Most links</option>
+      <option value="size">Largest HTML</option>
+    </select>
+
+    <button class="button primary" id="clearButton" type="button">
+      CLEAR
+    </button>
 
   </div>
 
 </section>
 
+<div class="resultsbar">
+  <div id="resultCount">Loading archive...</div>
+  <div>20 records per page</div>
+</div>
 
-<main class="catalogue" id="catalogue">
+<section id="records" class="records">
 
-  <div class="container">
-
-    <div class="catalogue-header">
-
-      <div>
-        <div class="section-label">
-          ARCHIVE CATALOGUE
-        </div>
-
-        <h2>
-          Every preserved record.
-        </h2>
-      </div>
-
-      <div class="result-count" id="resultCount">
-        Loading archive…
-      </div>
-
-    </div>
-
-
-    <div class="notice">
-      <strong>Finding aid:</strong>
-      This catalogue is an interface to the preserved records.
-      It does not replace the underlying HTML, PDF, hyperlink,
-      manifest or source-list files.
-    </div>
-
-
-    <div id="loading" class="loading">
-      Loading the complete preservation manifest…
-    </div>
-
-    <div id="records"></div>
-
-    <div id="empty" class="empty">
-
-      <h3>No matching records</h3>
-
-      <p>
-        Try a different title, keyword, URL fragment or record number.
-      </p>
-
-    </div>
-
-
-    <div id="pagination" class="pagination"></div>
-
+  <div class="loading">
+    Loading the preservation manifest…
   </div>
 
-</main>
+</section>
 
+<div class="pagination">
+
+  <button id="previous" type="button">
+    ← Previous
+  </button>
+
+  <div class="page-info" id="pageInfo">
+    Page 1
+  </div>
+
+  <button id="next" type="button">
+    Next →
+  </button>
+
+</div>
 
 <footer>
 
-  <div class="container">
+  <p>
+    <strong>BARRANDODGER DOCUMENTARY ARCHIVE</strong>
+  </p>
 
-    <div class="footer-links">
+  <p>
+    Preservation catalogue generated from
+    <a href="manifest.jsonl">manifest.jsonl</a>.
+    The manifest records the archive sequence, source URL, rendered files,
+    character counts, link counts, byte sizes and SHA-256 hashes.
+  </p>
 
-      <a href="../../index.html">Main Site</a>
-
-      <a href="index.html">Archive Home</a>
-
-      <a href="html/">HTML Records</a>
-
-      <a href="pdf/">PDF Records</a>
-
-      <a href="links/">Link Records</a>
-
-      <a href="manifest.jsonl">Manifest</a>
-
-      <a href="urls.txt">URL Index</a>
-
-    </div>
-
-    <p>
-      Barrandodger documentary preservation archive.
-      Finding aid. Not a court. Not a verdict.
-    </p>
-
-  </div>
+  <p>
+    Archive components:
+    <a href="html/">HTML</a> ·
+    <a href="pdf/">PDF</a> ·
+    <a href="links/">LINKS</a> ·
+    <a href="urls.txt">URL INDEX</a> ·
+    <a href="README.md">README</a>
+  </p>
 
 </footer>
 
+</main>
 
 <script>
 
 const MANIFEST = "manifest.jsonl";
-
 const PAGE_SIZE = 20;
 
-let allRecords = [];
-let filteredRecords = [];
+let records = [];
+let filtered = [];
 let currentPage = 1;
 
+const searchInput = document.getElementById("search");
+const sortSelect = document.getElementById("sort");
+const recordsContainer = document.getElementById("records");
+const resultCount = document.getElementById("resultCount");
+const pageInfo = document.getElementById("pageInfo");
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const clearButton = document.getElementById("clearButton");
+const totalRecords = document.getElementById("totalRecords");
 
-/* LOAD MANIFEST */
 
-async function loadManifest(){
+function formatNumber(value){
 
-  const loading = document.getElementById("loading");
-
-  try{
-
-    const response = await fetch(MANIFEST, {
-      cache:"no-store"
-    });
-
-    if(!response.ok){
-      throw new Error("Manifest could not be loaded.");
-    }
-
-    const text = await response.text();
-
-    allRecords = text
-      .split(/\r?\n/)
-      .map(line => line.trim())
-      .filter(Boolean)
-      .map(line => {
-
-        try{
-          return JSON.parse(line);
-        }catch(error){
-          return null;
-        }
-
-      })
-      .filter(Boolean);
-
-    filteredRecords = [...allRecords];
-
-    document.getElementById("totalRecords").textContent =
-      allRecords.length;
-
-    loading.style.display = "none";
-
-    render();
-
-  }catch(error){
-
-    loading.innerHTML = `
-      <strong>Archive manifest could not be loaded.</strong>
-      <br><br>
-      The preserved manifest remains available directly:
-      <br><br>
-      <a href="manifest.jsonl"
-         style="color:var(--accent);font-weight:900;">
-         OPEN MANIFEST →
-      </a>
-    `;
-
-    console.error(error);
-
+  if(value === undefined || value === null || value === ""){
+    return "—";
   }
+
+  return Number(value).toLocaleString();
 
 }
 
 
-/* SEARCH */
+function formatBytes(bytes){
 
-function runSearch(){
+  if(!bytes){
+    return "—";
+  }
 
-  const query =
-    document.getElementById("searchInput")
-      .value
-      .trim()
-      .toLowerCase();
+  const units = ["B","KB","MB","GB"];
+  let size = Number(bytes);
+  let unit = 0;
 
-  const sort =
-    document.getElementById("sortSelect").value;
+  while(size >= 1024 && unit < units.length - 1){
+    size /= 1024;
+    unit++;
+  }
 
-  filteredRecords = allRecords.filter(record => {
+  return size.toFixed(unit === 0 ? 0 : 1) + " " + units[unit];
 
-    if(!query) return true;
+}
 
-    const haystack = [
+
+function escapeHTML(value){
+
+  if(value === undefined || value === null){
+    return "";
+  }
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+function archivePath(record, type){
+
+  if(!record){
+    return "#";
+  }
+
+  if(type === "html"){
+    return record.html || "#";
+  }
+
+  if(type === "pdf"){
+    return record.pdf || "#";
+  }
+
+  if(type === "links"){
+    return record.links || "#";
+  }
+
+  return record.url || "#";
+
+}
+
+
+function makeRecord(record){
+
+  const article = document.createElement("article");
+
+  article.className = "record";
+
+  const number = formatNumber(record.n);
+
+  const title = record.title || record.id || "Untitled record";
+
+  const sourceURL = record.url || "";
+
+  article.innerHTML = `
+
+    <div class="record-top">
+
+      <div>
+
+        <div class="record-number">
+          RECORD ${escapeHTML(number)}
+        </div>
+
+        <h2>
+          ${escapeHTML(title)}
+        </h2>
+
+        <div class="record-url">
+          ${escapeHTML(sourceURL)}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="meta">
+
+      <span>
+        <strong>ID</strong>
+        ${escapeHTML(record.id || "—")}
+      </span>
+
+      <span>
+        <strong>PATH</strong>
+        ${escapeHTML(record.path || "—")}
+      </span>
+
+      <span>
+        <strong>TEXT</strong>
+        ${formatNumber(record.text_chars)} chars
+      </span>
+
+      <span>
+        <strong>LINKS</strong>
+        ${formatNumber(record.link_count)}
+      </span>
+
+      <span>
+        <strong>HTML</strong>
+        ${formatBytes(record.html_bytes)}
+      </span>
+
+      <span>
+        <strong>PDF</strong>
+        ${formatBytes(record.pdf_bytes)}
+      </span>
+
+    </div>
+
+    <div class="actions">
+
+      <a
+        class="button primary"
+        href="${escapeHTML(archivePath(record,"html"))}"
+        target="_blank"
+        rel="noopener"
+      >
+        HTML
+      </a>
+
+      <a
+        class="button"
+        href="${escapeHTML(archivePath(record,"pdf"))}"
+        target="_blank"
+        rel="noopener"
+      >
+        PDF
+      </a>
+
+      <a
+        class="button"
+        href="${escapeHTML(archivePath(record,"links"))}"
+        target="_blank"
+        rel="noopener"
+      >
+        LINKS
+      </a>
+
+      <a
+        class="button"
+        href="${escapeHTML(archivePath(record,"url"))}"
+        target="_blank"
+        rel="noopener"
+      >
+        ORIGINAL URL
+      </a>
+
+    </div>
+
+  `;
+
+  return article;
+
+}
+
+
+function applySearch(){
+
+  const query = searchInput.value.trim().toLowerCase();
+
+  filtered = records.filter(record => {
+
+    if(!query){
+      return true;
+    }
+
+    const searchable = [
 
       record.n,
       record.id,
@@ -815,11 +801,11 @@ function runSearch(){
     .join(" ")
     .toLowerCase();
 
-    return haystack.includes(query);
+    return searchable.includes(query);
 
   });
 
-  sortRecords(sort);
+  applySort();
 
   currentPage = 1;
 
@@ -828,309 +814,237 @@ function runSearch(){
 }
 
 
-/* SORT */
+function applySort(){
 
-function sortRecords(mode){
-
-  if(mode === "number"){
-
-    filteredRecords.sort(
-      (a,b) => Number(a.n) - Number(b.n)
-    );
-
-  }
+  const mode = sortSelect.value;
 
   if(mode === "title"){
 
-    filteredRecords.sort(
-      (a,b) => String(a.title || "")
-        .localeCompare(String(b.title || ""))
+    filtered.sort((a,b) =>
+      String(a.title || "").localeCompare(
+        String(b.title || "")
+      )
     );
 
   }
 
-  if(mode === "title-desc"){
+  else if(mode === "links"){
 
-    filteredRecords.sort(
-      (a,b) => String(b.title || "")
-        .localeCompare(String(a.title || ""))
+    filtered.sort(
+      (a,b) =>
+        Number(b.link_count || 0) -
+        Number(a.link_count || 0)
     );
 
   }
 
-  if(mode === "largest"){
+  else if(mode === "size"){
 
-    filteredRecords.sort(
-      (a,b) => Number(b.html_bytes || 0)
-        - Number(a.html_bytes || 0)
+    filtered.sort(
+      (a,b) =>
+        Number(b.html_bytes || 0) -
+        Number(a.html_bytes || 0)
     );
 
   }
 
-  if(mode === "links"){
+  else{
 
-    filteredRecords.sort(
-      (a,b) => Number(b.link_count || 0)
-        - Number(a.link_count || 0)
+    filtered.sort(
+      (a,b) =>
+        Number(a.n || 0) -
+        Number(b.n || 0)
     );
 
   }
 
 }
 
-
-/* ESCAPE HTML */
-
-function escapeHTML(value){
-
-  return String(value ?? "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* FORMAT BYTES */
-
-function formatBytes(bytes){
-
-  bytes = Number(bytes || 0);
-
-  if(bytes < 1024){
-    return bytes + " B";
-  }
-
-  if(bytes < 1024 * 1024){
-    return (bytes / 1024).toFixed(1) + " KB";
-  }
-
-  return (bytes / (1024 * 1024)).toFixed(2) + " MB";
-
-}
-
-
-/* RECORD CARD */
-
-function recordCard(record){
-
-  const n =
-    String(record.n ?? "")
-      .padStart(3,"0");
-
-  const title =
-    escapeHTML(record.title || record.id || "Untitled record");
-
-  const id =
-    escapeHTML(record.id || "");
-
-  const url =
-    escapeHTML(record.url || "");
-
-  const path =
-    escapeHTML(record.path || "");
-
-  const html =
-    escapeHTML(record.html || "");
-
-  const pdf =
-    escapeHTML(record.pdf || "");
-
-  const links =
-    escapeHTML(record.links || "");
-
-  const chars =
-    Number(record.text_chars || 0)
-      .toLocaleString();
-
-  const linkCount =
-    Number(record.link_count || 0)
-      .toLocaleString();
-
-  const htmlBytes =
-    formatBytes(record.html_bytes);
-
-  const pdfBytes =
-    formatBytes(record.pdf_bytes);
-
-  return `
-
-    <article class="record">
-
-      <div class="record-main">
-
-        <div class="record-top">
-
-          <div>
-
-            <div class="record-number">
-              RECORD ${n}
-            </div>
-
-            <h3>
-              ${title}
-            </h3>
-
-            <div class="record-url">
-              ${url}
-            </div>
-
-          </div>
-
-          <div class="record-number">
-            ${id}
-          </div>
-
-        </div>
-
-
-        <div class="record-meta">
-
-          <span>
-            PATH: ${path}
-          </span>
-
-          <span>
-            TEXT: ${chars} chars
-          </span>
-
-          <span>
-            LINKS: ${linkCount}
-          </span>
-
-          <span>
-            HTML: ${htmlBytes}
-          </span>
-
-          <span>
-            PDF: ${pdfBytes}
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <div class="record-actions">
-
-        <a href="${html}">
-          HTML
-        </a>
-
-        <a href="${pdf}">
-          PDF
-        </a>
-
-        <a href="${links}">
-          LINKS
-        </a>
-
-        <a href="${url}"
-           target="_blank"
-           rel="noopener">
-          ORIGINAL URL ↗
-        </a>
-
-      </div>
-
-    </article>
-
-  `;
-
-}
-
-
-/* RENDER */
 
 function render(){
 
-  const container =
-    document.getElementById("records");
+  recordsContainer.innerHTML = "";
 
-  const empty =
-    document.getElementById("empty");
+  const total = filtered.length;
 
-  const resultCount =
-    document.getElementById("resultCount");
-
-  const pagination =
-    document.getElementById("pagination");
-
-
-  const total =
-    filteredRecords.length;
-
-  resultCount.textContent =
-    `${total.toLocaleString()} matching record${total === 1 ? "" : "s"}`;
-
-
-  if(total === 0){
-
-    container.innerHTML = "";
-
-    empty.style.display = "block";
-
-    pagination.innerHTML = "";
-
-    return;
-
-  }
-
-  empty.style.display = "none";
-
-
-  const totalPages =
-    Math.ceil(total / PAGE_SIZE);
+  const totalPages = Math.max(
+    1,
+    Math.ceil(total / PAGE_SIZE)
+  );
 
   if(currentPage > totalPages){
     currentPage = totalPages;
   }
 
-
   const start =
     (currentPage - 1) * PAGE_SIZE;
 
-  const pageRecords =
-    filteredRecords.slice(
-      start,
-      start + PAGE_SIZE
+  const end =
+    start + PAGE_SIZE;
+
+  const visible =
+    filtered.slice(start,end);
+
+  resultCount.textContent =
+    total.toLocaleString() +
+    (total === 1 ? " record" : " records") +
+    " found";
+
+  pageInfo.textContent =
+    "Page " +
+    currentPage +
+    " of " +
+    totalPages;
+
+  previousButton.disabled =
+    currentPage <= 1;
+
+  nextButton.disabled =
+    currentPage >= totalPages;
+
+  if(visible.length === 0){
+
+    const empty = document.createElement("div");
+
+    empty.className = "empty";
+
+    empty.textContent =
+      "No archive records match your search.";
+
+    recordsContainer.appendChild(empty);
+
+    return;
+
+  }
+
+  visible.forEach(record => {
+
+    recordsContainer.appendChild(
+      makeRecord(record)
     );
 
-
-  container.innerHTML =
-    pageRecords
-      .map(recordCard)
-      .join("");
-
-
-  renderPagination(totalPages);
+  });
 
 }
 
 
-/* PAGINATION */
+async function loadManifest(){
 
-function renderPagination(totalPages){
+  try{
 
-  const pagination =
-    document.getElementById("pagination");
+    const response = await fetch(
+      MANIFEST,
+      {
+        cache:"no-store"
+      }
+    );
 
-  pagination.innerHTML = "";
+    if(!response.ok){
+
+      throw new Error(
+        "Manifest could not be loaded. HTTP " +
+        response.status
+      );
+
+    }
+
+    const text =
+      await response.text();
+
+    records =
+      text
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean)
+        .map(line => {
+
+          try{
+            return JSON.parse(line);
+          }
+          catch(error){
+            return null;
+          }
+
+        })
+        .filter(Boolean);
+
+    totalRecords.textContent =
+      records.length.toLocaleString();
+
+    filtered = [...records];
+
+    applySort();
+
+    render();
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    recordsContainer.innerHTML = `
+
+      <div class="error">
+
+        <strong>
+          The archive manifest could not be loaded.
+        </strong>
+
+        <br><br>
+
+        Check that
+        <code>manifest.jsonl</code>
+        exists in the same directory as this
+        <code>archive.html</code> file.
+
+        <br><br>
+
+        ${escapeHTML(error.message)}
+
+      </div>
+
+    `;
+
+    resultCount.textContent =
+      "Archive unavailable";
+
+  }
+
+}
 
 
-  const previous =
-    document.createElement("button");
+searchInput.addEventListener(
+  "input",
+  applySearch
+);
 
-  previous.className = "page-button";
 
-  previous.textContent = "‹";
+sortSelect.addEventListener(
+  "change",
+  applySearch
+);
 
-  previous.disabled =
-    currentPage === 1;
 
-  previous.onclick = () => {
+clearButton.addEventListener(
+  "click",
+  () => {
+
+    searchInput.value = "";
+
+    sortSelect.value = "number";
+
+    applySearch();
+
+    searchInput.focus();
+
+  }
+);
+
+
+previousButton.addEventListener(
+  "click",
+  () => {
 
     if(currentPage > 1){
 
@@ -1139,64 +1053,27 @@ function renderPagination(totalPages){
       render();
 
       window.scrollTo({
-        top:document.getElementById("catalogue").offsetTop - 80,
+        top:document.querySelector(".controls").offsetTop - 75,
         behavior:"smooth"
       });
 
     }
 
-  };
-
-  pagination.appendChild(previous);
-
-
-  let start =
-    Math.max(1,currentPage - 2);
-
-  let end =
-    Math.min(totalPages,currentPage + 2);
-
-
-  for(let page = start; page <= end; page++){
-
-    const button =
-      document.createElement("button");
-
-    button.className =
-      "page-button" +
-      (page === currentPage ? " active" : "");
-
-    button.textContent = page;
-
-    button.onclick = () => {
-
-      currentPage = page;
-
-      render();
-
-      window.scrollTo({
-        top:document.getElementById("catalogue").offsetTop - 80,
-        behavior:"smooth"
-      });
-
-    };
-
-    pagination.appendChild(button);
-
   }
+);
 
 
-  const next =
-    document.createElement("button");
+nextButton.addEventListener(
+  "click",
+  () => {
 
-  next.className = "page-button";
-
-  next.textContent = "›";
-
-  next.disabled =
-    currentPage === totalPages;
-
-  next.onclick = () => {
+    const totalPages =
+      Math.max(
+        1,
+        Math.ceil(
+          filtered.length / PAGE_SIZE
+        )
+      );
 
     if(currentPage < totalPages){
 
@@ -1205,31 +1082,15 @@ function renderPagination(totalPages){
       render();
 
       window.scrollTo({
-        top:document.getElementById("catalogue").offsetTop - 80,
+        top:document.querySelector(".controls").offsetTop - 75,
         behavior:"smooth"
       });
 
     }
 
-  };
+  }
+);
 
-  pagination.appendChild(next);
-
-}
-
-
-/* LIVE SEARCH */
-
-document
-  .getElementById("searchInput")
-  .addEventListener("input",runSearch);
-
-document
-  .getElementById("sortSelect")
-  .addEventListener("change",runSearch);
-
-
-/* START */
 
 loadManifest();
 
