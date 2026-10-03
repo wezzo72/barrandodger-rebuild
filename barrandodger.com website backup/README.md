@@ -15,3 +15,6 @@ Each page is saved three ways, after the page’s own JavaScript has rendered. A
 Run again with `node crawl.mjs`. Pages already saved are skipped. `--only 1` saves the first page. `--from 2 --to 40` saves a range.
 
 Finding aid. Not a court. Not a verdict.
+
+
+Recounted 4 October 2026. The source list remains the 660-page index. `pdf/` still holds those 660 page PDFs. The archive statement PDF in this folder makes 661 PDF files in the folder. The main repository wezzo72/Barrandodger holds 5,583 files, including 2,840 PDFs. Nothing in the crawl was deleted.
