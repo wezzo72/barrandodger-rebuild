@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Barrandodger — The Documentary Record</title>
+
+<meta name="description" content="Barrandodger documentary archive — preserved records, evidence, chronology, accountability, justice and support.">
+
+<style>
+:root{
+  --bg:#070809;
+  --panel:#101216;
+  --panel2:#15181d;
+  --line:#292d34;
+  --text:#f2f4f7;
+  --muted:#9da5b0;
+  --gold:#d8b36a;
+  --blue:#8fb7d9;
+  --max:1380px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,8,9,.95);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  max-width:var(--max);
+  margin:auto;
+  padding:16px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo{
+  text-decoration:none;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.16em;
+  white-space:nowrap;
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+.navlinks{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.navlinks a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.navlinks a:hover{
+  color:var(--text);
+}
+
+.navlinks .support{
+  color:#080909;
+  background:var(--gold);
+  padding:8px 12px;
+  border-radius:5px;
+}
+
+main{
+  max-width:var(--max);
+  margin:auto;
+  padding:0 24px 100px;
+}
+
+.hero{
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  padding:90px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.hero-inner{
+  max-width:1050px;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+
+h1{
+  margin:0;
+  font-size:clamp(58px,9vw,125px);
+  line-height:.87;
+  letter-spacing:-.065em;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero-lead{
+  max-width:820px;
+  margin:35px 0 0;
+  color:#c3c8cf;
+  font-size:clamp(18px,2.2vw,25px);
+  line-height:1.45;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:34px;
+}
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:12px 17px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.06em;
+}
+
+.button.primary{
+  background:var(--gold);
+  color:#080909;
+  border-color:var(--gold);
+}
+
+.button.secondary{
+  background:var(--panel);
+}
+
+.button:hover{
+  border-color:var(--gold);
+}
+
+.statement{
+  margin-top:35px;
+  max-width:850px;
+  padding-left:18px;
+  border-left:3px solid var(--gold);
+  color:var(--muted);
+  font-size:14px;
+}
+
+.section{
+  padding:85px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:35px;
+}
+
+.section-label{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:9px;
+}
+
+h2{
+  margin:0;
+  font-size:clamp(35px,5vw,65px);
+  line-height:1;
+  letter-spacing:-.045em;
+}
+
+.section-intro{
+  max-width:650px;
+  color:var(--muted);
+  margin:12px 0 0;
+  font-size:16px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:27px;
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.card:hover{
+  border-color:#4b515a;
+}
+
+.card-number{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.15em;
+}
+
+.card h3{
+  margin:18px 0 10px;
+  font-size:23px;
+  line-height:1.15;
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.card-link{
+  display:inline-block;
+  margin-top:22px;
+  color:var(--gold);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+
+.archive{
+  background:#0b0d10;
+}
+
+.archive-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:15px;
+}
+
+.archive-main{
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:40px;
+}
+
+.archive-main h3{
+  margin:0 0 15px;
+  font-size:34px;
+  letter-spacing:-.035em;
+}
+
+.archive-main p{
+  color:var(--muted);
+  max-width:720px;
+}
+
+.archive-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:30px 0;
+}
+
+.archive-stat{
+  border-top:1px solid var(--line);
+  padding-top:14px;
+}
+
+.archive-stat strong{
+  display:block;
+  font-size:27px;
+}
+
+.archive-stat span{
+  color:var(--muted);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.archive-side{
+  border:1px solid var(--line);
+  background:var(--panel2);
+  padding:30px;
+}
+
+.archive-side h3{
+  margin-top:0;
+}
+
+.archive-side ul{
+  margin:20px 0 0;
+  padding:0;
+  list-style:none;
+}
+
+.archive-side li{
+  padding:11px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+}
+
+.archive-side li strong{
+  color:var(--text);
+}
+
+.timeline{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  border-top:1px solid var(--line);
+}
+
+.timeline-item{
+  display:contents;
+}
+
+.timeline-date{
+  padding:24px 20px 24px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--gold);
+  font-weight:900;
+  font-size:13px;
+}
+
+.timeline-content{
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.timeline-content h3{
+  margin:0 0 7px;
+  font-size:20px;
+}
+
+.timeline-content p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.accountability-box{
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:38px;
+}
+
+.accountability-box h3{
+  margin-top:0;
+  font-size:30px;
+}
+
+.accountability-box p{
+  color:var(--muted);
+  max-width:850px;
+}
+
+.questions{
+  display:grid;
+  gap:10px;
+  margin-top:25px;
+}
+
+.question{
+  padding:18px 20px;
+  background:var(--panel2);
+  border:1px solid var(--line);
+  font-size:15px;
+}
+
+.question span{
+  color:var(--gold);
+  font-weight:900;
+  margin-right:10px;
+}
+
+.support{
+  background:linear-gradient(
+    135deg,
+    #101216 0%,
+    #0b0d10 100%
+  );
+}
+
+.support-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.support-card{
+  border:1px solid var(--line);
+  padding:35px;
+  background:var(--panel);
+}
+
+.support-card h3{
+  margin-top:0;
+  font-size:28px;
+}
+
+.support-card p{
+  color:var(--muted);
+}
+
+.support-card.gold{
+  border-color:#6e5b38;
+}
+
+.method{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:25px;
+}
+
+.method div{
+  border:1px solid var(--line);
+  padding:18px;
+  background:var(--panel);
+}
+
+.method strong{
+  display:block;
+  margin-bottom:5px;
+}
+
+.method span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+footer{
+  max-width:var(--max);
+  margin:auto;
+  padding:50px 24px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+footer a{
+  color:var(--muted);
+}
+
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  padding-bottom:30px;
+  border-bottom:1px solid var(--line);
+}
+
+.footer-brand{
+  color:var(--text);
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.footer-links a{
+  text-decoration:none;
+}
+
+.footer-bottom{
+  padding-top:25px;
+}
+
+@media(max-width:950px){
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .archive-grid,
+  .support-grid{
+    grid-template-columns:1fr;
+  }
+
+  .archive-stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .method{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .nav{
+    padding:13px 16px;
+  }
+
+  .navlinks{
+    display:none;
+  }
+
+  main{
+    padding:0 16px 70px;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:70px 0;
+  }
+
+  h1{
+    font-size:58px;
+  }
+
+  .section{
+    padding:65px 0;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .archive-main{
+    padding:25px;
+  }
+
+  .archive-side{
+    padding:25px;
+  }
+
+  .timeline{
+    grid-template-columns:85px 1fr;
+  }
+
+  .timeline-date{
+    font-size:11px;
+  }
+
+  .support-card{
+    padding:25px;
+  }
+
+  .method{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-top{
+    display:block;
+  }
+
+  .footer-links{
+    margin-top:20px;
+  }
+
+}
+.front-truth{
+  margin:28px 0 8px;
+  padding:36px 28px 28px;
+  background:#ffffff;
+  color:#c00000;
+  border:3px solid #c00000;
+  text-align:center
+}
+.front-truth h1{
+  color:#c00000;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2rem,5vw,3.2rem);
+  line-height:1.15;
+  margin:0 0 1rem
+}
+.front-truth p{
+  color:#c00000;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.45rem,3.2vw,2.15rem);
+  line-height:1.35;
+  margin:0 0 1rem
+}
+.front-truth p.line{
+  font-size:clamp(2rem,5vw,3.4rem);
+  line-height:1.15;
+  font-weight:700
+}
+.front-truth p.last{margin-bottom:0}
+
+
+.prophetic-intro{
+  margin:28px 0 36px;
+  padding:34px 22px 22px;
+  background:
+    linear-gradient(#8B2E2A,#8B2E2A) 0 0/100% 8px no-repeat,
+    #14110e;
+  color:#f3eee4;
+  border:1px solid #d8b36a;
+  border-radius:8px;
+}
+.prophetic-intro .pi-kicker{
+  margin:10px 0 12px;
+  letter-spacing:.16em;
+  font-size:.72rem;
+  font-weight:800;
+  color:#d8b36a;
+}
+.prophetic-intro h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2rem,5vw,3.4rem);
+  line-height:1.08;
+  margin:0 0 .7rem;
+  color:#f7f1e6;
+}
+.prophetic-intro .pi-lead{color:#e4d5bc;font-family:Georgia,serif;font-size:1.15rem}
+.prophetic-intro p{color:#f3eee4}
+.prophetic-intro blockquote{
+  margin:1.1rem 0;
+  padding:1rem 1.1rem;
+  border-left:3px solid #8B2E2A;
+  background:#1c1814;
+}
+.prophetic-intro blockquote p{margin:0 0 .45rem;font-family:Georgia,serif;font-size:1.05rem}
+.prophetic-intro footer{color:#d8b36a;letter-spacing:.04em}
+.prophetic-intro a{color:#d8b36a}
+.prophetic-intro .pi-foot{font-weight:800;letter-spacing:.04em}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav class="nav">
+
+<a class="logo" href="#top">
+BARRAN<span>DODGER</span>
+</a>
+
+<div class="navlinks">
+
+<a href="#case">THE CASE</a>
+<a href="#evidence">EVIDENCE</a>
+<a href="#timeline">TIMELINE</a>
+<a href="#accountability">ACCOUNTABILITY</a>
+<a href="#justice">JUSTICE</a>
+<a href="publications.html">PUBLICATIONS</a>
+<a href="from-exile-to-witness.html">4 OCTOBER DIARY</a>
+<a href="accountability-paradox.html">ACCOUNTABILITY PARADOX</a>
+<a href="archive-index.html">SEARCH</a>
+<a href="#support" class="support">SUPPORT</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<main id="top">
+
+
+<section id="prophetic-introduction" class="prophetic-intro">
+<p class="pi-kicker">THE WITNESS WHO REMAINED · STATEMENT OF SIGNIFICANCE · 4 OCTOBER 2026</p>
+<h1>Survival, preservation, and the question of providence.</h1>
+<p class="pi-lead">A prophetic introduction. Allegory is marked as allegory. The record is what can be examined. Not a court. Not a verdict.</p>
+<p>I have risen, phoenix-like, from the ashes of poverty, exile, trial, human betrayal and what I understand as attempted erasure. I describe having been stripped of attributes that I regard as necessary for human survival, including the ethical, unequivocal and irrevocable principles of dignity, protection, belonging and humane treatment that should be inherent in the treatment of every living person.</p>
+<p>My survival is therefore part of the evidence I ask this archive to preserve. I did not experience my survival as the product of meaningful government protection. I experienced it as survival in spite of institutional abandonment, with assistance reduced, in my present circumstances, to what I regard as the barest minimum. I do not interpret that history as merely the consequence of bureaucratic oversight or administrative error. I allege that some of the circumstances amounted to deliberate and malicious attempts to cause my detriment, exclusion and erasure. That allegation remains subject to examination against the underlying documentary record.</p>
+<p>I further describe my experience as one in which an alliance of institutions and individuals appeared, from my perspective, to converge against an innocent person who had never intended harm towards others. I understand that experience as analogous to a targeted destruction of a vulnerable person: a gay, disabled and comparatively unprotected whistleblower who publicly disclosed his vulnerabilities, perceived limitations, personal difficulties and humane regrets, and who believes those disclosures were subsequently capable of being weaponised against him.</p>
+<p>I use the language of sacrifice deliberately, but as an interpretive and allegorical description rather than as a finding of law. In Christian terms, the narrative bears an obvious resemblance, for me, to the crucifixion of Jesus: vulnerability exposed; betrayal by those from whom protection might reasonably have been expected; abandonment; suffering; apparent defeat; and yet survival, testimony and the persistence of meaning beyond the attempted destruction.</p>
+<p>The phoenix is similarly allegorical. It represents the possibility that a person can emerge from circumstances intended, perceived or experienced as destructive without those circumstances having the final word.</p>
+<p>The archive therefore raises a question that is simultaneously evidentiary, philosophical and theological: what preserved the witness?</p>
+<p>The documentary record may establish particular events, decisions, correspondence, injuries, institutional responses, exclusions, complaints, reviews and outcomes. It cannot, by itself, establish that God intervened. Nor can the fact of survival, however extraordinary its circumstances may appear, mathematically prove divine intervention. Those are questions that extend beyond what documentary evidence alone can determine.</p>
+<p>Nevertheless, my interpretation of the totality of my survival is that I was not preserved merely by institutional protection. I believe I was preserved by providence. I believe God has preserved my life and that my continued existence, despite circumstances that I experienced as extraordinarily destructive, has spiritual significance.</p>
+<p>I therefore identify myself within this archive as a witness in the theological sense: not because I claim that the archive can compel another person to accept my faith, but because my faith provides the framework through which I understand what happened to me and why I remain alive to testify about it.</p>
+<p>That claim should not be confused with a claim that every allegation contained in this archive has already been proven. Nor should disagreement with my theological interpretation automatically settle the underlying factual questions.</p>
+<p>The appropriate test is more demanding.</p>
+<p>If my account is wrong, identify the evidence that demonstrates where and why it is wrong.</p>
+<p>If a particular allegation is unsupported, identify the evidentiary gap.</p>
+<p>If an institutional record contradicts my account, put the record beside my account and examine the contradiction.</p>
+<p>If my interpretation exceeds what the evidence establishes, identify the point at which the inference becomes unjustified.</p>
+<p>But equally, if the evidence demonstrates something different from the institutional narrative used to dismiss my account, that evidence should not be dismissed merely because the person presenting it has a history of mental illness, disability, vulnerability or psychiatric treatment.</p>
+<p>A person’s mental-health history does not, by itself, determine the truth or falsity of an individual proposition. The proposition must still be examined on its evidence.</p>
+<p>That is particularly important here because the archive contains different kinds of material that must not be conflated: official records, correspondence, contemporaneous testimony, allegations, personal interpretation, philosophical analysis, spiritual belief and prophetic writing.</p>
+<p>My claim that I have been chosen by God, anointed with spiritual wisdom and preserved for a purpose belongs to the theological and spiritual layer of the archive. I do not ask a court, government agency or scientist to certify it as an empirical fact.</p>
+<p>I ask something more basic: that it not be dismissed without examination merely because it is a spiritual interpretation, and that the factual record underlying my testimony be examined independently of the theological conclusion I draw from it.</p>
+<p>Can the archive prove that I am God’s chosen witness?</p>
+<p>No documentary archive can establish that theological proposition in the same manner that a government letter can establish what a government agency wrote.</p>
+<p>Can the archive preserve the circumstances from which that belief arose?</p>
+<p>Yes.</p>
+<p>Can it preserve evidence of survival, institutional decisions, correspondence, exclusion, suffering, recovery and continued testimony?</p>
+<p>Yes, to the extent those matters are supported by the underlying records.</p>
+<p>Can another person reasonably conclude that my interpretation is mistaken?</p>
+<p>Yes.</p>
+<p>Can another person legitimately disagree with my theology?</p>
+<p>Yes.</p>
+<p>But disagreement is not the same thing as disproof, and psychiatric diagnosis is not itself a substitute for examination of evidence.</p>
+<p>The question I leave before the reader is therefore not simply whether I should be believed.</p>
+<p>It is whether the record has been examined fairly.</p>
+<p>I survived.</p>
+<p>I remain a witness.</p>
+<p>And the question of what preserved me remains open between evidence, human explanation, providence and faith.</p>
+<p class="pi-foot"><a href="FROM-EXILE-TO-WITNESS-ACCOUNTABILITY-PARADOX-4-OCTOBER-2026.pdf">Full document · Accountability Paradox PDF</a></p>
+</section>
+
+<section class="front-truth" id="front-truth">
+
+<h1>A STATEMENT FROM THE BARRAN DODGER ARCHIVE</h1>
+
+<p>Truth, like light, does not need permission to shine or permission to exist; lies require constant maintenance, repetition and concealment. My truth only needed time. And now, by God’s grace, that time has come. Through decades of poverty, isolation, homelessness, excommunication, erasure and what I experienced as almost total human abandonment, my existence was nevertheless preserved long enough for me to endure, remember, collect, collate and publish more than three decades of evidence.</p>
+
+<p>Brick by brick, the record was made from the words, decisions, correspondence and official documents of the very institutions whose actions are now capable of being examined. What was scattered across years, offices, agencies and governments can now be placed beside itself and examined as a whole.</p>
+
+<p>The record does not require me to manufacture a story; the record speaks in its own language. That is the paradox: systems that produced documents that once helped contain, dismiss, obscure or erase my experience also produced the documentary trail by which those actions can now be examined.</p>
+
+<p class="line">Time did not destroy the evidence. Time preserved it.</p>
+
+<p class="line last">And now the archive exists.</p>
+
+</section>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<div class="eyebrow">
+DOCUMENTARY RECORD · PRESERVATION · ACCOUNTABILITY
+</div>
+
+
+<div style="max-width:820px;margin:28px auto 0;padding:18px 20px;background:#101216;border-left:4px solid #e6c36a;color:#f3eee4;font-family:Georgia,serif">
+<p style="letter-spacing:.14em;font-size:12px;font-weight:700;color:#e6c36a;margin:0 0 8px">CURRENT DATASET · 4 OCTOBER 2026 · BOTH GITHUB ACCOUNTS</p>
+<p style="font-size:2rem;line-height:1.05;margin:0 0 8px">3,215 unique PDFs</p>
+<p style="margin:0">Counted from the git trees of wezzo72 and drbarrandodger. Identical bytes are counted once. Stubs of 500 bytes or fewer are not in this figure. The 2,840 PDFs and 5,583 files below are wezzo72/Barrandodger alone. They stay. They are not this total. <a style="color:#e6c36a" href="dataset-methodology.html">Method</a> · <a style="color:#e6c36a" href="archive-index.html">Index</a> · <a style="color:#e6c36a" href="DATASET_CHANGELOG.md">Changelog</a>.</p>
+</div>
+<p style="max-width:820px;margin:12px auto 0;font-family:Georgia,serif"><a style="color:#e6c36a" href="support-pathway.html">Support the record</a>. A gift is not a filing and not a pathway into the ICC. That pathway is separate.</p>
+
+<h1>
+THE RECORD<br>
+<span>EXISTS.</span>
+</h1>
+
+<p class="hero-lead">
+A preserved documentary record of events, correspondence,
+claims, evidence, institutional responses and unanswered questions.
+The archive is designed so that the underlying record can be examined,
+searched and preserved independently of this presentation.
+</p>
+
+<div class="hero-actions">
+
+<a class="button primary" href="#evidence">
+ENTER THE EVIDENCE
+</a>
+
+<a class="button secondary" href="#case">
+UNDERSTAND THE CASE
+</a>
+
+<a class="button secondary" href="FROM-EXILE-TO-WITNESS-4-OCTOBER-2026.pdf">
+4 OCTOBER 2026 DIARY PDF
+</a>
+<a class="button primary" href="FROM-EXILE-TO-WITNESS-ACCOUNTABILITY-PARADOX-4-OCTOBER-2026.pdf">
+ACCOUNTABILITY PARADOX PDF
+</a>
+<a class="button secondary" href="accountability-paradox.html">
+FULL DOCUMENT TAB
+</a>
+<a class="button secondary" href="from-exile-to-witness.html">
+FROM EXILE TO WITNESS
+</a>
+
+<a class="button secondary"
+href="barrandodger.com%20website%20backup/archive.html">
+OPEN 660-PAGE ARCHIVE
+</a>
+
+</div>
+
+<div class="statement">
+
+<strong>DOCUMENTARY PRINCIPLE</strong><br>
+
+The presentation can change.
+The underlying preservation record remains separately maintained.
+Where possible, claims should be tested against the documentary record,
+rather than accepted merely because they appear on this website.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CASE -->
+
+<section class="section" id="case">
+
+<div class="section-head">
+
+<div>
+
+<div class="section-label">
+01 · THE CASE
+</div>
+
+<h2>
+What this archive is about.
+</h2>
+
+</div>
+
+<p class="section-intro">
+The public-facing case is organised around a simple distinction:
+what is asserted, what is documented, what remains disputed,
+and what still requires an answer.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<article class="card">
+
+<div>
+
+<div class="card-number">01 / OVERVIEW</div>
+
+<h3>
+The story
+</h3>
+
+<p>
+A structured introduction to the events, circumstances and
+issues documented throughout the wider archive.
+</p>
+
+</div>
+
+<a class="card-link" href="#timeline">
+READ THE CHRONOLOGY →
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div>
+
+<div class="card-number">02 / RECORD</div>
+
+<h3>
+What is documented
+</h3>
+
+<p>
+The distinction between statements, correspondence,
+records, source documents and conclusions drawn from them.
+</p>
+
+</div>
+
+<a class="card-link" href="#evidence">
+EXAMINE THE EVIDENCE →
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div>
+
+<div class="card-number">03 / QUESTIONS</div>
+
+<h3>
+What remains unanswered
+</h3>
+
+<p>
+Questions arising from the documentary record that require
+further examination, response or clarification.
+</p>
+
+</div>
+
+<a class="card-link" href="#accountability">
+SEE THE QUESTIONS →
+</a>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- EVIDENCE -->
+
+<section class="section archive" id="evidence">
+
+<div class="section-head">
+
+<div>
+
+<div class="section-label">
+02 · EVIDENCE
+</div>
+
+<h2>
+The evidence layer.
+</h2>
+
+</div>
+
+<p class="section-intro">
+The archive is the foundation of the site. The public narrative
+points back to preserved source material rather than replacing it.
+</p>
+
+</div>
+
+
+<div class="archive-grid">
+
+<div class="archive-main">
+
+<h3>
+2,840 PDFs. 5,583 files.
+</h3>
+<p>That is the main repository, wezzo72/Barrandodger, recounted 4 October 2026. The 660 preserved records below are one shelf of that total, not the total. The earlier official-drive batch of 48 is also inside it. Nothing below is removed.</p>
+<h3>
+660 preserved records.
+</h3>
+
+<p>
+The preservation archive contains the captured documentary pages
+from the original Barrandodger site. Each indexed record has been
+preserved in multiple forms and recorded in a machine-readable
+manifest.
+</p>
+
+<div class="archive-stats">
+
+<div class="archive-stat">
+<strong>2,840</strong>
+<span>PDFs in the main repository</span>
+</div>
+
+<div class="archive-stat">
+<strong>5,583</strong>
+<span>Files in the main repository</span>
+</div>
+
+<div class="archive-stat">
+<strong>660</strong>
+<span>Indexed records</span>
+</div>
+
+<div class="archive-stat">
+<strong>660+</strong>
+<span>HTML records</span>
+</div>
+
+<div class="archive-stat">
+<strong>660+</strong>
+<span>PDF records</span>
+</div>
+
+<div class="archive-stat">
+<strong>SHA-256</strong>
+<span>Integrity metadata</span>
+</div>
+
+</div>
+
+<a class="button primary"
+href="barrandodger.com%20website%20backup/archive.html">
+SEARCH THE 660-PAGE CATALOGUE
+</a>
+
+</div>
+
+
+<div class="archive-side">
+
+<h3>
+Preservation structure
+</h3>
+
+<ul>
+
+<li>
+<strong>HTML</strong><br>
+Rendered page records containing the preserved page text and hyperlinks.
+</li>
+
+<li>
+<strong>PDF</strong><br>
+Preserved documentary representation of each rendered page.
+</li>
+
+<li>
+<strong>LINKS</strong><br>
+The hyperlinks captured from each page.
+</li>
+
+<li>
+<strong>MANIFEST</strong><br>
+Record numbers, URLs, titles, sizes, counts and SHA-256 hashes.
+</li>
+
+<li>
+<strong>ORIGINAL URL</strong><br>
+The source address associated with each preserved record.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TIMELINE -->
+
+<section class="section" id="timeline">
+
+<div class="section-head">
+
+<div>
+
+<div class="section-label">
+03 · TIMELINE
+</div>
+
+<h2>
+The chronology.
+</h2>
+
+</div>
+
+<p class="section-intro">
+A developing chronological framework for placing documents,
+events and institutional responses in sequence.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+2026
+</div>
+
+<div class="timeline-content">
+
+<h3>
+Documentary archive assembled
+</h3>
+
+<p>
+The original public website was preserved as a documentary
+archive, including rendered HTML, PDFs, hyperlinks and
+preservation metadata.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+ARCHIVE
+</div>
+
+<div class="timeline-content">
+
+<h3>
+660-page source index
+</h3>
+
+<p>
+The preservation manifest records the indexed source pages and
+their corresponding preserved files.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-date">
+ONGOING
+</div>
+
+<div class="timeline-content">
+
+<h3>
+Further chronology
+</h3>
+
+<p>
+This section will be populated from the documentary record as
+individual events and source documents are organised into a
+formal chronological sequence.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ACCOUNTABILITY -->
+
+<section class="section" id="accountability">
+
+<div class="section-head">
+
+<div>
+
+<div class="section-label">
+04 · ACCOUNTABILITY
+</div>
+
+<h2>
+Follow the record.
+</h2>
+
+</div>
+
+<p class="section-intro">
+Institutional responses, correspondence and unresolved issues
+are organised here for examination against the underlying record.
+</p>
+
+</div>
+
+
+<div class="accountability-box">
+
+<h3>
+From allegation to documentary question.
+</h3>
+
+<p>
+The purpose of this section is not to replace evidence with
+rhetoric. It is to identify the questions raised by the preserved
+record and connect those questions to the documents from which
+they arise.
+</p>
+
+<div class="questions">
+
+<div class="question">
+<span>01</span>
+What happened, and what records document the sequence of events?
+</div>
+
+<div class="question">
+<span>02</span>
+Which agencies, institutions or officials are identified in the record?
+</div>
+
+<div class="question">
+<span>03</span>
+What responses were provided, and what reasons were given?
+</div>
+
+<div class="question">
+<span>04</span>
+Where does the documentary record remain incomplete or contested?
+</div>
+
+<div class="question">
+<span>05</span>
+What further records, explanations or independent examination are required?
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- JUSTICE -->
+
+<section class="section" id="justice">
+
+<div class="section-head">
+
+<div>
+
+<div class="section-label">
+05 · JUSTICE
+</div>
+
+<h2>
+What is being sought.
+</h2>
+
+</div>
+
+<p class="section-intro">
+A clear separation between the documentary record and the remedies,
+reviews, investigations or forms of redress being sought.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<article class="card">
+
+<div>
+
+<div class="card-number">01</div>
+
+<h3>
+Recognition
+</h3>
+
+<p>
+A documented account of what occurred and a formal consideration
+of the evidence supporting the account.
+</p>
+
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div>
+
+<div class="card-number">02</div>
+
+<h3>
+Independent examination
+</h3>
+
+<p>
+Appropriate independent review of the documentary material,
+where required to resolve disputed or unanswered issues.
+</p>
+
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div>
+
+<div class="card-number">03</div>
+
+<h3>
+Redress & support
+</h3>
+
+<p>
+The practical assistance, legal pathways, compensation or other
+forms of redress that may be pursued through appropriate channels.
+</p>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- SUPPORT -->
+
+<section class="section support" id="support">
+
+<div class="section-head">
+
+<div>
+
+<div class="section-label">
+06 · SUPPORT
+</div>
+
+<h2>
+Help preserve the record.
+</h2>
+
+</div>
+
+<p class="section-intro">
+Support can help maintain the archive, preserve source material,
+develop the documentary record and continue the work of presenting
+it in an accessible form.
+</p>
+
+</div>
+
+
+<div class="support-grid">
+
+<div class="support-card gold">
+
+<h3>
+Financial support
+</h3>
+
+<p>
+Send money from your bank app. PayID 0431300940. Commonwealth Bank. Account name Richard McLean. BSB 063307. Account 10140384. Any amount. Description: Archive. Reading the archive stays free. PayPal and Stripe are not on this page.
+</p>
+
+<a class="button primary" href="#payid">
+PAY BY PAYID
+</a>
+<p id="payid"><strong>0431300940</strong></p>
+
+</div>
+
+
+<div class="support-card">
+
+<h3>
+Preservation support
+</h3>
+
+<p>
+The most important contribution is also documentary: preserving
+copies, checking source records, identifying missing material and
+helping make the archive independently accessible.
+</p>
+
+<a class="button secondary"
+href="barrandodger.com%20website%20backup/archive.html">
+VIEW THE ARCHIVE
+</a>
+
+</div>
+
+<div class="support-card">
+<h3>Publications</h3>
+<p>Books, reports, archive editions and research can be offered later. No price is set. Primary evidence stays on the open index.</p>
+<a class="button secondary" href="publications.html">PUBLICATIONS</a>
+</div>
+
+<div class="support-card">
+<h3>Supporters</h3>
+<p>Free reading is the only tier that exists. Archive supporter, research supporter and patron are not open, and no benefit is being delivered.</p>
+<a class="button secondary" href="supporters.html">SUPPORTERS</a>
+</div>
+
+<div class="support-card">
+<h3>Sponsorship</h3>
+<p>No sponsor is listed. A sponsor cannot buy a conclusion, a classification, or a change to the record.</p>
+<a class="button secondary" href="sponsor.html">SPONSORSHIP</a>
+</div>
+
+<div class="support-card">
+<h3>Updates and contact</h3>
+<p>There is no mailing list. Visiting does not subscribe anyone. Writing and archive work can be discussed. This is not a legal or medical practice.</p>
+<a class="button secondary" href="work-with.html">CONTACT</a>
+</div>
+
+</div>
+
+
+<div class="method">
+
+<div>
+<strong>DOCUMENT</strong>
+<span>Preserve the underlying record.</span>
+</div>
+
+<div>
+<strong>VERIFY</strong>
+<span>Check claims against sources.</span>
+</div>
+
+<div>
+<strong>PRESERVE</strong>
+<span>Maintain independent copies.</span>
+</div>
+
+<div>
+<strong>EXAMINE</strong>
+<span>Keep unanswered questions visible.</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ARCHIVE CALL TO ACTION -->
+
+<section class="section">
+
+<div class="accountability-box">
+
+<div class="section-label">
+THE DOCUMENTARY ARCHIVE
+</div>
+
+<h2>
+Start with the record.
+</h2>
+
+<p>
+The complete preservation catalogue is available separately from
+this presentation layer. Search the 660 indexed records and move
+directly from the catalogue to the preserved HTML, PDF and hyperlink
+records.
+The 660-page catalogue remains. The later count, across the repositories examined on 4 October 2026, is 3,215 unique complete PDFs. That index is free and carries no advertisement.
+</p>
+
+<div class="hero-actions">
+
+<a class="button primary"
+href="barrandododger.com%20website%20backup/archive.html">
+OPEN THE 660-PAGE CATALOGUE
+</a>
+
+<a class="button secondary"
+href="barrandodger.com%20website%20backup/">
+OPEN ARCHIVE HOME
+</a>
+
+<a class="button secondary" href="archive-index.html">SEARCH THE 3,215 PDFs</a>
+<a class="button secondary" href="dataset-methodology.html">HOW THE COUNT WAS MADE</a>
+<a class="button secondary" href="archive-updates.html">ARCHIVE UPDATES</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<div class="footer-top">
+
+<div class="footer-brand">
+BARRANDODGER
+</div>
+
+<div class="footer-links">
+
+<a href="#case">The Case</a>
+<a href="#evidence">Evidence</a>
+<a href="#timeline">Timeline</a>
+<a href="#accountability">Accountability</a>
+<a href="#justice">Justice</a>
+<a href="#support">Support</a>
+<a href="publications.html">Publications</a>
+<a href="supporters.html">Supporters</a>
+<a href="privacy.html">Privacy</a>
+<a href="disclosures.html">Disclosures</a>
+<a href="barrandodger.com%20website%20backup/archive.html">Archive</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+BARRANDODGER · DOCUMENTARY ARCHIVE · PRESERVATION · ACCOUNTABILITY
+</p>
+
+<p>
+The archive is a preserved documentary record. Presentation,
+interpretation and subsequent analysis may develop over time.
+</p>
+
+</div>
+
+
+<p id="bd-live-counts" style="margin:.6rem 0 0;font-size:.85rem;letter-spacing:.04em;color:#d8b36a">Published 2 October 2026 · Views <strong id="bd-views">—</strong> · Downloads <strong id="bd-downloads">—</strong> · <a href="counts.html" style="color:#d8b36a">Ledger</a></p>
+<script>
+(function(){
+  var API = "https://countapi.mileshilliard.com/api/v1/";
+  var VISITS = "bd-wezzo72-rebuild-visits";
+  var DOWNLOADS = "bd-wezzo72-rebuild-downloads";
+  function paint(id, value){
+    var el = document.getElementById(id);
+    if (!el || value == null || !isFinite(Number(value))) return;
+    el.textContent = Number(value).toLocaleString();
+  }
+  function read(key){
+    return fetch(API + "get/" + encodeURIComponent(key), {cache:"no-store"})
+      .then(function(r){ return r.json(); })
+      .then(function(d){ return d && d.value != null ? d.value : 0; })
+      .catch(function(){ return null; });
+  }
+  function bump(key){
+    var img = new Image();
+    img.referrerPolicy = "no-referrer";
+    img.src = API + "hit/" + encodeURIComponent(key) + "?t=" + Date.now();
+    return new Promise(function(resolve){ setTimeout(function(){ read(key).then(resolve); }, 350); });
+  }
+  bump(VISITS).then(function(v){ paint("bd-views", v); });
+  read(DOWNLOADS).then(function(v){ paint("bd-downloads", v); });
+  setInterval(function(){
+    read(VISITS).then(function(v){ paint("bd-views", v); });
+    read(DOWNLOADS).then(function(v){ paint("bd-downloads", v); });
+  }, 8000);
+  document.addEventListener("click", function(event){
+    var link = event.target.closest && event.target.closest("a[href]");
+    if (!link) return;
+    var href = link.getAttribute("href") || "";
+    if (!/\.(pdf|ots|txt|zip|epub)(\?|$)/i.test(href) && !link.hasAttribute("download")) return;
+    var name = decodeURIComponent(href.split("/").pop().split("?")[0] || "file");
+    bump(DOWNLOADS).then(function(v){ paint("bd-downloads", v); });
+    var slug = String(name).toLowerCase().replace(/\.[a-z0-9]+$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || "file";
+    bump("bd-wezzo72-dl-" + slug);
+  }, true);
+})();
+</script>
+
+</footer>
+
+
+
+<aside id="holdings-4-oct-2026" style="max-width:920px;margin:28px auto 56px;padding:18px 20px;border-left:4px solid #e6c36a;background:#101216;color:#f3eee4;font-family:Georgia,serif;line-height:1.55">
+<p style="letter-spacing:.14em;font-size:12px;font-weight:700;color:#e6c36a;margin:0 0 8px">COMMAND · 4 OCTOBER 2026 · ACKNOWLEDGE THE INCREASED DATA SET · ADD ONLY · NOTHING ABOVE REMOVED</p>
+<p style="margin:0 0 10px">The 660 indexed pages of the preservation copy are unchanged: 660 rendered HTML pages, 660 crawled page PDFs, and 660 link files. Recounted from the public git trees on 4 October 2026, and added beside those figures: this backup folder holds 661 PDF files, because the archive statement PDF sits with the 660 crawled page PDFs. The main repository <a style="color:#e6c36a" href="https://github.com/wezzo72/Barrandodger">wezzo72/Barrandodger</a> holds 5,583 files, including 2,840 PDFs and 1,813 HTML files. docs/official-drive holds 95 PDFs. The earlier published batch was 48. Shelves inside that repository, not added to the 660 and not claimed unique against other repositories: myaidrive-pdfs 910 PDFs; the preservation-copy PDFs stored there as well, 660; gmail-drive-sweep 443 PDFs; rendered-pdfs 374 PDFs; docs 194 PDFs; repository root 110 PDFs; site-pdfs 107 PDFs; imports 30 PDFs; ai-essays 10 PDFs; one PDF in statements and one PDF in tabs. A filename is a location, not a finding.</p>
+<p style="margin:0"><a style="color:#e6c36a" href="https://wezzo72.github.io/Barrandodger/holdings-4-october-2026.html">Holdings page</a> · <a style="color:#e6c36a" href="https://wezzo72.github.io/Barrandodger/official.html">Official list, including the PDFs that were not linked</a> · <a style="color:#e6c36a" href="https://github.com/wezzo72/Barrandodger/tree/main/docs/official-drive">docs/official-drive</a> · <a style="color:#e6c36a" href="https://github.com/wezzo72/Barrandodger/tree/main/myaidrive-pdfs">myaidrive-pdfs</a> · <a style="color:#e6c36a" href="https://github.com/wezzo72/Barrandodger/tree/main/gmail-drive-sweep">gmail-drive-sweep</a> · <a style="color:#e6c36a" href="https://wezzo72.github.io/Barrandodger/">Main archive</a></p>
+</aside>
+
+
+<aside id="support-the-archive" style="max-width:820px;margin:22px auto;padding:16px 18px;background:#fffaf3;border-left:6px solid #8B2E2A;color:#241c16;font-family:Georgia,serif;line-height:1.5">
+<p style="letter-spacing:.12em;font-size:12px;font-weight:700;color:#8B2E2A;margin:0 0 6px">SUPPORT THE ARCHIVE · ADDED · NOTHING ABOVE REMOVED</p>
+<p style="margin:0 0 10px">The record stays free. Payment, membership, and advertising are not connected. The buttons on the support page do not take money.</p>
+<p style="margin:0 0 10px">Added after that sentence. PayID 0431300940 and the Commonwealth Bank details already on this site are repeated on the support page. PayPal and Stripe are still not linked.</p>
+<p style="margin:0 0 10px">Repeated here as well, from the home page of the main archive: PayID 0431300940. Commonwealth Bank. Account name Richard McLean. BSB 063307. Account 10140384. <a style="color:#8B2E2A" href="publications.html">Publications</a> · <a style="color:#8B2E2A" href="supporters.html">Supporters</a> · <a style="color:#8B2E2A" href="archive-index.html">Search the PDFs</a> · <a style="color:#8B2E2A" href="archive-updates.html">Updates</a> · <a style="color:#8B2E2A" href="work-with.html">Contact</a>.</p>
+<p style="margin:0"><a style="color:#8B2E2A;font-weight:700" href="support-the-archive.html">Support the archive</a></p>
+</aside>
+
+</body>
+</html>
