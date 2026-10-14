@@ -1,0 +1,15 @@
+{
+  "edition": "press-1",
+  "date": "2026-10-14",
+  "title": "Witness Gospels and Prophetic Papers",
+  "price_aud": 12,
+  "price_status": "introductory test",
+  "checkout": "not_live",
+  "pages": 89,
+  "source_pages": 81,
+  "sha256": "d91b45494e0703995860655da30f648451dacfeac0200e0134d287cf17de7311",
+  "sample_sha256": "9e01d1c747f03f56fec2b89bf44b48261da784f89dde2f7ffacaa94d87c48b8c",
+  "sample_file": "WITNESS-GOSPELS-AND-PROPHETIC-PAPERS-PRESS-EDITION-14-OCTOBER-2026-SAMPLE.pdf",
+  "product_page": "witness-gospels-press-edition-14-october-2026.html",
+  "full_file_in_public_repo": false
+}
