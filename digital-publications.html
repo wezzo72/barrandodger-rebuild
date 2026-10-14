@@ -54,7 +54,7 @@
 
   <h2>List of titles</h2>
   <div id="basket">
-    <p>Only the two fixed A$15 titles can be listed together. Stripe sets those prices. This page cannot change them and cannot send one combined charge. Betrayed, Murdered, Forsaken is not listed here because the payer can change that amount.</p>
+    <p>Only the two fixed A$15 titles can be listed together. One title opens its own Stripe page. Both titles open one Stripe page that already contains both prices. Betrayed, Murdered, Forsaken stays separate because the payer can change that amount. No link emails a file.</p>
     <ul id="basket-items"><li>Nothing selected.</li></ul>
     <p id="basket-total">No charge from this page.</p>
     <p id="basket-pay"></p>
@@ -364,14 +364,12 @@ document.getElementById("pub-filter").addEventListener("input", function () {
       a.textContent = "Open the Stripe page for this title";
       pay.appendChild(a);
     } else {
-      total.textContent = "Two separate Stripe charges of A$15.00. A$30.00 is the sum of those two charges. It is not one checkout.";
-      ids.forEach(function (id) {
-        var a = document.createElement("a");
-        a.className = "buy";
-        a.href = products[id].href;
-        a.textContent = "Pay A$15 — " + products[id].title;
-        pay.appendChild(a);
-      });
+      total.textContent = "One Stripe charge for both titles. Each price is A$15.00, tax inclusive, set by Stripe. This page does not set the amount. No file is emailed.";
+      var a = document.createElement("a");
+      a.className = "buy";
+      a.href = "https://buy.stripe.com/14A8wQ1qfbCNfDD4GP0Ny0c";
+      a.textContent = "Pay both titles on Stripe";
+      pay.appendChild(a);
     }
   }
   document.querySelectorAll("[data-add]").forEach(function (btn) {
