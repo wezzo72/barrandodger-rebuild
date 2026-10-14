@@ -2773,5 +2773,21 @@
       "inspected": false,
       "note": "Not given a purchase button."
     }
-  ]
+  ],
+  "file_register": {
+    "file": "data/publication-source-map.json",
+    "document_files": 11825,
+    "evidence_not_for_sale": 6078,
+    "stubs": 2684,
+    "undetermined_not_opened": 2320,
+    "rendered_pages": 411,
+    "text_not_opened": 215,
+    "rights_review": 21,
+    "authored_folder": 96,
+    "openings_read": 34,
+    "possible_duplicate_groups_same_name_and_size": 3064,
+    "checksums": "not computed",
+    "private_files_produced": 0,
+    "new_checkouts": 0
+  }
 }
