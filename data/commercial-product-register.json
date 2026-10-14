@@ -1,0 +1,151 @@
+{
+  "register_id": "commercial-product-register",
+  "updated": "2026-10-15",
+  "currency": "AUD",
+  "role": "Sale register only. data/publications-catalogue.json remains the source-file inventory and is not a shop. digital-publications.html renders that inventory. read-and-purchase.html is the shelf. This file does not add a second catalogue page.",
+  "preservation": "No archive PDF, hash, timestamp, or existing page was replaced. The financial project at https://barran-dodger-finance.base44.app was not edited.",
+  "checked_on": "2026-10-15",
+  "limits_of_this_check": [
+    "Stripe Dashboard is not available from this session. No product, price, or payment link was created. No file was uploaded to Stripe. No card was charged.",
+    "The full press PDF named on the product page is not in this public repository. A title search of the connected Google Drive did not find it. The published SHA-256 was therefore not recomputed.",
+    "The three existing buy.stripe.com URLs returned HTTP 200 and a Stripe Checkout script page. The amount, currency, and whether a file is attached were not readable from that script. They are not re-certified here.",
+    "stripe.com/au/pricing did not return a rate table on this check. The fee sentence already printed on the product page was not recalculated."
+  ],
+  "products": [
+    {
+      "product_id": "BD-PRESS-2026-10-14-001",
+      "exact_title": "Witness Gospels and Prophetic Papers",
+      "author": "Barran Dodger, and Dr Richard William McLean where a source file names him",
+      "category": "Gospel and prophetic writings, compiled",
+      "source": {
+        "repository": "wezzo72/barrandodger-rebuild",
+        "edition_record": "press-edition.json",
+        "product_page": "witness-gospels-press-edition-14-october-2026.html",
+        "public_url": "https://wezzo72.github.io/barrandodger-rebuild/witness-gospels-press-edition-14-october-2026.html",
+        "included_public_files": [
+          {
+            "title": "Foundational gospel, The Witness Remains, 10 October 2026",
+            "path": "FOUNDATIONAL-GOSPEL-THE-WITNESS-REMAINS-10-OCTOBER-2026.pdf",
+            "bytes": 59532,
+            "pages_rechecked": 8,
+            "sha256": "b96e61711113ee9b80b96d495439478ba8ba8583effd933d42f15befc962374a"
+          },
+          {
+            "title": "The Witness Remains — The Prophecy of the Witness, 7 October 2026",
+            "path": "THE-WITNESS-REMAINS-THE-PROPHECY-OF-THE-WITNESS-7-OCTOBER-2026.pdf",
+            "bytes": 86017,
+            "pages_rechecked": 32,
+            "sha256": "53356711aa1d4f05ae43a9627943356cd9ccb1540ae9eb0bc08d7e9803939b0d"
+          },
+          {
+            "title": "The Witness Remains — The Paradox of Survival, 9 October 2026",
+            "path": "THE-WITNESS-REMAINS-PARADOX-OF-SURVIVAL-9-OCTOBER-2026.pdf",
+            "bytes": 89460,
+            "pages_rechecked": 14,
+            "sha256": "6e1e9131184e639b96bf6979bcb26af0fdb8a6b61a86dbcf10bc9473a416de55"
+          },
+          {
+            "title": "From Exile to Witness, 4 October 2026",
+            "path": "FROM-EXILE-TO-WITNESS-4-OCTOBER-2026.pdf",
+            "bytes": 222816,
+            "pages_rechecked": 27,
+            "sha256": "da06a16b816828f1b167f492982c6b75e5015539edb781eaa1f49a0d28e140ba"
+          }
+        ]
+      },
+      "completeness": "Source pages rechecked on 15 October 2026: 8 + 32 + 14 + 27 = 81, matching the product page. The full press file of 89 pages was not opened on this date because it is not in the public repository.",
+      "edition": "press-1, 14 October 2026. Front matter added. Source pages not rewritten.",
+      "file": {
+        "full_press_pdf_in_public_repository": false,
+        "full_press_sha256_as_previously_published": "d91b45494e0703995860655da30f648451dacfeac0200e0134d287cf17de7311",
+        "full_press_sha256_recomputed_on": null,
+        "sample_file": "WITNESS-GOSPELS-AND-PROPHETIC-PAPERS-PRESS-EDITION-14-OCTOBER-2026-SAMPLE.pdf",
+        "sample_bytes": 152605,
+        "sample_pages_rechecked": 13,
+        "sample_sha256": "9e01d1c747f03f56fec2b89bf44b48261da784f89dde2f7ffacaa94d87c48b8c",
+        "sample_sha256_matches_press_edition_json": true
+      },
+      "length": "Product page says 89 pages, of which 81 are the source pages. Only the 81 source pages and the 13-page sample were counted again.",
+      "rights": "Compilation of four files already public under the author's name. This is not a legal clearance. Quotations or third-party material inside those PDFs were not separately reviewed on 15 October 2026. The four source PDFs stay free.",
+      "description": "One PDF gathering four existing writings: the foundational gospel, the prophecy of the witness, the paradox of survival, and the exile diary. Religious and prophetic writing, plus a first-person diary. Not a finding, not a verdict, and not access to the archive.",
+      "preview": "https://wezzo72.github.io/barrandodger-rebuild/WITNESS-GOSPELS-AND-PROPHETIC-PAPERS-PRESS-EDITION-14-OCTOBER-2026-SAMPLE.pdf",
+      "price": {
+        "amount": "12.00",
+        "currency": "AUD",
+        "label": "Introductory test price already printed on the product page. Not a market valuation."
+      },
+      "checkout": "not_live. No payment URL exists for this file. Do not send a customer to the other Stripe links for this PDF.",
+      "delivery": "not_configured. Intended method remains a file attached to a Stripe payment link. That attachment does not exist. A public download of the full press file was not added.",
+      "publication_status": "prepared",
+      "customer_journey": {
+        "source_file_exists": "The four source PDFs exist and were downloaded from the live site. The full press PDF was not found.",
+        "source_file_inspected": "Page counts and SHA-256 of the four public sources and the sample were checked. The full press PDF was not inspected.",
+        "product_complete": "Unverified for the 89-page file. Verified for the four sources and the sample only.",
+        "rights_reviewed": "Attribution checked against the existing product page and filenames. Not a legal opinion.",
+        "commercial_edition_exists": "Claimed on 14 October 2026, with a SHA-256. The file itself was not in the repository on 15 October 2026.",
+        "product_page_exists": true,
+        "checkout_destination_valid": false,
+        "seller_account_activated": "Not re-tested. Other payment links for different titles open a Stripe Checkout page. That does not activate this product.",
+        "payment_processing_tested": false,
+        "digital_delivery_tested": false,
+        "payout_arrangements_confirmed": false,
+        "public_page_live": true,
+        "live_purchase_pathway_verified": false
+      }
+    },
+    {
+      "product_id": "BD-STRIPE-SHRINK",
+      "exact_title": "The Shrink! ...and you thought you were crazy!",
+      "author": "Not re-established from a complete manuscript on 15 October 2026",
+      "category": "Book, existing Stripe title",
+      "source": "Earlier note in digital-publications.html: a short extract, not a complete book. Not re-opened on 15 October 2026.",
+      "completeness": "Not a complete sale file.",
+      "edition": "None prepared.",
+      "file": null,
+      "length": "Not claimed.",
+      "rights": "Not reviewed beyond the existing do-not-upload note.",
+      "description": "Existing Stripe product name. This register does not add a description.",
+      "preview": null,
+      "price": "AUD 15.00 was recorded on 14 October 2026. Not re-read from Stripe on 15 October 2026.",
+      "checkout": "https://buy.stripe.com/eVa0050xt3mO5R68wA",
+      "delivery": "Previously recorded as receipt only. Not re-tested. Do not describe this as file delivery.",
+      "publication_status": "unavailable"
+    },
+    {
+      "product_id": "BD-STRIPE-SPLICE",
+      "exact_title": "Dr Rich McLean PHD: 'A Splice of My Life'",
+      "author": "Named in the Stripe product title. No manuscript was opened on 15 October 2026.",
+      "category": "Book, existing Stripe title",
+      "source": "Listed as a research-queue title on the existing pages. No manuscript PDF was attached by this change.",
+      "completeness": "Unverified. Not a complete sale file.",
+      "edition": "None prepared.",
+      "file": null,
+      "length": "Not claimed.",
+      "rights": "Not reviewed.",
+      "description": "Existing Stripe product name only.",
+      "preview": null,
+      "price": "AUD 15.00 was recorded on 14 October 2026. Not re-read from Stripe on 15 October 2026.",
+      "checkout": "https://buy.stripe.com/8wM7sxbc75uW2EUdQT",
+      "delivery": "Previously recorded as receipt only. Not re-tested.",
+      "publication_status": "unavailable"
+    },
+    {
+      "product_id": "BD-STRIPE-BETRAYED",
+      "exact_title": "Betrayed, Murdered, Forsaken",
+      "author": "Not re-established from a finished book file on 15 October 2026",
+      "category": "Book, existing Stripe title",
+      "source": "Earlier note: Drive copies opened on 14 October 2026 were not a finished book. Those files were not re-opened.",
+      "completeness": "Not a verified finished book.",
+      "edition": "None prepared.",
+      "file": null,
+      "length": "Not claimed.",
+      "rights": "Not reviewed.",
+      "description": "Existing Stripe product name only.",
+      "preview": null,
+      "price": "A payer-chosen amount, with a preset recorded earlier as AUD 29.00. Not re-read from Stripe on 15 October 2026.",
+      "checkout": "https://buy.stripe.com/aEU149eojbTk3IYfYY",
+      "delivery": "Previously recorded as receipt only. Not re-tested.",
+      "publication_status": "unavailable"
+    }
+  ]
+}
