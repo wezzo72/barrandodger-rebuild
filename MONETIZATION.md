@@ -8,7 +8,7 @@ Public URLs only. Do not put API keys, AdSense secrets, or Stripe secret keys in
 | --- | --- |
 | donations | On. Card gifts use the public Stripe donation links. PayID and bank details were already printed on the site. |
 | monthly_support | On. A$10 a month, public Stripe link. Cancel from the Stripe receipt. |
-| publications / store_url | Points at the church publications shelf. The documentary archive is not for sale. |
+| publications / store_url | Points at the press-edition shelf on the rebuild site. The documentary archive is not for sale. Card checkout for the press edition is not live. |
 | memberships | Off. No exclusive file exists, so no paid tier is honest yet. |
 | advertising | Off. |
 | newsletter | Off. |
