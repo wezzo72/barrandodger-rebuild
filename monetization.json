@@ -21,7 +21,7 @@
   "monthly_support": true,
   "monthly_support_url": "https://donate.stripe.com/28EfZied1eOZ9ff4GP0Ny0b",
   "publications": true,
-  "store_url": "https://wezzo72.github.io/-church-of-barran-dodger/publications.html",
+  "store_url": "https://wezzo72.github.io/barrandodger-rebuild/read-and-purchase.html",
   "memberships": false,
   "membership_url": "",
   "sponsorship": false,
@@ -32,5 +32,6 @@
   "newsletter_url": "",
   "analytics": false,
   "analytics_id": "",
-  "note": "Public Stripe payment links only. No API keys. The documentary archive is not for sale. Membership is not connected because no exclusive file exists. PayID and bank details were already printed; they are not new."
+  "note": "Public Stripe payment links only. No API keys. The documentary archive is not for sale. The press edition page is separate and its card checkout is not live. Membership is not connected. PayID and bank details were already printed; they are not new.",
+  "press_edition_checkout": "not_live"
 }
