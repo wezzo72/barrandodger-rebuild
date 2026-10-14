@@ -1,0 +1,218 @@
+{
+  "verified_on": "2026-10-14",
+  "note": "Fees below were read from the cited official pages on this date. A platform with status NOT VERIFIED was not given a fee. No account was created. No listing was submitted.",
+  "platforms": [
+    {
+      "name": "Existing Stripe payment links",
+      "url": "https://dashboard.stripe.com/",
+      "priority": 1,
+      "model": "direct card checkout on the account www.barrandodger.com",
+      "formats": "Does not accept or email a publication file. Confirmation page only.",
+      "australia": "Account exists, charges_enabled and payouts_enabled were true on 14 October 2026.",
+      "fees": "Card fee was not returned by the docs search this session. No monthly fee for Payment Links was found.",
+      "delivers_file": false,
+      "api": "Payment Links can be read. They cannot attach a private PDF.",
+      "status": "CHECKOUT VERIFIED \u2014 DELIVERY REQUIRED",
+      "next_action": "Do not add another product until the finished manuscript exists. These links still do not send a file."
+    },
+    {
+      "name": "Payhip",
+      "url": "https://payhip.com/",
+      "pricing_url": "https://payhip.com/faq",
+      "priority": 2,
+      "model": "direct digital download",
+      "formats": "FAQ says ebooks and most digital files, including documents.",
+      "australia": "Not tested. No account exists in this session.",
+      "fees": "Free plan: 5% of the sale, from the Payhip FAQ. Plus is described as 2% and Pro as 0%. The monthly price of Plus and Pro was not on the FAQ excerpt. PayPal or Stripe processing fees are extra.",
+      "delivers_file": true,
+      "api": "Not verified. No key is connected.",
+      "status": "BLOCKED \u2014 no Payhip account",
+      "next_action": "Create a Payhip account and connect payouts. Do not upload a public archive PDF and call it exclusive."
+    },
+    {
+      "name": "Gumroad",
+      "url": "https://gumroad.com/",
+      "pricing_url": "https://gumroad.com/help/article/66-gumroads-fees",
+      "priority": 2,
+      "model": "direct digital download",
+      "formats": "Digital products and ebooks, from Gumroad's pricing page.",
+      "australia": "Not tested. No account.",
+      "fees": "Direct sales: 10% + US$0.50, plus card processing stated as 2.9% + US$0.30. Discover marketplace sales: 30% including processing. No monthly fee. Source: Gumroad help article 66, read 14 October 2026.",
+      "delivers_file": true,
+      "api": "Not connected.",
+      "status": "BLOCKED \u2014 no Gumroad account",
+      "next_action": "Not the first channel. Payhip's free-plan percentage is lower. Do not open both until one delivery path works."
+    },
+    {
+      "name": "Ko-fi Shop",
+      "url": "https://ko-fi.com/",
+      "pricing_url": "https://help.ko-fi.com/hc/en-us/articles/360002506494-Does-Ko-fi-take-a-fee",
+      "priority": 2,
+      "model": "direct shop download",
+      "formats": "Shop items. Exact file rules were not re-read.",
+      "australia": "Not tested. Payments go to the creator's own PayPal or Stripe, per Ko-fi help.",
+      "fees": "Shop sales: 5% on the free option. No monthly fee on that option. Processor fees extra. Ko-fi's help page says processor fees are typically around 3% + $0.30; that processor figure was Ko-fi's example, not a quote from this Stripe account.",
+      "delivers_file": true,
+      "api": "Not connected.",
+      "status": "BLOCKED \u2014 no Ko-fi shop",
+      "next_action": "Optional after Payhip. Same rule: do not upload the public gospel as a paid exclusive."
+    },
+    {
+      "name": "Lemon Squeezy",
+      "url": "https://www.lemonsqueezy.com/",
+      "pricing_url": "https://www.lemonsqueezy.com/pricing",
+      "priority": 2,
+      "model": "direct digital sale, merchant of record",
+      "formats": "Digital products. Not re-tested with a file.",
+      "australia": "Payout to a non-US bank is listed as 1% extra if using Stripe payouts, on the fees doc.",
+      "fees": "5% + US$0.50 platform fee. International card payments +1.5%. No monthly fee for the ecommerce plan on the pricing page read 14 October 2026.",
+      "delivers_file": true,
+      "api": "Not connected.",
+      "status": "BLOCKED \u2014 no account. A second merchant of record is not needed while Stripe already pays out.",
+      "next_action": "Do not open unless Payhip cannot pay an Australian seller."
+    },
+    {
+      "name": "Amazon KDP",
+      "url": "https://kdp.amazon.com/",
+      "pricing_url": "https://kdp.amazon.com/earn",
+      "priority": 3,
+      "model": "ebook and print retail, not a private PDF shop",
+      "formats": "Kindle ebook and paperback. A raw archive PDF is not a Kindle listing.",
+      "australia": "KDP publishes to Amazon stores including Amazon.com.au. Account tax interview was not done.",
+      "fees": "Ebook royalty 35%, or 70% in stated territories minus delivery. From 7 July 2026 the 70% band on Amazon.com is USD 2.99\u201312.99. Print up to 60% minus printing, from the KDP earn page. Delivery example on Amazon.com.au was listed as AUD 0.15 per MB on the KDP pricing help.",
+      "exclusivity": "Do not enrol any title in KDP Select. The same text is already public.",
+      "delivers_file": "Retailer delivery, not the archive PDF.",
+      "api": "No KDP account connected.",
+      "status": "BLOCKED \u2014 no account, and no verified complete exclusive edition",
+      "next_action": "Do not submit. Public copies would conflict with KDP Select, and the three shop titles are not finished private editions."
+    },
+    {
+      "name": "Draft2Digital",
+      "url": "https://www.draft2digital.com/",
+      "pricing_url": "https://www.draft2digital.com/faq/",
+      "priority": 3,
+      "model": "aggregator",
+      "stores_named_on_faq": [
+        "Amazon (invite only)",
+        "Apple Books",
+        "Barnes & Noble",
+        "Kobo",
+        "Smashwords",
+        "Bookshop.org",
+        "Tolino",
+        "OverDrive",
+        "cloudLibrary"
+      ],
+      "fees": "About 10% of retail as commission, from the FAQ. One-time activation USD 20 for new publishing accounts. Annual USD 12 maintenance if the account earns under USD 100 a year and has titles in distribution. Author share on several stores was listed as about 60% of list on a Draft2Digital royalty article dated around December 2025; that article's Amazon band still said USD 2.99\u20139.99, which is older than KDP's July 2026 band. Do not treat the article as the current Amazon rate.",
+      "delivers_file": "Retail and library delivery after approval.",
+      "api": "Not connected.",
+      "status": "BLOCKED \u2014 no account. Not the first channel.",
+      "next_action": "Use only after one direct download shop works, and only for a complete non-exclusive EPUB."
+    },
+    {
+      "name": "Kobo Writing Life",
+      "url": "https://www.kobo.com/writinglife",
+      "priority": 3,
+      "model": "ebook retail",
+      "formats": "EPUB, or Kobo will make one from an uploaded manuscript, from the Kobo Writing Life page.",
+      "fees": "Page says earn up to 70% and no exclusivity. The exact price bands were not on the page retrieved.",
+      "payout": "A Kobo help answer says payment in the author's currency once a month after more than USD 50, otherwise twice a year.",
+      "status": "BLOCKED \u2014 no account. Royalty bands not fully verified.",
+      "next_action": "Do not submit a PDF archive file as a Kobo book."
+    },
+    {
+      "name": "Google Play Books Partner Center",
+      "url": "https://play.google.com/books/publish/",
+      "priority": 3,
+      "model": "ebook retail",
+      "fees": "NOT VERIFIED. The portal exists. The only revenue share read today was 52% for auto-narrated audiobooks, which is not the ebook rate.",
+      "status": "NOT VERIFIED THIS SESSION",
+      "next_action": "Do not claim PDF listings or Australian eligibility."
+    },
+    {
+      "name": "Shopify",
+      "url": "https://www.shopify.com/",
+      "priority": 5,
+      "fees": "NOT VERIFIED. It is a subscription store. Not opened.",
+      "status": "UNSUITABLE AS A FIRST CHANNEL \u2014 a monthly shop is not justified while Payhip has a free plan.",
+      "next_action": "Do not subscribe."
+    },
+    {
+      "name": "WooCommerce",
+      "url": "https://woocommerce.com/",
+      "priority": 5,
+      "status": "NOT VERIFIED. Needs a hosted shop. Not built.",
+      "next_action": "Do not add a server."
+    },
+    {
+      "name": "Fourthwall",
+      "url": "https://fourthwall.com/",
+      "priority": 5,
+      "status": "NOT VERIFIED",
+      "next_action": "No account."
+    },
+    {
+      "name": "Sellfy",
+      "url": "https://sellfy.com/",
+      "priority": 5,
+      "status": "NOT VERIFIED",
+      "next_action": "No account."
+    },
+    {
+      "name": "IngramSpark",
+      "url": "https://www.ingramspark.com/",
+      "priority": 4,
+      "status": "NOT VERIFIED. Print setup was not priced.",
+      "next_action": "No print file is ready."
+    },
+    {
+      "name": "Lulu",
+      "url": "https://www.lulu.com/",
+      "priority": 4,
+      "status": "NOT VERIFIED",
+      "next_action": "No print file is ready."
+    },
+    {
+      "name": "StreetLib",
+      "url": "https://www.streetlib.com/",
+      "priority": 5,
+      "status": "NOT VERIFIED",
+      "next_action": "No account."
+    },
+    {
+      "name": "PublishDrive",
+      "url": "https://publishdrive.com/",
+      "priority": 5,
+      "status": "NOT VERIFIED",
+      "next_action": "No account. Do not open a second aggregator before Draft2Digital is even available."
+    },
+    {
+      "name": "Barnes & Noble Press",
+      "url": "https://press.barnesandnoble.com/",
+      "priority": 3,
+      "status": "NOT VERIFIED. Also reachable through Draft2Digital if that account is later approved.",
+      "next_action": "No direct account."
+    },
+    {
+      "name": "Apple Books for Authors",
+      "url": "https://authors.apple.com/",
+      "priority": 3,
+      "status": "NOT VERIFIED as a new submission path. An existing Apple Books listing for Betrayed, Murdered, Forsaken was already recorded on books.html. This session did not open the Apple account.",
+      "next_action": "Do not create a second Apple listing of an unverified file."
+    },
+    {
+      "name": "Smashwords",
+      "url": "https://www.smashwords.com/",
+      "priority": 3,
+      "status": "Covered inside Draft2Digital's store list. Direct Smashwords fees were not separately verified, except the Draft2Digital royalty article's Smashwords rates.",
+      "next_action": "Do not open a separate Smashwords account while using Draft2Digital later."
+    },
+    {
+      "name": "Etsy",
+      "url": "https://www.etsy.com/",
+      "priority": 5,
+      "status": "NOT VERIFIED. Not assumed eligible for these manuscripts.",
+      "next_action": "Do not list."
+    }
+  ]
+}
