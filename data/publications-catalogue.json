@@ -1,0 +1,64 @@
+{
+  "generated": "2026-10-14",
+  "scope": "Repositories searched: wezzo72/barrandodger-rebuild (main 9926dd4f) and wezzo72/Barrandodger (books.html, docs/source-texts, filename tree). Google Drive title search for the three shop titles. drbarrandodger.github.io and Base44 were not used as manuscript stores. This file does not claim every writing has been found.",
+  "stripe": {
+    "account_name": "www.barrandodger.com",
+    "payment_links_deliver_files": false,
+    "note": "Active payment links end on a Stripe confirmation page. No file is attached. A public GitHub URL is not buyer-only delivery."
+  },
+  "products": [
+    {
+      "id": "shrink",
+      "title": "The Shrink! ...and you thought you were crazy!",
+      "price": "AUD 15.00 fixed",
+      "checkout_url": "https://buy.stripe.com/eVa0050xt3mO5R68wA",
+      "checkout_status": "CHECKOUT VERIFIED",
+      "source_status": "RIGHTS REVIEW REQUIRED",
+      "source_note": "Drive holds a 2020 Word file of about 2,650 words. The file calls itself an extract and names Richard McLean. It is not a complete book. Not copied into the public repository.",
+      "publication_file": null,
+      "private_delivery": "BLOCKED",
+      "can_buy_and_receive_file_now": false,
+      "public_classification": "checkout is public; manuscript was not published here"
+    },
+    {
+      "id": "splice",
+      "title": "Dr Rich McLean PHD: 'A Splice of My Life'",
+      "price": "AUD 15.00 fixed",
+      "checkout_url": "https://buy.stripe.com/8wM7sxbc75uW2EUdQT",
+      "checkout_status": "CHECKOUT VERIFIED",
+      "source_status": "BLOCKED",
+      "source_note": "No PDF of this title found in Drive. books.html keeps it in the research queue. A Victoria University thesis page uses a similar title (vuir.vu.edu.au/41836). That deposit was not copied and is not this shop's file.",
+      "publication_file": null,
+      "private_delivery": "BLOCKED",
+      "can_buy_and_receive_file_now": false,
+      "public_classification": "checkout is public; no sale file"
+    },
+    {
+      "id": "betrayed",
+      "title": "Betrayed, Murdered, Forsaken",
+      "price": "AUD preset 29.00, payer can change the amount",
+      "checkout_url": "https://buy.stripe.com/aEU149eojbTk3IYfYY",
+      "checkout_status": "CHECKOUT VERIFIED",
+      "source_status": "FOUND",
+      "source_note": "Several Drive PDFs use this title. Opened copies are a 35-page synopsis, a 49-page draft, a 1,322-page compilation, and a 4,064-page file named Purchase Low Res. Sampled pages are briefs, letters, and links, not a verified continuous novel. Apple Books listing exists. No edition was copied into the public repository or attached to Stripe.",
+      "publication_file": null,
+      "private_delivery": "BLOCKED",
+      "can_buy_and_receive_file_now": false,
+      "public_classification": "checkout is public; source files were not published"
+    }
+  ],
+  "free_public_kept_free": [
+    {
+      "title": "Foundational Gospel — The Witness Remains (10 October 2026)",
+      "url": "https://wezzo72.github.io/barrandodger-rebuild/FOUNDATIONAL-GOSPEL-THE-WITNESS-REMAINS-10-OCTOBER-2026.pdf",
+      "bytes": 59532,
+      "status": "remains free; not a paid product"
+    }
+  ],
+  "not_for_sale_in_this_run": [
+    {
+      "title": "Recovered, Not Cured: A Journey through Schizophrenia",
+      "reason": "books.html records Allen & Unwin, 2003. Publisher's book. Not copied and not listed for sale."
+    }
+  ]
+}
