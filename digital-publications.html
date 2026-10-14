@@ -24,6 +24,10 @@
   .price { font-weight:700; }
   .buy { display:inline-flex; align-items:center; min-height:48px; margin:.6rem 0; padding:.7rem 1rem; background:var(--oxblood); color:var(--paper); text-decoration:none; font-weight:700; }
   .quiet { display:inline-block; margin-left:.6rem; }
+  .add { display:inline-flex; align-items:center; min-height:48px; margin:.4rem .4rem .4rem 0; padding:.7rem 1rem; background:transparent; color:var(--oxblood); border:1px solid var(--oxblood); font:inherit; font-weight:700; }
+  #basket { border:1px solid #d9d0c2; padding:1rem; margin:1rem 0; }
+  #basket button, #basket a.buy { margin-right:.4rem; }
+  #basket ul { padding-left:1.1rem; }
   footer { margin-top:2.5rem; font-size:.85rem; color:var(--slate); }
 </style>
 </head>
@@ -47,12 +51,23 @@
 
   <h2>Books</h2>
 
+
+  <h2>List of titles</h2>
+  <div id="basket">
+    <p>Only the two fixed A$15 titles can be listed together. Stripe sets those prices. This page cannot change them and cannot send one combined charge. Betrayed, Murdered, Forsaken is not listed here because the payer can change that amount.</p>
+    <ul id="basket-items"><li>Nothing selected.</li></ul>
+    <p id="basket-total">No charge from this page.</p>
+    <p id="basket-pay"></p>
+  </div>
+  <p>Payment methods switched on for the account www.barrandodger.com: card, Apple Pay, and Google Pay. PayPal is not configured. Whether Apple Pay or Google Pay appears depends on the buyer's device. No test payment was made.</p>
+
   <article>
     <h2>The Shrink! ...and you thought you were crazy!</h2>
     <p class="price">A$15.00 fixed. One payment.</p>
     <p>Stripe product name, copied from the payment link. This page does not add a description the product does not already carry, and it does not claim a page count.</p>
     <p>You receive: a Stripe receipt for this title. You do not receive an automatic file from this link.</p>
     <a class="buy" href="https://buy.stripe.com/eVa0050xt3mO5R68wA">Pay A$15 — The Shrink</a>
+    <button type="button" class="add" data-add="shrink">Add The Shrink to the list</button>
   </article>
 
   <article>
@@ -61,6 +76,7 @@
     <p>Stripe product name, copied from the payment link. The church publications page already says this title is still in a research queue, not a confirmed bibliography. This page does not change that note. The checkout is listed because the Stripe link is active.</p>
     <p>You receive: a Stripe receipt for this title. You do not receive an automatic file from this link.</p>
     <a class="buy" href="https://buy.stripe.com/8wM7sxbc75uW2EUdQT">Pay A$15 — A Splice of My Life</a>
+    <button type="button" class="add" data-add="splice">Add A Splice of My Life to the list</button>
   </article>
 
   <article>
@@ -298,6 +314,78 @@ document.getElementById("pub-filter").addEventListener("input", function () {
 <p>Full register: <a href="PUBLICATION-INVENTORY.md">PUBLICATION-INVENTORY.md</a> and <a href="data/publications-catalogue.json">data/publications-catalogue.json</a>.</p>
 
   <footer>Money does not write the archive. Appearance is not a finding.</footer>
+
+<script>
+(function () {
+  var products = {
+    shrink: { title: "The Shrink! ...and you thought you were crazy!", aud: 15, href: "https://buy.stripe.com/eVa0050xt3mO5R68wA" },
+    splice: { title: "Dr Rich McLean PHD: 'A Splice of My Life'", aud: 15, href: "https://buy.stripe.com/8wM7sxbc75uW2EUdQT" }
+  };
+  var key = "bd-shop-list";
+  function load() {
+    try { return JSON.parse(sessionStorage.getItem(key) || "[]"); }
+    catch (e) { return []; }
+  }
+  function save(ids) { sessionStorage.setItem(key, JSON.stringify(ids)); }
+  function render() {
+    var ids = load().filter(function (id) { return products[id]; });
+    var list = document.getElementById("basket-items");
+    var total = document.getElementById("basket-total");
+    var pay = document.getElementById("basket-pay");
+    list.innerHTML = "";
+    pay.innerHTML = "";
+    if (!ids.length) {
+      list.innerHTML = "<li>Nothing selected.</li>";
+      total.textContent = "No charge from this page.";
+      return;
+    }
+    var sum = 0;
+    ids.forEach(function (id) {
+      var item = products[id];
+      sum += item.aud;
+      var li = document.createElement("li");
+      li.textContent = item.title + " — A$" + item.aud.toFixed(2) + " on its own Stripe page. ";
+      var rm = document.createElement("button");
+      rm.type = "button";
+      rm.className = "add";
+      rm.textContent = "Remove";
+      rm.addEventListener("click", function () {
+        save(load().filter(function (x) { return x !== id; }));
+        render();
+      });
+      li.appendChild(rm);
+      list.appendChild(li);
+    });
+    if (ids.length === 1) {
+      total.textContent = "One Stripe charge of A$" + products[ids[0]].aud.toFixed(2) + ". This page does not set the amount.";
+      var a = document.createElement("a");
+      a.className = "buy";
+      a.href = products[ids[0]].href;
+      a.textContent = "Open the Stripe page for this title";
+      pay.appendChild(a);
+    } else {
+      total.textContent = "Two separate Stripe charges of A$15.00. A$30.00 is the sum of those two charges. It is not one checkout.";
+      ids.forEach(function (id) {
+        var a = document.createElement("a");
+        a.className = "buy";
+        a.href = products[id].href;
+        a.textContent = "Pay A$15 — " + products[id].title;
+        pay.appendChild(a);
+      });
+    }
+  }
+  document.querySelectorAll("[data-add]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var id = btn.getAttribute("data-add");
+      var ids = load();
+      if (ids.indexOf(id) === -1) ids.push(id);
+      save(ids);
+      render();
+    });
+  });
+  render();
+})();
+</script>
 </main>
 </body>
 </html>
