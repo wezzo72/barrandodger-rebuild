@@ -35,7 +35,7 @@ p{line-height:1.5}
 <main>
 <p class="live" id="stamp">READING</p>
 <h1>Keeper’s ledger</h1>
-<p class="sub">Both sites. The numbers are read again every five seconds while this page is open. This page does not add a visit.</p>
+<p class="sub">The finding aid, the archive, the church and the publishing house. The numbers are read again every five seconds while this page is open. This page does not add a hit.</p>
 <h2>Barran Dodger Archive</h2>
 <p class="sub">Published 18 September 2026</p>
 <div class="grid">
@@ -50,6 +50,26 @@ p{line-height:1.5}
 <div class="card"><span>Page visits</span><strong id="r-visits">—</strong></div>
 <div class="card"><span>Downloads</span><strong id="r-dl">—</strong></div>
 </div>
+<h2>Church of Barran Dodger</h2>
+<p class="sub">Faith, testimony and ministry. <a href="https://wezzo72.github.io/-church-of-barran-dodger/">Open the church site</a>. A page opening is not a download and not a finding.</p>
+<div class="grid">
+<div class="card"><span>Web hits</span><strong id="c-hits">—</strong></div>
+</div>
+<p class="sub">Collection began 16 October 2026, on church pages. Publishing-house openings are not included in this figure. There is no earlier church count on record. “Not started” means the counter has no value yet. It does not mean the audience was zero.</p>
+<h2>Ministry and publishing house</h2>
+<p class="sub">A page of the church site, not a separate domain. <a href="https://wezzo72.github.io/-church-of-barran-dodger/publishing-house.html">Open the publishing house</a>.</p>
+<div class="grid">
+<div class="card"><span>Page openings</span><strong id="p-hits">—</strong></div>
+</div>
+<p class="sub">This is not a download count. A file download remains a separate event.</p>
+<h2 id="network">Recorded hits, summed</h2>
+<div class="card" style="margin:0 0 14px"><span>Network web hits</span><strong id="net-hits">—</strong></div>
+<p id="net-note" class="sub">The sum uses web hits only. Page visits are not added again. Downloads are not added. A counter that has not started is left out, not treated as zero.</p>
+<h2>What is not in these figures</h2>
+<p>A web hit is one opening of a counted page. It is not a unique visitor. The counter cannot tell that one person opened two sites, so no combined unique-visitor figure is shown.</p>
+<p>The archive front page adds one page visit and one web hit on the same opening. Those two numbers are not independent measurements. The rebuild web-hit figure was set equal to its page-visit figure on 16 October 2026, and the two have moved together since. The network sum uses the web-hit figure only.</p>
+<p>No referral source is recorded. This counter does not see which link the reader followed.</p>
+<p>Daily, weekly and monthly history is not invented. One sealed reading is kept in this repository. A further reading is added once each Sydney day, at about 03:15, when the repository workflow runs. A week or a month can be read only after a seal exists at both ends of that period. The time beside “Live” is when this page last read the counter. The source is countapi.mileshilliard.com.</p>
 <h2>Sealed readings</h2>
 <p>The live numbers above can be read now. They are also kept here, in the repository, so a later loss of the counter does not erase the reach. This page does not add a hit.</p>
 <div id="seals">Reading the sealed copy…</div>
@@ -62,7 +82,7 @@ p{line-height:1.5}
 <button type="submit">Look up</button>
 </form>
 <p id="file-result">—</p>
-<p><a href="index.html">Archive</a> · <a href="https://wezzo72.github.io/barrandodger-rebuild/">Rebuild</a></p>
+<p><a href="https://wezzo72.github.io/Barrandodger/">Archive</a> · <a href="index.html">Finding aid</a> · <a href="https://wezzo72.github.io/-church-of-barran-dodger/">Church</a> · <a href="https://wezzo72.github.io/-church-of-barran-dodger/publishing-house.html">Publishing house</a></p>
 </main>
 <script>
 (function(){
@@ -73,23 +93,45 @@ p{line-height:1.5}
     "a-dl":"bd-wezzo72-archive-downloads",
     "r-hits":"bd-wezzo72-rebuild-webhits",
     "r-visits":"bd-wezzo72-rebuild-visits",
-    "r-dl":"bd-wezzo72-rebuild-downloads"
+    "r-dl":"bd-wezzo72-rebuild-downloads",
+    "c-hits":"bd-wezzo72-church-webhits",
+    "p-hits":"bd-wezzo72-publishing-webhits"
   };
+  var SUM_IDS = ["a-hits","r-hits","c-hits","p-hits"];
   function read(key){
     return fetch(API + encodeURIComponent(key), {cache:"no-store"})
-      .then(function(r){ return r.json(); })
-      .then(function(d){ return d && d.value != null ? d.value : 0; })
+      .then(function(r){
+        if (r.status === 404) return null;
+        return r.json().then(function(d){ return d && d.value != null ? Number(d.value) : null; });
+      })
       .catch(function(){ return null; });
   }
   function paint(){
-    Object.keys(keys).forEach(function(id){
-      read(keys[id]).then(function(v){
+    var ids = Object.keys(keys);
+    Promise.all(ids.map(function(id){ return read(keys[id]); })).then(function(vals){
+      ids.forEach(function(id, i){
         var el = document.getElementById(id);
-        if (el && v != null) el.textContent = Number(v).toLocaleString();
+        if (!el) return;
+        var v = vals[i];
+        if (v == null) el.textContent = (id === "c-hits" || id === "p-hits") ? "not started" : "—";
+        else el.textContent = Number(v).toLocaleString();
       });
+      var sum = 0;
+      var any = false;
+      var waiting = false;
+      SUM_IDS.forEach(function(id){
+        var v = vals[ids.indexOf(id)];
+        if (v == null) { if (id === "c-hits" || id === "p-hits") waiting = true; return; }
+        any = true;
+        sum += v;
+      });
+      var net = document.getElementById("net-hits");
+      if (net && any) net.textContent = sum.toLocaleString();
+      var note = document.getElementById("net-note");
+      if (note && waiting) note.textContent = "The sum includes only counters that already have a value. Church or publishing house still says not started, so that part is left out. It is not treated as zero.";
+      var s = document.getElementById("stamp");
+      if (s) s.textContent = "LIVE · " + new Date().toLocaleString("en-AU", {timeZone:"Australia/Sydney", hour:"2-digit", minute:"2-digit", second:"2-digit"}) + " Sydney";
     });
-    var s = document.getElementById("stamp");
-    if (s) s.textContent = "LIVE · " + new Date().toLocaleTimeString();
   }
   function slug(name){
     return String(name || "file").toLowerCase().replace(/\.[a-z0-9]+$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || "file";
@@ -119,9 +161,11 @@ p{line-height:1.5}
       when.textContent = row.sealedSydney || row.sealed || "Sealed reading";
       var strong = document.createElement("strong");
       var r = row.rebuild || {};
-      strong.textContent = "Web hits " + (r.webHits != null ? Number(r.webHits).toLocaleString() : "—")
-        + " · Visits " + (r.pageVisits != null ? Number(r.pageVisits).toLocaleString() : "—")
-        + " · Downloads " + (r.downloads != null ? Number(r.downloads).toLocaleString() : "—");
+      var parts = ["Finding aid " + (r.webHits != null ? Number(r.webHits).toLocaleString() : "—")];
+      if (row.archive && row.archive.webHits != null) parts.push("Archive " + Number(row.archive.webHits).toLocaleString());
+      if (row.church) parts.push("Church " + (row.church.webHits == null ? "not started" : Number(row.church.webHits).toLocaleString()));
+      if (row.publishingHouse) parts.push("Publishing house " + (row.publishingHouse.webHits == null ? "not started" : Number(row.publishingHouse.webHits).toLocaleString()));
+      strong.textContent = parts.join(" · ");
       var note = document.createElement("p");
       note.style.margin = "8px 0 0";
       note.textContent = row.note || "";
@@ -136,7 +180,7 @@ p{line-height:1.5}
     .then(drawSeals)
     .catch(function(){ var box=document.getElementById("seals"); if(box) box.textContent="The sealed copy could not be read."; });
   document.getElementById("seal").addEventListener("click", function(){
-    var ids = ["r-hits","r-visits","r-dl","a-hits","a-visits","a-dl"];
+    var ids = ["net-hits","r-hits","r-visits","r-dl","a-hits","a-visits","a-dl","c-hits","p-hits"];
     var reading = { sealed: new Date().toISOString(), site: "https://wezzo72.github.io/barrandodger-rebuild/" };
     ids.forEach(function(id){
       var el = document.getElementById(id);
