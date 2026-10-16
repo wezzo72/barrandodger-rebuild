@@ -7,16 +7,15 @@
   var HREF = "https://wezzo72.github.io/barrandodger-rebuild/the-enemy-within-16-october-2026.html";
   var PDF = "https://github.com/wezzo72/Barrandodger/blob/main/THE-ENEMY-WITHIN-FAMILY-BETRAYAL-COMMUNITY-POWER-INSTITUTIONAL-EXILE-AND-THE-PRICE-OF-INTEGRITY-16-OCTOBER-2026.pdf";
   var HASH = "e74e2b8743bff27e04069cd11b38250675ec72841cd788d71f5d6f18a9fe95f6";
-  var MARK = "20261017a";
+  var MARK = "20261017b";
   function ensure(){
     var el = document.getElementById(ID);
     if (!el) {
       el = document.createElement("section");
       el.id = ID;
       el.setAttribute("role", "note");
-      if (document.body) document.body.insertBefore(el, document.body.firstChild);
     }
-    if (el.getAttribute("data-enemy-full") !== MARK) {
+    if (el.getAttribute("data-enemy-full") !== MARK && !el.getAttribute("data-enemy-full")) {
       el.setAttribute("data-enemy-full", MARK);
       el.style.cssText = "margin:0;padding:22px 16px 18px;background:#1a140f;color:#f3eee4;border-bottom:8px solid #8B2E2A;font-family:Georgia,'Times New Roman',serif;text-align:center;";
       el.innerHTML = '<p style="letter-spacing:.14em;font-size:.72rem;font-weight:800;color:#e6c36a;margin:0 0 8px;font-family:system-ui,sans-serif;">16 OCTOBER 2026 · FULL TEXT · NOT A FINDING</p>'
@@ -32,28 +31,20 @@
     }
     return el;
   }
-  var busy = false;
   function place(){
-    if (!document.body || busy) return;
-    busy = true;
+    if (!document.body) return;
     var el = ensure();
-    if (document.body.firstChild !== el) document.body.insertBefore(el, document.body.firstChild);
-    var pr = document.getElementById("private-record-able-point-14-october-2026");
-    if (pr && el.nextSibling !== pr) el.parentNode.insertBefore(pr, el.nextSibling);
-    busy = false;
-  }
-  function arm(){
-    place();
-    [0,250,700,1400,2500,4200,6800,9000,12000].forEach(function(ms){ setTimeout(place, ms); });
-    if (window.MutationObserver && document.body) {
-      var t;
-      new MutationObserver(function(){
-        clearTimeout(t);
-        t = setTimeout(place, 50);
-      }).observe(document.body, {childList:true});
+    if (el.parentNode === document.body && document.body.firstChild === el) {
+      var pr = document.getElementById("private-record-able-point-14-october-2026");
+      if (pr && el.nextSibling !== pr) el.parentNode.insertBefore(pr, el.nextSibling);
+      return;
+    }
+    if (!el.parentNode) {
+      document.body.insertBefore(el, document.body.firstChild);
+      var pr2 = document.getElementById("private-record-able-point-14-october-2026");
+      if (pr2 && el.nextSibling !== pr2) el.parentNode.insertBefore(pr2, el.nextSibling);
     }
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", arm);
-  else arm();
-  window.addEventListener("load", place);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", place);
+  else place();
 })();
