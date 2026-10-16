@@ -1,16 +1,18 @@
 {
-  "record": "Reach ledger for the Barrandodger rebuild. A count is not a finding. A reading is not a verdict.",
+  "record": "Reach ledger for one documentary network. A count is not a finding. A reading is not a verdict.",
   "site": "https://wezzo72.github.io/barrandodger-rebuild/",
   "sealedCopy": "data/reach-ledger.json",
   "liveKey": "bd-wezzo72-rebuild-webhits",
-  "method": "The web-hit button at the top of the front page adds one hit each time that page is opened, then shows the running total. counts.html reads the same total and does not add a hit. The live total is kept by a public counter. Each sealed reading below is the copy kept in this repository. Git history is the permanent record if the live counter is later lost.",
+  "method": "The network counter at the top of the finding aid opens the ledger. This page does not add a hit. Archive, finding-aid, church and publishing-house openings are separate keys. A missing key is not a historical zero. Downloads are not added to web hits. The live numbers come from countapi.mileshilliard.com. Each object in readings is a sealed copy. The repository workflow adds one reading on each Sydney day at about 03:15. Git history keeps the file if the live counter is later lost.",
   "keys": {
     "rebuildWebHits": "bd-wezzo72-rebuild-webhits",
     "rebuildVisits": "bd-wezzo72-rebuild-visits",
     "rebuildDownloads": "bd-wezzo72-rebuild-downloads",
     "archiveVisits": "bd-wezzo72-archive-visits",
     "archiveWebHits": "bd-wezzo72-archive-webhits",
-    "archiveDownloads": "bd-wezzo72-archive-downloads"
+    "archiveDownloads": "bd-wezzo72-archive-downloads",
+    "churchWebHits": "bd-wezzo72-church-webhits",
+    "publishingWebHits": "bd-wezzo72-publishing-webhits"
   },
   "readings": [
     {
@@ -27,6 +29,57 @@
         "pageVisits": 345,
         "downloads": 14
       }
+    },
+    {
+      "sealed": "2026-10-16T01:56:49Z",
+      "sealedSydney": "16 October 2026",
+      "sealedSydneyDate": "2026-10-16",
+      "source": "countapi.mileshilliard.com",
+      "method": "GET only. Null means the key did not exist. Null is not zero.",
+      "note": "First network reading. Church and publishing-house counters had not been started. Their absence is not a record that nobody had opened those pages before this date.",
+      "rebuild": {
+        "webHits": 358,
+        "pageVisits": 358,
+        "downloads": 8
+      },
+      "archive": {
+        "webHits": 333,
+        "pageVisits": 346,
+        "downloads": 14
+      },
+      "church": {
+        "webHits": null
+      },
+      "publishingHouse": {
+        "webHits": null
+      }
     }
-  ]
+  ],
+  "components": {
+    "archive": {
+      "name": "Barran Dodger Archive",
+      "url": "https://wezzo72.github.io/Barrandodger/",
+      "repository": "wezzo72/Barrandodger",
+      "pagesBranch": "codex/recreate-barrandodger",
+      "counts": "Front page only. One opening adds one page visit and one web hit together."
+    },
+    "church": {
+      "name": "Church of Barran Dodger",
+      "url": "https://wezzo72.github.io/-church-of-barran-dodger/",
+      "repository": "wezzo72/-church-of-barran-dodger",
+      "counts": "Church pages except the publishing-house page. Collection began 16 October 2026."
+    },
+    "publishingHouse": {
+      "name": "Ministry & Publishing House",
+      "url": "https://wezzo72.github.io/-church-of-barran-dodger/publishing-house.html",
+      "repository": "wezzo72/-church-of-barran-dodger",
+      "counts": "That page only. It is not a separate domain. A download is not this count."
+    },
+    "findingAid": {
+      "name": "Barrandodger rebuild",
+      "url": "https://wezzo72.github.io/barrandodger-rebuild/",
+      "repository": "wezzo72/barrandodger-rebuild",
+      "counts": "Front page. On 16 October 2026 web hits were set equal to the page visits already recorded."
+    }
+  }
 }
