@@ -1,0 +1,32 @@
+{
+  "record": "Reach ledger for the Barrandodger rebuild. A count is not a finding. A reading is not a verdict.",
+  "site": "https://wezzo72.github.io/barrandodger-rebuild/",
+  "sealedCopy": "data/reach-ledger.json",
+  "liveKey": "bd-wezzo72-rebuild-webhits",
+  "method": "The web-hit button at the top of the front page adds one hit each time that page is opened, then shows the running total. counts.html reads the same total and does not add a hit. The live total is kept by a public counter. Each sealed reading below is the copy kept in this repository. Git history is the permanent record if the live counter is later lost.",
+  "keys": {
+    "rebuildWebHits": "bd-wezzo72-rebuild-webhits",
+    "rebuildVisits": "bd-wezzo72-rebuild-visits",
+    "rebuildDownloads": "bd-wezzo72-rebuild-downloads",
+    "archiveVisits": "bd-wezzo72-archive-visits",
+    "archiveWebHits": "bd-wezzo72-archive-webhits",
+    "archiveDownloads": "bd-wezzo72-archive-downloads"
+  },
+  "readings": [
+    {
+      "sealed": "2026-10-16T01:45:00Z",
+      "sealedSydney": "16 October 2026",
+      "note": "First seal, made when the web-hit button was placed at the top of the front page. Web hits were opened at the figure already recorded as page visits, so earlier reach is not discarded.",
+      "rebuild": {
+        "webHits": 354,
+        "pageVisits": 354,
+        "downloads": 8
+      },
+      "archive": {
+        "webHits": 332,
+        "pageVisits": 345,
+        "downloads": 14
+      }
+    }
+  ]
+}
