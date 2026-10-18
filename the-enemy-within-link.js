@@ -24,11 +24,54 @@
     return el;
   }
 
+
+  var OCT_MARK = "20261018b";
+  function octSection(id, html, css){
+    var el = document.getElementById(id);
+    if (!el) {
+      el = document.createElement("section");
+      el.id = id;
+      el.setAttribute("role", "note");
+      el.innerHTML = html;
+    }
+    if (el.getAttribute("data-oct18") !== OCT_MARK) {
+      el.setAttribute("data-oct18", OCT_MARK);
+      el.style.cssText = css;
+      if (!el.innerHTML || el.innerHTML.length < 40) el.innerHTML = html;
+    }
+    return el;
+  }
+  var LIGHT = "margin:0;padding:18px 16px 16px;background:#f3eee4;color:#1a140f;border-bottom:8px solid #8B2E2A;font-family:Georgia,Times New Roman,serif;text-align:center;";
+  var DARK = "margin:0;padding:18px 16px 16px;background:#1a140f;color:#f3eee4;border-bottom:8px solid #c9a36a;font-family:Georgia,Times New Roman,serif;text-align:center;";
+  function october18(){
+    return [
+      octSection("master-command-18-october-2026", "<section id=\"master-command-18-october-2026\" role=\"note\" style=\"margin:0;padding:18px 16px 16px;background:#f3eee4;color:#1a140f;border-bottom:8px solid #8B2E2A;font-family:Georgia,Times New Roman,serif;text-align:center;\">\n<p style=\"letter-spacing:.14em;font-size:.72rem;font-weight:800;color:#8B2E2A;margin:0 0 8px;font-family:system-ui,sans-serif;\">18 OCTOBER 2026 \u00b7 7:14 PM SYDNEY \u00b7 FORMAL NOTICE \u00b7 NOT A FINDING</p>\n<p style=\"margin:0 auto;max-width:46rem;font-size:clamp(1.15rem,3.2vw,1.55rem);line-height:1.25;font-weight:700;\"><a href=\"https://github.com/wezzo72/Barrandodger/blob/main/MASTER-COMMAND-COMPLETE-CONSOLIDATED-FORMAL-NOTICE-18-OCTOBER-2026.pdf\" style=\"color:#1a140f;text-decoration:underline;text-underline-offset:3px;\">Master Command \u2014 Complete Consolidated Formal Notice</a></p>\n<p style=\"margin:10px auto 0;max-width:42rem;font-size:.98rem;line-height:1.45;color:#1a140f;\">Consolidated formal notice of alleged safeguarding failures, exploitation, executive accountability, financial restriction and evidence preservation. Sent 18 October 2026. Allegations remain allegations. The name is the link. A link is not a finding.</p>\n<p style=\"margin:8px auto 0;max-width:46rem;font-size:.82rem;line-height:1.45;color:#3f4c5a;font-family:system-ui,sans-serif;overflow-wrap:anywhere;\">SHA-256 a9cb9c658ef7c9afd318d824c13e7ea980eb2544cd588b59672d723e59c7b393 \u00b7 <a href=\"https://wezzo72.github.io/Barrandodger/MASTER-COMMAND-COMPLETE-CONSOLIDATED-FORMAL-NOTICE-18-OCTOBER-2026.pdf\" style=\"color:inherit;font-weight:700;\">Open the PDF</a> \u00b7 <a href=\"https://github.com/wezzo72/Barrandodger/blob/main/MASTER-COMMAND-COMPLETE-CONSOLIDATED-FORMAL-NOTICE-18-OCTOBER-2026.pdf.ots\" style=\"color:inherit;font-weight:700;\">OpenTimestamps receipt</a> \u00b7 calendar submitted, Bitcoin block not yet confirmed</p>\n</section>\n", LIGHT),
+      octSection("i-wrote-you-a-letter-master-command-18-october-2026", "<section id=\"i-wrote-you-a-letter-master-command-18-october-2026\" role=\"note\" style=\"margin:0;padding:18px 16px 16px;background:#f3eee4;color:#1a140f;border-bottom:8px solid #8B2E2A;font-family:Georgia,Times New Roman,serif;text-align:center;\">\n<p style=\"letter-spacing:.14em;font-size:.72rem;font-weight:800;color:#8B2E2A;margin:0 0 8px;font-family:system-ui,sans-serif;\">18 OCTOBER 2026 \u00b7 LETTER COPY \u00b7 NOT A FINDING</p>\n<p style=\"margin:0 auto;max-width:46rem;font-size:clamp(1.15rem,3.2vw,1.55rem);line-height:1.25;font-weight:700;\"><a href=\"https://github.com/wezzo72/Barrandodger/blob/main/I-WROTE-YOU-A-LETTER-MASTER-COMMAND-18-OCTOBER-2026.pdf\" style=\"color:#1a140f;text-decoration:underline;text-underline-offset:3px;\">I wrote you a letter \u2014 Master Command</a></p>\n<p style=\"margin:10px auto 0;max-width:42rem;font-size:.98rem;line-height:1.45;color:#1a140f;\">The letter copy of the same consolidated notice, preserved separately from the full emailed instrument. The name is the link. A link is not a finding.</p>\n<p style=\"margin:8px auto 0;max-width:46rem;font-size:.82rem;line-height:1.45;color:#3f4c5a;font-family:system-ui,sans-serif;overflow-wrap:anywhere;\">SHA-256 74114953ae0ba4fc06960fca9aa949763278b3438bbb55c270c6ec706fd9bb26 \u00b7 <a href=\"https://wezzo72.github.io/Barrandodger/I-WROTE-YOU-A-LETTER-MASTER-COMMAND-18-OCTOBER-2026.pdf\" style=\"color:inherit;font-weight:700;\">Open the PDF</a> \u00b7 <a href=\"https://github.com/wezzo72/Barrandodger/blob/main/I-WROTE-YOU-A-LETTER-MASTER-COMMAND-18-OCTOBER-2026.pdf.ots\" style=\"color:inherit;font-weight:700;\">OpenTimestamps receipt</a> \u00b7 calendar submitted, Bitcoin block not yet confirmed</p>\n</section>\n", LIGHT),
+      octSection("barran-resonance-dodger-theology-18-october-2026", "<section id=\"barran-resonance-dodger-theology-18-october-2026\" role=\"note\" style=\"margin:0;padding:18px 16px 16px;background:#1a140f;color:#f3eee4;border-bottom:8px solid #c9a36a;font-family:Georgia,Times New Roman,serif;text-align:center;\">\n<p style=\"letter-spacing:.14em;font-size:.72rem;font-weight:800;color:#e6c36a;margin:0 0 8px;font-family:system-ui,sans-serif;\">18 OCTOBER 2026 \u00b7 THEOLOGICAL STATEMENT \u00b7 NOT A FINDING</p>\n<p style=\"margin:0 auto;max-width:46rem;font-size:clamp(1.15rem,3.2vw,1.55rem);line-height:1.25;font-weight:700;\"><a href=\"https://github.com/wezzo72/Barrandodger/blob/main/STATEMENT-ON-BARRAN-RESONANCE-DODGER-THEOLOGY-18-OCTOBER-2026.pdf\" style=\"color:#f3eee4;text-decoration:underline;text-underline-offset:3px;\">Statement on Barran Resonance Dodger Theology</a></p>\n<p style=\"margin:10px auto 0;max-width:42rem;font-size:.98rem;line-height:1.45;color:#f3eee4;\">Expanded theological, philosophical and documentary statement. Resonance, the sacred witness, and the archive. Faith is not a finding. The name is the link.</p>\n<p style=\"margin:8px auto 0;max-width:46rem;font-size:.82rem;line-height:1.45;color:#c9a36a;font-family:system-ui,sans-serif;overflow-wrap:anywhere;\">SHA-256 a4eb3d8bd23bad839db90221ea92d212111039643e47b849a3faec31f003cf9e \u00b7 <a href=\"https://wezzo72.github.io/Barrandodger/STATEMENT-ON-BARRAN-RESONANCE-DODGER-THEOLOGY-18-OCTOBER-2026.pdf\" style=\"color:inherit;font-weight:700;\">Open the PDF</a> \u00b7 <a href=\"https://github.com/wezzo72/Barrandodger/blob/main/STATEMENT-ON-BARRAN-RESONANCE-DODGER-THEOLOGY-18-OCTOBER-2026.pdf.ots\" style=\"color:inherit;font-weight:700;\">OpenTimestamps receipt</a> \u00b7 calendar submitted, Bitcoin block not yet confirmed</p>\n</section>\n", DARK)
+    ];
+  }
+  function stack(nodes){
+    if (!document.body) return null;
+    var prev = null;
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (!el) continue;
+      if (!prev) {
+        if (document.body.firstChild !== el) document.body.insertBefore(el, document.body.firstChild);
+      } else if (prev.nextSibling !== el) {
+        prev.parentNode.insertBefore(el, prev.nextSibling);
+      }
+      prev = el;
+    }
+    return prev;
+  }
+
   if (onEnemy) {
     function placeWitnessOnly(){
-      if (!document.body) return;
+      var nodes = october18();
       var w = witness();
-      if (w && document.body.firstChild !== w) document.body.insertBefore(w, document.body.firstChild);
+      if (w) nodes.push(w);
+      stack(nodes);
     }
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", placeWitnessOnly);
     else placeWitnessOnly();
@@ -65,11 +108,12 @@
   }
   function place(){
     if (!document.body) return;
+    var nodes = october18();
     var w = witness();
+    if (w) nodes.push(w);
     var el = ensure();
-    if (w && document.body.firstChild !== w) document.body.insertBefore(w, document.body.firstChild);
-    if (w && w.nextSibling !== el) w.parentNode.insertBefore(el, w.nextSibling);
-    else if (!w && document.body.firstChild !== el) document.body.insertBefore(el, document.body.firstChild);
+    nodes.push(el);
+    stack(nodes);
     var pr = document.getElementById("private-record-able-point-14-october-2026");
     if (pr && el.nextSibling !== pr) el.parentNode.insertBefore(pr, el.nextSibling);
   }
