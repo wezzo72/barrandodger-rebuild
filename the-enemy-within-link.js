@@ -41,6 +41,29 @@
     }
     return el;
   }
+
+  var PROTEST_ID = "protest-want-to-live-19-october-2026";
+  var PROTEST_PDF = "https://wezzo72.github.io/Barrandodger/2026-10-19-YOURE-ALL-HURTING-ME-I-PROTEST-THIS-BECAUSE-I-WANT-TO-LIVE.pdf";
+  var PROTEST_BLOB = "https://github.com/wezzo72/Barrandodger/blob/main/2026-10-19-YOURE-ALL-HURTING-ME-I-PROTEST-THIS-BECAUSE-I-WANT-TO-LIVE.pdf";
+  var PROTEST_REBUILD = "https://wezzo72.github.io/barrandodger-rebuild/2026-10-19-YOURE-ALL-HURTING-ME-I-PROTEST-THIS-BECAUSE-I-WANT-TO-LIVE.pdf";
+  var PROTEST_HASH = "344805bfb97598d7ae642f28c770ae94ece0f8b3a842bcffd7701d20cb4892bc";
+  function protest(){
+    var el = document.getElementById(PROTEST_ID);
+    if (!el) {
+      el = document.createElement("section");
+      el.id = PROTEST_ID;
+      el.setAttribute("role", "note");
+    }
+    el.setAttribute("data-protest", "20261019a");
+    el.style.cssText = "margin:0;padding:22px 16px 18px;background:#f3eee4;color:#1a140f;border-bottom:8px solid #8B2E2A;font-family:Georgia,'Times New Roman',serif;text-align:center;";
+    el.innerHTML = '<p style="letter-spacing:.14em;font-size:.72rem;font-weight:800;color:#8B2E2A;margin:0 0 8px;font-family:system-ui,sans-serif;">19 OCTOBER 2026 · 1:09 PM SYDNEY · PUBLIC STATEMENT · NOT A FINDING</p>'
+      + '<p style="margin:0 auto;max-width:46rem;font-size:clamp(1.25rem,3.6vw,1.7rem);line-height:1.25;font-weight:700;"><a href="' + PROTEST_BLOB + '" style="color:#1a140f;text-decoration:underline;text-underline-offset:3px;">You\'re all hurting me — I protest this because I want to LIVE</a></p>'
+      + '<p style="margin:10px auto 0;max-width:44rem;font-size:1.02rem;line-height:1.45;">But you\'re all killing me. Consolidated public statement, evidence archive and demand for accountability. Issued by Barran Dodger, 19 October 2026. Three statements kept in full. The reported arrest is an account to be checked against police and court records. It is not a finding.</p>'
+      + '<p style="margin:12px auto 0;"><a href="' + PROTEST_PDF + '" style="color:#8B2E2A;font-family:Georgia,serif;font-size:1.05rem;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Open the PDF</a></p>'
+      + '<p style="margin:8px auto 0;max-width:46rem;font-size:.82rem;line-height:1.45;color:#3f4c5a;font-family:system-ui,sans-serif;overflow-wrap:anywhere;">SHA-256 ' + PROTEST_HASH + ' · <a href="' + PROTEST_REBUILD + '" style="color:inherit;font-weight:700;">Rebuild copy</a> · <a href="' + PROTEST_BLOB + '" style="color:inherit;font-weight:700;">GitHub file</a></p>';
+    return el;
+  }
+
   var LIGHT = "margin:0;padding:18px 16px 16px;background:#f3eee4;color:#1a140f;border-bottom:8px solid #8B2E2A;font-family:Georgia,Times New Roman,serif;text-align:center;";
   var DARK = "margin:0;padding:18px 16px 16px;background:#1a140f;color:#f3eee4;border-bottom:8px solid #c9a36a;font-family:Georgia,Times New Roman,serif;text-align:center;";
   function october18(){
@@ -68,13 +91,14 @@
 
   if (onEnemy) {
     function placeWitnessOnly(){
-      var nodes = october18();
+      var nodes = [protest()].concat(october18());
       var w = witness();
       if (w) nodes.push(w);
       stack(nodes);
     }
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", placeWitnessOnly);
     else placeWitnessOnly();
+    window.addEventListener("load", placeWitnessOnly);
     return;
   }
 
@@ -108,7 +132,7 @@
   }
   function place(){
     if (!document.body) return;
-    var nodes = october18();
+    var nodes = [protest()].concat(october18());
     var w = witness();
     if (w) nodes.push(w);
     var el = ensure();
@@ -117,6 +141,10 @@
     var pr = document.getElementById("private-record-able-point-14-october-2026");
     if (pr && el.nextSibling !== pr) el.parentNode.insertBefore(pr, el.nextSibling);
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", place);
-  else place();
+  function bind(fn){
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+    else fn();
+    window.addEventListener("load", fn);
+  }
+  bind(place);
 })();
