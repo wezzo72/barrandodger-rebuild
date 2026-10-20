@@ -148,3 +148,21 @@
   }
   bind(place);
 })();
+
+(function(){
+  if (window.__bdComplaint20261020) return;
+  window.__bdComplaint20261020 = true;
+  var HREF = "https://wezzo72.github.io/barrandodger-rebuild/2026-10-20-URGENT-FORMAL-COMPLAINT.html";
+  function place(){
+    if (document.getElementById("urgent-complaint-2026-10-20")) return;
+    var el = document.createElement("p");
+    el.id = "urgent-complaint-2026-10-20";
+    el.setAttribute("role", "note");
+    el.style.cssText = "margin:0;padding:14px 16px;background:#1a140c;color:#f3eee4;font-family:Georgia,serif;text-align:center";
+    el.innerHTML = '<a style="color:#c9a36a;font-size:1.15rem;font-weight:700" href="' + HREF + '">Urgent formal complaint — 20 October 2026</a>';
+    if (!document.body) return;
+    document.body.insertBefore(el, document.body.firstChild);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", place);
+  else place();
+})();
