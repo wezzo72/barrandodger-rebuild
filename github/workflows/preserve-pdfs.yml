@@ -1,0 +1,26 @@
+RAN DODGER ONE-CLICK PRESERVATION — IPHONE SETUP
+
+This package contains one GitHub Actions workflow file. It is not running yet.
+
+INSTALL (GitHub website, iPhone):
+1. Open https://github.com/wezzo72/barrandodger-rebuild
+2. Tap Add file, then Create new file.
+3. For the filename, enter exactly:
+   .github/workflows/preserve-pdfs.yml
+4. Open preserve-pdfs.yml from this package, copy its entire contents, and paste into GitHub's editor.
+5. Commit the new file to the main branch.
+6. Open the repository's Actions tab.
+7. Select "Barran Dodger PDF Preservation", tap Run workflow, then confirm.
+8. Wait for the run to finish. Open the run and download the artifact named
+   barran-dodger-preservation-package. The CSV, JSON, failures report and .ots proofs are in it.
+9. The workflow also commits the latest ledger/proof folder into preservation-output in the rebuild repository.
+
+IMPORTANT LIMITATIONS:
+- The first run requires GitHub Actions to be enabled for the repository.
+- The workflow scans PDFs in both public repositories as they exist at run time.
+- OpenTimestamps may initially produce pending proofs; Bitcoin confirmation is not immediate.
+- The workflow's verification output should be checked; pending is not confirmed.
+- GitHub Actions artifacts expire after 90 days. The committed preservation-output folder is not the same as an independent backup.
+- For a truly independent backup, download the ZIP to iCloud Drive or another storage provider you control, and keep a second copy offline. This step is not automated by this workflow.
+- This uses GitHub-hosted automation. GitHub may apply usage limits or disable scheduled workflows after prolonged inactivity.
+- Do not put private PDFs into public repositories without reviewing privacy and consent.
