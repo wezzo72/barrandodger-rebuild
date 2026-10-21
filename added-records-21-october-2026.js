@@ -16,7 +16,11 @@
         + '<p style="margin:10px auto 0;max-width:44rem;font-size:.98rem;line-height:1.45;">Three documents placed in the public archives on 21 October 2026. Descriptions and plain links are on one page. A link is not a finding.</p>'
         + '<p style="margin:12px auto 0;"><a href="' + PAGE + '" style="color:#8B2E2A;font-weight:700;">Open the descriptions and links</a></p>';
     }
-    if (document.body.firstChild !== el) document.body.insertBefore(el, document.body.firstChild);
+    var newest = document.getElementById("added-records-22-october-2026");
+    if (newest) {
+      if (document.body.firstChild !== newest) document.body.insertBefore(newest, document.body.firstChild);
+      if (newest.nextSibling !== el) newest.parentNode.insertBefore(el, newest.nextSibling);
+    } else if (document.body.firstChild !== el) document.body.insertBefore(el, document.body.firstChild);
   }
   function arm() {
     place();
