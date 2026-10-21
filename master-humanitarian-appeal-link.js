@@ -20,11 +20,26 @@
         + '<p style="margin:12px auto 0;"><a href="' + PAGE + '" style="color:#8B2E2A;font-family:Georgia,serif;font-size:1.05rem;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Open the full text</a></p>'
         + '<p style="margin:8px auto 0;max-width:46rem;font-size:.82rem;line-height:1.45;color:#3f4c5a;font-family:system-ui,sans-serif;overflow-wrap:anywhere;">SHA-256 ' + HASH + ' · <a href="' + PDF + '" style="color:inherit;font-weight:700;">Open the PDF</a> · <a href="' + BLOB + '" style="color:inherit;font-weight:700;">GitHub file</a></p>';
     }
+    var newest = document.getElementById("added-records-22-october-2026");
     var records = document.getElementById("added-records-21-october-2026");
+    var anchor = null;
+    if (newest) {
+      if (document.body.firstChild !== newest) document.body.insertBefore(newest, document.body.firstChild);
+      anchor = newest;
+    }
     if (records) {
-      if (document.body.firstChild !== records) document.body.insertBefore(records, document.body.firstChild);
-      if (records.nextSibling !== el) records.parentNode.insertBefore(el, records.nextSibling);
-    } else if (document.body.firstChild !== el) document.body.insertBefore(el, document.body.firstChild);
+      if (!anchor) {
+        if (document.body.firstChild !== records) document.body.insertBefore(records, document.body.firstChild);
+      } else if (anchor.nextSibling !== records) {
+        anchor.parentNode.insertBefore(records, anchor.nextSibling);
+      }
+      anchor = records;
+    }
+    if (!anchor) {
+      if (document.body.firstChild !== el) document.body.insertBefore(el, document.body.firstChild);
+    } else if (anchor.nextSibling !== el) {
+      anchor.parentNode.insertBefore(el, anchor.nextSibling);
+    }
   }
   function arm() {
     place();
