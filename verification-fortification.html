@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification Fortification — Barran Dodger Archive</title>
+<style>
+body{margin:0;background:#111;color:#eee9df;font-family:Georgia,"Times New Roman",serif;line-height:1.65;padding:20px}
+.container{max-width:900px;margin:0 auto}
+h1{color:#e8c987;border-bottom:2px solid #a52a2a;padding-bottom:10px}
+h2{color:#ffd400;margin-top:30px}
+.disclaimer{background:#2a1a1a;border-left:5px solid #ffd400;padding:16px;margin:20px 0;font-size:0.95rem}
+.table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.9rem}
+.table th,.table td{border:1px solid #444;padding:10px;text-align:left}
+.table th{background:#1b1b1b;color:#e8c987}
+.high{color:#7dcea0}.medium{color:#f4d03f}.low{color:#e74c3c}
+.hash{font-family:monospace;font-size:0.8rem;word-break:break-all}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Forensic, Intellectual and Legal Fortification of the Archive</h1>
+<p><strong>Date of fortification:</strong> 25 October 2026. Added for robust probabilistic, factual and undeniable integrity.</p>
+
+<div class="disclaimer">
+<strong>Core principle (consistent with the archive methodology):</strong> Preservation first. Examination second. Conclusion last. A link is not a finding. This page does not constitute a court, a verdict, or independent verification of conclusions. It fortifies the <em>integrity, completeness, and examinability</em> of the preserved record itself. Cryptographic hashes and timestamps establish that a specific digital artefact existed in a particular form at a particular time. They do not prove the truth of any narrative, allegation, or interpretation contained within the artefact. All claims remain subject to independent examination.
+</div>
+
+<h2>1. Archive Completeness Verification</h2>
+<p>The preservation copy is verified by the automated workflow <code>verify-archive.yml</code>, which confirms:</p>
+<ul>
+<li>660 manifest records</li>
+<li>660 HTML files</li>
+<li>660 PDF files</li>
+<li>660 link files</li>
+</ul>
+<p>This establishes a closed, countable corpus. Any subsequent addition is versioned in Git history, preserving the chain of custody for the digital archive.</p>
+
+<h2>2. Cryptographic Integrity Inventory (Selected Key Documents)</h2>
+<table class="table">
+<thead><tr><th>Document</th><th>SHA-256</th><th>Additional Stamps</th><th>Epistemic Status</th></tr></thead>
+<tbody>
+<tr><td>LEGAL BRIEF of BARRAN DODGER / DR RICHARD WILLIAM MCLEAN — 23 October 2026</td><td class="hash">effa0bfe8894e4d9f98de8de8988a44ddef8ee95b1317a80d28d7cbd20fca8ff</td><td>Published 23 Oct 2026</td><td>Official compilation of status, citations, and documentary references. Existence of the brief is high-certainty. Conclusions within it are allegations/inferences requiring independent testing.</td></tr>
+<tr><td>THE WITNESS REMAINS — DR BARRAN DODGER — 6 October 2026</td><td class="hash">(see .sha256 companion files where present)</td><td>OpenTimestamps (.ots) on related papers</td><td>First-person narrative + linkage to official records. High certainty of digital integrity; truth-value of interpretive claims is open.</td></tr>
+<tr><td>Multiple dated papers (Oct 2026 series)</td><td class="hash">Individual .sha256 and .ots files in repository root</td><td>OpenTimestamps where present</td><td>Contemporaneous statements. Integrity sealed; content status = first-person account or interpretation.</td></tr>
+</tbody>
+</table>
+<p>Full inventory of hashes is maintained via Git and companion .sha256 / .ots files. Anyone can recompute SHA-256 of a downloaded file and compare. OpenTimestamps proofs can be verified independently at opentimestamps.org.</p>
+
+<h2>3. Epistemic Categories and Qualitative Probability Notes</h2>
+<p>Following the archive’s own distinctions:</p>
+<ul>
+<li><strong>Documented fact / official record (high probability of existence):</strong> Letters, receipts, administrative decisions on agency letterheads. The paper exists and was produced by the issuing body. Probability that the document was created as described is high once the original or certified copy is examined.</li>
+<li><strong>First-person account / testimony (medium-to-high probability of sincere belief; variable probability of correspondence to external events):</strong> The author’s contemporaneous statements. Integrity of the digital record is high; whether the described events occurred as stated requires corroboration.</li>
+<li><strong>Allegation / inference / interpretation (low-to-medium prior probability pending independent investigation):</strong> Conclusions drawn from the record (e.g., coordinated targeting, specific criminal characterisations, spiritual designations). These remain open questions. Extraordinary claims require extraordinary evidence; the archive supplies the documentary base for that examination rather than a final determination.</li>
+<li><strong>Spiritual belief / prophetic framing:</strong> Categorically distinct from empirical proof. Preserved as part of the author’s testimony and ministry, not as forensic evidence.</li>
+</ul>
+<p>This stratification increases intellectual honesty and legal defensibility: the archive does not collapse distinct epistemic layers.</p>
+
+<h2>4. Legal Fortification Statement</h2>
+<p>The archive is a public finding aid and documentary repository. It preserves records so that they may be examined by any competent authority, journalist, researcher, or member of the public. Nothing on this site or in the repository constitutes:</p>
+<ul>
+<li>A court finding, judicial determination, or administrative decision;</li>
+<li>An allegation that has been proven beyond reasonable doubt or on the balance of probabilities in any tribunal;</li>
+<li>A substitute for independent investigation by appropriate bodies (police, courts, ombudsmen, human-rights commissions, etc.).</li>
+</ul>
+<p>Where official documents are cited, the primary source is the document itself. Readers are directed to the original files, their hashes, and the Git history for chain-of-custody verification. This structure maximises transparency and minimises the risk of mischaracterisation.</p>
+
+<h2>5. How to Independently Verify</h2>
+<ol>
+<li>Download any file from the repository or live site.</li>
+<li>Compute its SHA-256 (e.g., <code>sha256sum filename.pdf</code> or equivalent).</li>
+<li>Compare against the published hash or companion .sha256 file.</li>
+<li>For OpenTimestamps: upload the file and .ots proof to a public verifier.</li>
+<li>Cross-check dates against Git commit history and any external timestamps.</li>
+<li>Examine the underlying official documents (where linked) rather than secondary summaries.</li>
+</ol>
+
+<p><a href="index.html" style="color:#ffd400">← Return to Archive Doors</a></p>
+</div>
+</body>
+</html>
