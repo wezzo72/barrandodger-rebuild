@@ -2,8 +2,16 @@
   if (window.__bdLegalBrief23) return;
   window.__bdLegalBrief23 = true;
   var SOS_ID = "final-reckoning-sos-24-october-2026";
+  var DIVINE_ID = "divine-reckoning-banner-24-october-2026";
   var ID = "legal-brief-23-october-2026";
-  var PAGE = "https://wezzo72.github.io/barrandodger-rebuild/2026-10-24-the-final-reckoning.html";
+  var PAGE = "https://wezzo72.github.io/Barrandodger/2026-10-24-the-final-reckoning.html";
+  var ARCHIVE = "https://wezzo72.github.io/Barrandodger/#divine-reckoning";
+  var DIVINE_HTML = '<section id="divine-reckoning-banner-24-october-2026" role="note" style="margin:0;padding:16px 16px 14px;background:#f3eee4;color:#1a140f;border-bottom:8px solid #c9a36a;font-family:Georgia,Times New Roman,serif;text-align:left;">'
+    + '<p style="letter-spacing:.14em;font-size:.72rem;font-weight:800;color:#8B2E2A;margin:0 auto 8px;max-width:46rem;font-family:system-ui,sans-serif;">GOD\'S DIVINE RECKONING THROUGH ME, HIS WITNESS · NOT A FINDING</p>'
+    + '<p style="margin:0 auto 8px;max-width:46rem;font-weight:700;font-size:1.05rem;line-height:1.35;">No one would survive a day in what I have had to endure for over 35 years.</p>'
+    + '<p style="margin:0 auto 8px;max-width:46rem;">Testimony, then The Divine Reckoning, every word, stands at the top of the record.</p>'
+    + '<p style="margin:0 auto;max-width:46rem;"><a style="color:#6e2420;font-weight:700;" href="' + PAGE + '#divine-reckoning">Read every word</a></p>'
+    + '</section>';
   var TITLE = "LEGAL BRIEF of BARRAN DODGER / DR RICHARD WILLIAM MCLEAN — Fri 23rd October, 2026";
   var BLOB = "https://github.com/wezzo72/Barrandodger/blob/main/2026-10-23-LEGAL-BRIEF-of-BARRAN-DODGER-DR-RICHARD-WILLIAM-MCLEAN.pdf";
   var PDF = "https://wezzo72.github.io/Barrandodger/2026-10-23-LEGAL-BRIEF-of-BARRAN-DODGER-DR-RICHARD-WILLIAM-MCLEAN.pdf";
@@ -32,7 +40,7 @@
   <p style="margin:0 auto 10px;max-width:46rem;">I need someone to help.</p>
   <p style="margin:0 auto 10px;max-width:46rem;">I need to reach safety.</p>
   <p style="margin:0 auto 10px;max-width:46rem;font-family:system-ui,sans-serif;font-size:.95rem;">If there is an immediate risk to life in Australia, call 000. For urgent mental-health or crisis support, call Lifeline on 13 11 14.</p>
-  <p style="margin:12px auto 0;"><a style="color:#8B2E2A;font-weight:700;" href="https://wezzo72.github.io/barrandodger-rebuild/2026-10-24-the-final-reckoning.html">Read every word of the judgment</a></p>
+  <p style="margin:12px auto 0;"><a style="color:#6e2420;font-weight:700;" href="https://wezzo72.github.io/Barrandodger/2026-10-24-the-final-reckoning.html" style="color:#8B2E2A;font-weight:700;">Read every word of the judgment</a></p>
 </section>`;
   function onStatement() {
     return /2026-10-24-the-final-reckoning/.test(location.pathname);
@@ -58,12 +66,19 @@
         + '<p style="margin:8px auto 0;max-width:46rem;font-size:.82rem;line-height:1.45;color:#3f4c5a;font-family:system-ui,sans-serif;overflow-wrap:anywhere;">SHA-256 ' + HASH + ' · <a href="' + PAGE + '" style="color:inherit;font-weight:700;">The Final Reckoning</a> · <a href="' + PDF + '" style="color:inherit;font-weight:700;">Open the PDF</a></p>';
     }
     if (document.body.firstChild !== sos) document.body.insertBefore(sos, document.body.firstChild);
+    var divine = document.getElementById(DIVINE_ID);
+    if (!divine) {
+      var dwrap = document.createElement("div");
+      dwrap.innerHTML = DIVINE_HTML;
+      divine = dwrap.firstElementChild;
+    }
+    if (divine && sos.nextSibling !== divine) sos.parentNode.insertBefore(divine, sos.nextSibling);
     var pin = document.getElementById("philip-glass-letter");
     if (pin && pin.parentNode === document.body) {
-      if (sos.nextSibling !== pin) sos.parentNode.insertBefore(pin, sos.nextSibling);
+      if (divine.nextSibling !== pin) divine.parentNode.insertBefore(pin, divine.nextSibling);
       if (pin.nextSibling !== el) pin.parentNode.insertBefore(el, pin.nextSibling);
-    } else if (sos.nextSibling !== el) {
-      sos.parentNode.insertBefore(el, sos.nextSibling);
+    } else if (divine.nextSibling !== el) {
+      divine.parentNode.insertBefore(el, divine.nextSibling);
     }
   }
   function arm() {
