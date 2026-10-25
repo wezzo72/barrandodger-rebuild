@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forensic Integrity Fortification — Barran Dodger Archive</title>
+  <style>
+    body { font-family: system-ui, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 2rem; }
+    h1, h2 { color: #1a365d; }
+    .disclaimer { background: #fefcbf; padding: 1rem; border-left: 4px solid #d69e2e; margin: 1rem 0; }
+    code { background: #edf2f7; padding: 0.2em 0.4em; border-radius: 3px; }
+    ul { margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Forensic Integrity Fortification Certificate</h1>
+  <p class="disclaimer"><strong>Finding aid. Not a court. Not a verdict. A link is not a finding. Cryptographic methods establish continuity and integrity of digital records, not the truth of their contents.</strong></p>
+
+  <h2>Purpose</h2>
+  <p>This page fortifies the Barran Dodger / Dr Richard William McLean documentary archive with explicit, independent verification pathways. It adds forensic, intellectual, and legal robustness by documenting methods that any reader can use to confirm completeness, integrity, and provenance without relying solely on the site's presentation.</p>
+
+  <h2>Existing Integrity Mechanisms</h2>
+  <ul>
+    <li>Git history on GitHub provides immutable commit timeline for all files.</li>
+    <li>SHA-256 hashes published for key documents (see individual pages and stamps).</li>
+    <li>OpenTimestamps (.ots) receipts for selected files, anchoring to Bitcoin blockchain for temporal proof.</li>
+    <li>GitHub Actions workflows: <code>verify-archive.yml</code> checks the 660-page preservation manifest integrity; <code>seal-reach.yml</code> appends daily reach readings.</li>
+    <li>Publication inventory and source maps in <code>data/</code> and PUBLICATION-INVENTORY.md.</li>
+  </ul>
+
+  <h2>Independent Verification Steps (Any Reader)</h2>
+  <ol>
+    <li>Clone the repository: <code>git clone https://github.com/wezzo72/barrandodger-rebuild.git</code></li>
+    <li>Verify key file hashes against published SHA-256 values using <code>sha256sum</code> or equivalent.</li>
+    <li>For .ots files, use OpenTimestamps tools to confirm blockchain anchoring: <code>ots verify file.pdf.ots</code></li>
+    <li>Inspect Git log for commit history and authorship continuity: <code>git log --oneline</code></li>
+    <li>Review the verify-archive workflow results on GitHub Actions for the 660-record preservation copy.</li>
+    <li>Cross-reference official government documents against primary sources where available.</li>
+  </ol>
+
+  <h2>Completeness Statement</h2>
+  <p>The rebuild archive is derived from a 660-page preservation copy of barrandodger.com, with HTML, PDF, and links records matching the manifest. Additional documents, statements, legal briefs, and gospels have been added with timestamps. The full corpus spans multiple related repositories (see PUBLICATION-INVENTORY.md). This page does not claim absolute completeness of all historical material, but documents the current preserved state as of the last commit.</p>
+
+  <h2>Legal and Intellectual Fortification</h2>
+  <ul>
+    <li>All material is presented as a public documentary record for independent examination.</li>
+    <li>Distinctions between documented fact, official record, first-person account, allegation, inference, and unresolved matter are maintained.</li>
+    <li>Cryptographic proofs support non-repudiation of the digital versions as of their stamping dates.</li>
+    <li>This fortification layer can be removed without altering any underlying evidence.</li>
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    <li><a href="https://github.com/wezzo72/barrandodger-rebuild">GitHub Repository</a></li>
+    <li><a href="evidence-navigation-guide.html">Evidence Navigation and Verification Guide</a></li>
+    <li><a href="https://wezzo72.github.io/barrandodger-rebuild/">Rebuild Archive Home</a></li>
+    <li><a href="https://github.com/wezzo72/Barrandodger">Main Barrandodger Archive</a></li>
+  </ul>
+
+  <p>Generated as an additive integrity layer on 25 October 2026. Last commit hash available via Git history.</p>
+</body>
+</html>
