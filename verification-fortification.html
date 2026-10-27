@@ -16,20 +16,47 @@ h2{color:#ffd400;margin-top:30px}
 .high{color:#7dcea0}.medium{color:#f4d03f}.low{color:#e74c3c}
 .hash{font-family:monospace;font-size:0.8rem;word-break:break-all}
 .status{background:#1a2a1a;border-left:5px solid #7dcea0;padding:12px;margin:16px 0}
+#verifier{background:#1b1b1b;padding:16px;border-radius:6px;margin:20px 0}
+#verifier input[type=file]{margin:10px 0}
+#result{font-family:monospace;word-break:break-all;background:#0a0a0a;padding:10px;border-radius:4px;margin-top:10px}
 </style>
 </head>
 <body>
 <div class="container">
 <h1>Forensic, Intellectual and Legal Fortification of the Archive</h1>
-<p><strong>Date of fortification:</strong> 25 October 2026 (enhanced 26 October 2026; further strengthened 27 October 2026). Added for robust probabilistic, factual and practical undeniability of the preserved digital record's integrity. The digital artefacts are sealed such that their existence and content as of the seal dates approach practical certainty under independent cryptographic verification.</p>
+<p><strong>Date of fortification:</strong> 25 October 2026 (enhanced 26 October 2026; further strengthened 27 October 2026 with interactive verifier). Added for robust probabilistic, factual and practical undeniability of the preserved digital record's integrity. The digital artefacts are sealed such that their existence and content as of the seal dates approach practical certainty under independent cryptographic verification.</p>
 
 <div class="disclaimer">
 <strong>Core principle (consistent with the archive methodology and the Forensic Integrity Protocol):</strong> Preservation first. Examination second. Conclusion last. A link is not a finding. This page does not constitute a court, a verdict, or independent verification of conclusions. It fortifies the <em>integrity, completeness, and examinability</em> of the preserved record itself. Cryptographic hashes and timestamps establish that a specific digital artefact existed in a particular form at a particular time. They do not prove the truth of any narrative, allegation, or interpretation contained within the artefact. All claims remain subject to independent examination. See also the complementary <a href="https://wezzo72.github.io/Barrandodger/forensic-integrity-protocol.html" style="color:#ffd400">Forensic Integrity Protocol</a> on the main archive site for classification language (A/B/C/D/H) and precise probability phrasing that avoids converting allegation into fact.
 </div>
 
 <div class="status">
-<strong>Verification status as of 27 October 2026 (automation tested):</strong> The 660-record preservation corpus is targeted for machine-verification by the GitHub Actions workflow <code>verify-archive.yml</code> (runs on push and manual dispatch). Counts of 660 manifest records, HTML, PDF and link files are enforced; deviation fails the workflow. Digital artefacts are hash-sealed where companion files exist. This page and all edits are themselves under Git version control, providing an auditable chain of custody for the fortification layer. Independent re-computation of hashes remains the ultimate check. The robust probability framework below distinguishes the near-certainty of sealed digital existence from the open epistemic status of substantive claims.
+<strong>Verification status as of 27 October 2026 (automation tested + interactive verifier added):</strong> The 660-record preservation corpus is targeted for machine-verification by the GitHub Actions workflow <code>verify-archive.yml</code> (runs on push and manual dispatch). Counts of 660 manifest records, HTML, PDF and link files are enforced; deviation fails the workflow. Digital artefacts are hash-sealed where companion files exist. This page and all edits are themselves under Git version control, providing an auditable chain of custody for the fortification layer. Independent re-computation of hashes remains the ultimate check. The robust probability framework below distinguishes the near-certainty of sealed digital existence from the open epistemic status of substantive claims. An in-browser verifier is now provided below for immediate independent confirmation.
 </div>
+
+<h2>In-Browser Independent SHA-256 Verifier</h2>
+<p>Drop any downloaded file from the archive here. The hash is computed entirely in your browser (Web Crypto API — no upload, no server). Compare the result against the published hash, companion .sha256 file, or inventory below. A match yields practical certainty of the artefact's digital integrity as sealed.</p>
+<div id="verifier">
+<input type="file" id="fileInput">
+<div id="result">Awaiting file…</div>
+</div>
+<script>
+document.getElementById('fileInput').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const resultEl = document.getElementById('result');
+  resultEl.textContent = 'Computing SHA-256…';
+  try {
+    const buffer = await file.arrayBuffer();
+    const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    resultEl.innerHTML = '<strong>SHA-256:</strong><br><span class="hash">' + hashHex + '</span><br><small>Compare to published hash or .sha256 companion. Match = practical certainty of sealed integrity.</small>';
+  } catch (err) {
+    resultEl.textContent = 'Error computing hash: ' + err.message;
+  }
+});
+</script>
 
 <h2>1. Archive Completeness Verification</h2>
 <p>The preservation copy is verified by the automated workflow <code>.github/workflows/verify-archive.yml</code>, which confirms on every relevant push or dispatch:</p>
@@ -51,12 +78,12 @@ h2{color:#ffd400;margin-top:30px}
 <tr><td>Multiple dated papers (Oct 2026 series)</td><td class="hash">Individual .sha256 and .ots files in repository root</td><td>OpenTimestamps where present</td><td>Contemporaneous statements. Integrity sealed; content status = first-person account or interpretation.</td></tr>
 </tbody>
 </table>
-<p>Full inventory of hashes is maintained via Git and companion .sha256 / .ots files. Anyone can recompute SHA-256 of a downloaded file and compare. OpenTimestamps proofs can be verified independently at opentimestamps.org. Matching recomputation yields practical certainty (probability of undetected post-seal alteration approaching zero under standard cryptographic assumptions).</p>
+<p>Full inventory of hashes is maintained via Git and companion .sha256 / .ots files. Anyone can recompute SHA-256 of a downloaded file and compare (including via the in-browser tool above). OpenTimestamps proofs can be verified independently at opentimestamps.org. Matching recomputation yields practical certainty (probability of undetected post-seal alteration approaching zero under standard cryptographic assumptions).</p>
 
 <h2>3. Robust Probability Framework and Epistemic Categories</h2>
 <p>Following the archive’s own distinctions, the Forensic Integrity Protocol’s A/B/C/D/H classification, and adding a qualitative-to-quantitative probability layer for intellectual fortification (the “robust probability” layer):</p>
 <ul>
-<li><strong>Practically undeniable digital existence (near-certainty, P ≈ 1 for the artefact under independent verification):</strong> The presence of a specific file with a matching SHA-256 hash, corroborated by Git commit history and (where present) OpenTimestamps, establishes that the exact byte sequence existed in the repository at the time of the commit or timestamp. This is a fact about the digital artefact, not about external events. Probability of post-seal tampering approaches zero when independent re-computation matches. This layer is what the fortification makes robust and factually undeniable for the preserved record.</li>
+<li><strong>Practically undeniable digital existence (near-certainty, P ≈ 1 for the artefact under independent verification):</strong> The presence of a specific file with a matching SHA-256 hash, corroborated by Git commit history and (where present) OpenTimestamps, establishes that the exact byte sequence existed in the repository at the time of the commit or timestamp. This is a fact about the digital artefact, not about external events. Probability of post-seal tampering approaches zero when independent re-computation matches. This layer is what the fortification makes robust and factually undeniable for the preserved record. The interactive verifier above operationalises this check for any examiner.</li>
 <li><strong>Documented fact / official record (high probability of existence and authenticity of the paper, P high once primary examined):</strong> Letters, receipts, administrative decisions on agency letterheads. The paper exists and was produced by the issuing body. Probability that the document was created as described is high once the original or certified copy is examined and cross-checked against the sealed digital copy. Classified A under the Protocol where fully inspectable.</li>
 <li><strong>First-person account / testimony (medium-to-high probability of sincere belief; variable probability of correspondence to external events):</strong> The author’s contemporaneous statements. Integrity of the digital record is high (near-certainty of the text as sealed); whether the described events occurred as stated requires corroboration. The sealed record makes the testimony itself examinable without alteration risk. Often D under the Protocol.</li>
 <li><strong>Allegation / inference / interpretation (low-to-medium prior probability pending independent investigation):</strong> Conclusions drawn from the record (e.g., coordinated targeting, specific criminal characterisations). These remain open questions. Extraordinary claims require extraordinary evidence; the archive supplies the documentary base for that examination rather than a final determination. Bayesian updating is possible by any examiner who weighs the sealed primary materials. High-consequence (H) claims stay labelled as such.</li>
@@ -76,7 +103,7 @@ h2{color:#ffd400;margin-top:30px}
 <h2>5. How to Independently Verify</h2>
 <ol>
 <li>Download any file from the repository or live site.</li>
-<li>Compute its SHA-256 (e.g., <code>sha256sum filename.pdf</code> or equivalent).</li>
+<li>Compute its SHA-256 using the in-browser tool above, or locally (e.g., <code>sha256sum filename.pdf</code>).</li>
 <li>Compare against the published hash or companion .sha256 file.</li>
 <li>For OpenTimestamps: upload the file and .ots proof to a public verifier.</li>
 <li>Cross-check dates against Git commit history and any external timestamps.</li>
