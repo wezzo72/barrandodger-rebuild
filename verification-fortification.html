@@ -21,14 +21,14 @@ h2{color:#ffd400;margin-top:30px}
 <body>
 <div class="container">
 <h1>Forensic, Intellectual and Legal Fortification of the Archive</h1>
-<p><strong>Date of fortification:</strong> 25 October 2026 (enhanced 26 October 2026). Added for robust probabilistic, factual and practical undeniability of the preserved digital record's integrity.</p>
+<p><strong>Date of fortification:</strong> 25 October 2026 (enhanced 26 October 2026; further strengthened 27 October 2026). Added for robust probabilistic, factual and practical undeniability of the preserved digital record's integrity. The digital artefacts are sealed such that their existence and content as of the seal dates approach practical certainty under independent cryptographic verification.</p>
 
 <div class="disclaimer">
 <strong>Core principle (consistent with the archive methodology and the Forensic Integrity Protocol):</strong> Preservation first. Examination second. Conclusion last. A link is not a finding. This page does not constitute a court, a verdict, or independent verification of conclusions. It fortifies the <em>integrity, completeness, and examinability</em> of the preserved record itself. Cryptographic hashes and timestamps establish that a specific digital artefact existed in a particular form at a particular time. They do not prove the truth of any narrative, allegation, or interpretation contained within the artefact. All claims remain subject to independent examination. See also the complementary <a href="https://wezzo72.github.io/Barrandodger/forensic-integrity-protocol.html" style="color:#ffd400">Forensic Integrity Protocol</a> on the main archive site for classification language (A/B/C/D/H) and precise probability phrasing that avoids converting allegation into fact.
 </div>
 
 <div class="status">
-<strong>Verification status as of 26 October 2026 (automation tested):</strong> The 660-record preservation corpus is targeted for machine-verification by the GitHub Actions workflow <code>verify-archive.yml</code> (runs on push and manual dispatch). A manual workflow_dispatch was triggered on 26 October 2026 for testing. Digital artefacts are hash-sealed where companion files exist. This page and all edits are themselves under Git version control, providing an auditable chain of custody for the fortification layer. Independent re-computation of hashes remains the ultimate check.
+<strong>Verification status as of 27 October 2026 (automation tested):</strong> The 660-record preservation corpus is targeted for machine-verification by the GitHub Actions workflow <code>verify-archive.yml</code> (runs on push and manual dispatch). Counts of 660 manifest records, HTML, PDF and link files are enforced; deviation fails the workflow. Digital artefacts are hash-sealed where companion files exist. This page and all edits are themselves under Git version control, providing an auditable chain of custody for the fortification layer. Independent re-computation of hashes remains the ultimate check. The robust probability framework below distinguishes the near-certainty of sealed digital existence from the open epistemic status of substantive claims.
 </div>
 
 <h2>1. Archive Completeness Verification</h2>
@@ -39,29 +39,30 @@ h2{color:#ffd400;margin-top:30px}
 <li>660 PDF files</li>
 <li>660 link files</li>
 </ul>
-<p>This establishes a closed, countable corpus. Any subsequent addition is versioned in Git history, preserving the chain of custody for the digital archive. The workflow fails the build if counts deviate, providing continuous integrity monitoring. Counts have been independently confirmed via API as of the fortification date.</p>
+<p>This establishes a closed, countable corpus. Any subsequent addition is versioned in Git history, preserving the chain of custody for the digital archive. The workflow fails the build if counts deviate, providing continuous integrity monitoring. Counts have been independently confirmed via API as of the fortification date. This completeness check contributes to the practical undeniability of the corpus as a whole.</p>
 
 <h2>2. Cryptographic Integrity Inventory (Selected Key Documents)</h2>
 <table class="table">
 <thead><tr><th>Document</th><th>SHA-256</th><th>Additional Stamps</th><th>Epistemic Status</th></tr></thead>
 <tbody>
 <tr><td>LEGAL BRIEF of BARRAN DODGER / DR RICHARD WILLIAM MCLEAN — 23 October 2026</td><td class="hash">effa0bfe8894e4d9f98de8de8988a44ddef8ee95b1317a80d28d7cbd20fca8ff</td><td>Published 23 Oct 2026</td><td>Official compilation of status, citations, and documentary references. Existence of the brief is high-certainty. Conclusions within it are allegations/inferences requiring independent testing.</td></tr>
+<tr><td>THE GOSPEL OF EXPOSING DARKNESS — 21 October 2026</td><td class="hash">eab2b9d5fde7c5fd2de6d48ac85683100608d076d41c85f4260a933ed2793c4e</td><td>Companion .sha256</td><td>Contemporaneous statement. Integrity sealed; content status = first-person account or interpretation.</td></tr>
 <tr><td>THE WITNESS REMAINS — DR BARRAN DODGER — 6 October 2026</td><td class="hash">(see .sha256 companion files where present)</td><td>OpenTimestamps (.ots) on related papers</td><td>First-person narrative + linkage to official records. High certainty of digital integrity; truth-value of interpretive claims is open.</td></tr>
 <tr><td>Multiple dated papers (Oct 2026 series)</td><td class="hash">Individual .sha256 and .ots files in repository root</td><td>OpenTimestamps where present</td><td>Contemporaneous statements. Integrity sealed; content status = first-person account or interpretation.</td></tr>
 </tbody>
 </table>
-<p>Full inventory of hashes is maintained via Git and companion .sha256 / .ots files. Anyone can recompute SHA-256 of a downloaded file and compare. OpenTimestamps proofs can be verified independently at opentimestamps.org.</p>
+<p>Full inventory of hashes is maintained via Git and companion .sha256 / .ots files. Anyone can recompute SHA-256 of a downloaded file and compare. OpenTimestamps proofs can be verified independently at opentimestamps.org. Matching recomputation yields practical certainty (probability of undetected post-seal alteration approaching zero under standard cryptographic assumptions).</p>
 
 <h2>3. Robust Probability Framework and Epistemic Categories</h2>
-<p>Following the archive’s own distinctions, the Forensic Integrity Protocol’s A/B/C/D/H classification, and adding a qualitative probability layer for intellectual fortification:</p>
+<p>Following the archive’s own distinctions, the Forensic Integrity Protocol’s A/B/C/D/H classification, and adding a qualitative-to-quantitative probability layer for intellectual fortification (the “robust probability” layer):</p>
 <ul>
-<li><strong>Practically undeniable digital existence (near-certainty for the artefact):</strong> The presence of a specific file with a matching SHA-256 hash, corroborated by Git commit history and (where present) OpenTimestamps, establishes that the exact byte sequence existed in the repository at the time of the commit or timestamp. This is a fact about the digital artefact, not about external events. Probability of post-seal tampering approaches zero when independent re-computation matches. This layer is what the fortification makes robust.</li>
-<li><strong>Documented fact / official record (high probability of existence and authenticity of the paper):</strong> Letters, receipts, administrative decisions on agency letterheads. The paper exists and was produced by the issuing body. Probability that the document was created as described is high once the original or certified copy is examined and cross-checked against the sealed digital copy. Classified A under the Protocol where fully inspectable.</li>
-<li><strong>First-person account / testimony (medium-to-high probability of sincere belief; variable probability of correspondence to external events):</strong> The author’s contemporaneous statements. Integrity of the digital record is high; whether the described events occurred as stated requires corroboration. The sealed record makes the testimony itself examinable without alteration risk. Often D under the Protocol.</li>
+<li><strong>Practically undeniable digital existence (near-certainty, P ≈ 1 for the artefact under independent verification):</strong> The presence of a specific file with a matching SHA-256 hash, corroborated by Git commit history and (where present) OpenTimestamps, establishes that the exact byte sequence existed in the repository at the time of the commit or timestamp. This is a fact about the digital artefact, not about external events. Probability of post-seal tampering approaches zero when independent re-computation matches. This layer is what the fortification makes robust and factually undeniable for the preserved record.</li>
+<li><strong>Documented fact / official record (high probability of existence and authenticity of the paper, P high once primary examined):</strong> Letters, receipts, administrative decisions on agency letterheads. The paper exists and was produced by the issuing body. Probability that the document was created as described is high once the original or certified copy is examined and cross-checked against the sealed digital copy. Classified A under the Protocol where fully inspectable.</li>
+<li><strong>First-person account / testimony (medium-to-high probability of sincere belief; variable probability of correspondence to external events):</strong> The author’s contemporaneous statements. Integrity of the digital record is high (near-certainty of the text as sealed); whether the described events occurred as stated requires corroboration. The sealed record makes the testimony itself examinable without alteration risk. Often D under the Protocol.</li>
 <li><strong>Allegation / inference / interpretation (low-to-medium prior probability pending independent investigation):</strong> Conclusions drawn from the record (e.g., coordinated targeting, specific criminal characterisations). These remain open questions. Extraordinary claims require extraordinary evidence; the archive supplies the documentary base for that examination rather than a final determination. Bayesian updating is possible by any examiner who weighs the sealed primary materials. High-consequence (H) claims stay labelled as such.</li>
-<li><strong>Spiritual belief / prophetic framing:</strong> Categorically distinct from empirical proof. Preserved as part of the author’s testimony and ministry, not as forensic evidence. Its digital integrity is sealed; its status as belief is explicitly labelled.</li>
+<li><strong>Spiritual belief / prophetic framing:</strong> Categorically distinct from empirical proof. Preserved as part of the author’s testimony and ministry, not as forensic evidence. Its digital integrity is sealed (near-certainty); its status as belief is explicitly labelled.</li>
 </ul>
-<p>This stratification increases intellectual honesty and legal defensibility: the archive does not collapse distinct epistemic layers. The digital corpus is fortified to a standard of practical undeniability of its sealed contents as of the seal dates; substantive probability assessments of external events remain the domain of independent examination. Precise language from the Forensic Integrity Protocol is recommended when referring to claims.</p>
+<p>This stratification increases intellectual honesty and legal defensibility: the archive does not collapse distinct epistemic layers. The digital corpus is fortified to a standard of practical undeniability of its sealed contents as of the seal dates; substantive probability assessments of external events remain the domain of independent examination. Precise language from the Forensic Integrity Protocol is recommended when referring to claims. The robust probability layer specifically fortifies the factual integrity of the archive against denial of its existence or alteration.</p>
 
 <h2>4. Legal Fortification Statement</h2>
 <p>The archive is a public finding aid and documentary repository. It preserves records so that they may be examined by any competent authority, journalist, researcher, or member of the public. Nothing on this site or in the repository constitutes:</p>
@@ -70,7 +71,7 @@ h2{color:#ffd400;margin-top:30px}
 <li>An allegation that has been proven beyond reasonable doubt or on the balance of probabilities in any tribunal;</li>
 <li>A substitute for independent investigation by appropriate bodies (police, courts, ombudsmen, human-rights commissions, etc.).</li>
 </ul>
-<p>Where official documents are cited, the primary source is the document itself. Readers are directed to the original files, their hashes, and the Git history for chain-of-custody verification. This structure maximises transparency and minimises the risk of mischaracterisation. The fortification layer itself is under version control and subject to the same integrity mechanisms. Cross-reference with the main site’s Forensic Integrity Protocol for additional classification tools.</p>
+<p>Where official documents are cited, the primary source is the document itself. Readers are directed to the original files, their hashes, and the Git history for chain-of-custody verification. This structure maximises transparency and minimises the risk of mischaracterisation. The fortification layer itself is under version control and subject to the same integrity mechanisms. Cross-reference with the main site’s Forensic Integrity Protocol for additional classification tools. The sealed record supports legal fortification by enabling any party to verify completeness and integrity independently.</p>
 
 <h2>5. How to Independently Verify</h2>
 <ol>
@@ -82,6 +83,7 @@ h2{color:#ffd400;margin-top:30px}
 <li>Examine the underlying official documents (where linked) rather than secondary summaries.</li>
 <li>Confirm the completeness workflow status on the latest commit (visible in GitHub Actions tab).</li>
 <li>Apply the A/B/C/D/H classification from the linked Forensic Integrity Protocol when assessing individual items.</li>
+<li>Recompute and match hashes to confirm the robust probability of digital integrity approaches practical certainty.</li>
 </ol>
 
 <p><a href="index.html" style="color:#ffd400">← Return to Archive Doors</a> | <a href="https://wezzo72.github.io/Barrandodger/forensic-integrity-protocol.html" style="color:#ffd400">Forensic Integrity Protocol (main archive)</a></p>
