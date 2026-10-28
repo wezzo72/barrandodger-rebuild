@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robust Probability Fortification Certificate — Barran Dodger Archive</title>
+<style>
+body{margin:0;background:#0e0e0e;color:#eee9df;font-family:Georgia,"Times New Roman",serif;line-height:1.65;padding:24px}
+.container{max-width:920px;margin:0 auto}
+h1{color:#e8c987;border-bottom:2px solid #a52a2a;padding-bottom:8px}
+h2{color:#ffd400;margin-top:32px}
+.disclaimer{background:#2a1a1a;border-left:5px solid #ffd400;padding:16px;margin:20px 0}
+.status{background:#1a2a1a;border-left:5px solid #7dcea0;padding:14px;margin:16px 0}
+.bounds{background:#1a1a2a;border-left:5px solid #a78bfa;padding:16px;margin:20px 0}
+.hash{font-family:ui-monospace,monospace;font-size:0.82rem;word-break:break-all;background:#111;padding:4px 6px;border-radius:3px}
+.table{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.9rem}
+.table th,.table td{border:1px solid #444;padding:8px;text-align:left}
+.table th{background:#1b1b1b;color:#e8c987}
+#verifier{background:#1b1b1b;padding:16px;border-radius:6px;margin:20px 0}
+#result{font-family:monospace;word-break:break-all;background:#0a0a0a;padding:10px;margin-top:8px;border-radius:4px;min-height:2em}
+a{color:#f0ce82}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Robust Probability Fortification Certificate</h1>
+<p><strong>Issued:</strong> 28 October 2026 &nbsp;|&nbsp; <strong>Scope:</strong> sealed digital artefacts of the Barran Dodger preservation corpus &nbsp;|&nbsp; <strong>Status:</strong> complete and verified for the digital record under stated assumptions</p>
+
+<div class="disclaimer">
+<strong>Not a finding. Not a verdict. Not a court.</strong><br>
+Preservation first. Examination second. Conclusion last. A link is not a finding.<br>
+This certificate addresses only the integrity, existence, and examinability of specific digital byte sequences that have been hash-sealed. Matching a published SHA-256 establishes, under standard cryptographic assumptions, that the exact file content existed in that form at the time of sealing/commit. It does <em>not</em> establish the truth, accuracy, or legal effect of any allegation, interpretation, or narrative contained inside the file. Epistemic categories remain stratified exactly as set out in the Forensic Integrity Protocol (A/B/C/D/H) and the Forensic Probability &amp; Verification Framework.
+</div>
+
+<h2>1. Cryptographic Foundations for Practical Undeniability</h2>
+<div class="bounds">
+<p>Under the random-oracle model and the collision resistance of SHA-256:</p>
+<ul>
+<li>Targeted second-preimage or collision search against a specific published hash requires approximately \(2^{128}\) work.</li>
+<li>For any computationally bounded adversary the probability of producing an undetected altered file that still matches the published hash is negligible (on the order of \(2^{-128}\) or lower).</li>
+<li>When independent recomputation of the SHA-256 matches the published value, Git commit history corroborates the addition, and (where present) an OpenTimestamps receipt anchors the hash, the joint residual risk of post-seal undetected alteration falls well below \(10^{-40}\) under ordinary multi-layer assumptions.</li>
+</ul>
+<p>This yields <strong>practical certainty (P ≈ 1)</strong> of the digital artefact’s existence and byte-for-byte content as of the seal. It is a statement about the sealed file, not about external events.</p>
+</div>
+
+<h2>2. Multi-Layer Independent Confirmation Protocol</h2>
+<ol>
+<li><strong>Local hash recomputation</strong> — in-browser (below) or via standard tools (<code>sha256sum</code>, <code>certutil</code>, etc.).</li>
+<li><strong>Git chain-of-custody</strong> — public commit history shows when each file was added or altered.</li>
+<li><strong>Automated monitoring</strong> — growth-aware <code>verify-archive.yml</code> workflow reports counts and alerts only on drops below the sealed 660-record baseline.</li>
+<li><strong>OpenTimestamps</strong> — where a companion <code>.ots</code> exists, the hash is Bitcoin-anchored.</li>
+<li><strong>Cross-archive checks</strong> — main archive (<code>wezzo72/Barrandodger</code>) and rebuild mirror.</li>
+</ol>
+<p>Any single layer is already strong; the combination produces the residual-risk bound above.</p>
+
+<h2>3. Epistemic Stratification (unchanged)</h2>
+<ul>
+<li><strong>Practically undeniable digital existence</strong> — sealed artefacts under the bounds in §1.</li>
+<li><strong>Documented fact / official record</strong> — high-confidence existence of the document; content accuracy remains subject to ordinary examination (typically classification A).</li>
+<li><strong>First-person account</strong> — records what the author stated; correspondence to external events is open (often D).</li>
+<li><strong>Allegation / interpretation</strong> — requires independent investigation; high-consequence claims (H) are not treated as established.</li>
+<li><strong>Spiritual belief</strong> — preserved as testimony, not empirical proof.</li>
+</ul>
+
+<h2>4. Selected Sealed Artefacts (key hashes)</h2>
+<table class="table">
+<tr><th>Document</th><th>SHA-256</th><th>Notes</th></tr>
+<tr><td>LEGAL BRIEF of BARRAN DODGER / DR RICHARD WILLIAM MCLEAN (23 Oct 2026)</td><td class="hash">effa0bfe8894e4d9f98de8de8988a44ddef8ee95b1317a80d28d7cbd20fca8ff</td><td>High-certainty existence of the file; conclusions remain allegations.</td></tr>
+<tr><td>THE WITNESS REMAINS — DR BARRAN DODGER (6 Oct 2026)</td><td class="hash">(see companion .sha256 in repository)</td><td>Integrity sealed; interpretive claims open.</td></tr>
+</table>
+<p>Full inventory is the repository itself plus any companion <code>.sha256</code> / <code>.ots</code> files. Recompute any file and compare.</p>
+
+<h2>5. In-Browser Independent SHA-256 Verifier</h2>
+<div id="verifier">
+<p>Drop or select a downloaded archive file. Computation runs entirely in your browser via the Web Crypto API; nothing is uploaded.</p>
+<input type="file" id="fileInput" />
+<div id="result">Awaiting file…</div>
+</div>
+<script>
+document.getElementById('fileInput').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const resultEl = document.getElementById('result');
+  resultEl.textContent = 'Computing SHA-256…';
+  try {
+    const buf = await file.arrayBuffer();
+    const hashBuf = await crypto.subtle.digest('SHA-256', buf);
+    const hashArray = Array.from(new Uint8Array(hashBuf));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    resultEl.innerHTML = `<strong>SHA-256:</strong><br><span class="hash">${hashHex}</span><br><br>Compare this value with the published hash or companion .sha256 file. A match establishes practical certainty of the file’s digital integrity under the bounds stated above.`;
+  } catch (err) {
+    resultEl.textContent = 'Error: ' + err.message;
+  }
+});
+</script>
+
+<h2>6. How to Independently Verify (summary)</h2>
+<ol>
+<li>Download the file from the GitHub repository or GitHub Pages mirror.</li>
+<li>Recompute SHA-256 (this page or local tool).</li>
+<li>Compare with published hash / <code>.sha256</code>.</li>
+<li>Optionally verify any <code>.ots</code> at opentimestamps.org.</li>
+<li>Inspect Git commit history for addition date and subsequent changes.</li>
+<li>Apply the Forensic Integrity Protocol classifications when reading contents.</li>
+</ol>
+
+<div class="status">
+<strong>Certificate status (28 October 2026):</strong> The fortification layer for sealed digital artefacts is complete and verified by design. Continuous growth-aware automation, public Git history, published hashes, and the in-browser verifier remain available for independent examination. This certificate is itself under the same chain of custody.
+</div>
+
+<p><a href="index.html">← Back to Archive Doors</a> &nbsp;|&nbsp; <a href="verification-fortification.html">Verification Fortification Status</a> &nbsp;|&nbsp; <a href="https://wezzo72.github.io/Barrandodger/forensic-integrity-protocol.html">Forensic Integrity Protocol</a></p>
+</div>
+</body>
+</html>
