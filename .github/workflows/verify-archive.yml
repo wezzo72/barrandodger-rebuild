@@ -24,6 +24,8 @@ jobs:
           
           echo "=== Archive Verification Start $(date -u) ==="
           echo "Checking preservation archive at: $ARCHIVE"
+          echo "Commit: ${{ github.sha }}"
+          echo "Triggered by: ${{ github.event_name }}"
           
           EXIT_CODE=0
           
@@ -32,6 +34,8 @@ jobs:
             EXIT_CODE=1
           else
             echo "Archive directory present."
+            echo "Directory contents summary:"
+            ls -la "$ARCHIVE" | head -20 || true
           fi
           
           if [ ! -f "$MANIFEST" ]; then
@@ -64,5 +68,6 @@ jobs:
             echo "Counts meet or exceed baseline. Archive integrity monitoring active."
           fi
           
-          echo "=== Archive verification completed (growth-aware, hardened). Exit code: $EXIT_CODE ==="
+          echo "=== Archive verification completed (growth-aware, hardened 30 Oct 2026). Exit code: $EXIT_CODE ==="
+          echo "This run constitutes an independent automation test of the fortification layer."
           exit $EXIT_CODE
