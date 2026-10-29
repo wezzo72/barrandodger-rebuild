@@ -17,41 +17,52 @@ jobs:
       - name: Verify manifest and preserved files (adaptive to growth)
         shell: bash
         run: |
-          set -e
-
+          set +e  # Allow non-zero for warnings; control exit explicitly
+          
           ARCHIVE="barrandodger.com website backup"
           MANIFEST="$ARCHIVE/manifest.jsonl"
-
-          echo "Checking preservation archive..."
-
-          if [ ! -f "$MANIFEST" ]; then
-            echo "WARNING: Manifest not found at $MANIFEST. Archive may have evolved."
-            # Continue without hard fail for growth
+          
+          echo "=== Archive Verification Start $(date -u) ==="
+          echo "Checking preservation archive at: $ARCHIVE"
+          
+          EXIT_CODE=0
+          
+          if [ ! -d "$ARCHIVE" ]; then
+            echo "ERROR: Archive directory not found."
+            EXIT_CODE=1
           else
-            TOTAL=$(wc -l < "$MANIFEST")
+            echo "Archive directory present."
+          fi
+          
+          if [ ! -f "$MANIFEST" ]; then
+            echo "WARNING: Manifest not found at $MANIFEST. Archive may have evolved. Continuing."
+          else
+            TOTAL=$(wc -l < "$MANIFEST" 2>/dev/null || echo 0)
             echo "Manifest records: $TOTAL"
-
-            if [ "$TOTAL" -lt 660 ]; then
-              echo "ERROR: Manifest records below sealed baseline of 660."
-              exit 1
-            fi
-            if [ "$TOTAL" -gt 660 ]; then
+            
+            if [ "$TOTAL" -lt 660 ] 2>/dev/null; then
+              echo "ERROR: Manifest records ($TOTAL) below sealed baseline of 660."
+              EXIT_CODE=1
+            elif [ "$TOTAL" -gt 660 ] 2>/dev/null; then
               echo "INFO: Manifest records ($TOTAL) exceed original baseline of 660. Growth is expected and versioned."
+            else
+              echo "Manifest at or above baseline."
             fi
           fi
-
+          
           HTML_COUNT=$(find "$ARCHIVE/html" -type f -name '*.html' 2>/dev/null | wc -l || echo 0)
           PDF_COUNT=$(find "$ARCHIVE/pdf" -type f -name '*.pdf' 2>/dev/null | wc -l || echo 0)
           LINKS_COUNT=$(find "$ARCHIVE/links" -type f 2>/dev/null | wc -l || echo 0)
-
+          
           echo "HTML files: $HTML_COUNT"
           echo "PDF files: $PDF_COUNT"
           echo "LINK files: $LINKS_COUNT"
-
+          
           if [ "$HTML_COUNT" -lt 660 ] || [ "$PDF_COUNT" -lt 660 ] || [ "$LINKS_COUNT" -lt 660 ]; then
-            echo "WARNING: Some counts below baseline. Review for integrity."
+            echo "WARNING: Some counts below baseline. Review for integrity. (Not a hard failure for growth-aware design.)"
           else
             echo "Counts meet or exceed baseline. Archive integrity monitoring active."
           fi
-
-          echo "Archive verification completed (growth-aware)."
+          
+          echo "=== Archive verification completed (growth-aware, hardened). Exit code: $EXIT_CODE ==="
+          exit $EXIT_CODE
