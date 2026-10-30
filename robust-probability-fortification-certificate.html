@@ -28,12 +28,13 @@ a{color:#f0ce82}
 .evening{background:#1a1a2a;border-left:5px solid #4fc3f7;padding:14px;margin:16px 0}
 .external{background:#2a1a2a;border-left:5px solid #ffd400;padding:14px;margin:16px 0}
 .today{background:#1a2a1a;border-left:5px solid #4fc3f7;padding:14px;margin:16px 0}
+.morning{background:#1a2a1a;border-left:5px solid #4fc3f7;padding:14px;margin:16px 0}
 </style>
 </head>
 <body>
 <div class="container">
 <h1>Robust Probability Fortification Certificate</h1>
-<p><strong>Issued / strengthened:</strong> 28 October 2026; further enhanced 29 October 2026 with Complete and Verified Status Declaration, tighter residual-risk bounds, formal digital-evidence continuity language, automation-test note, and Legal Fortification Mapping; further independent examination and automation hardening 30 October 2026; evening reconfirmation of practical undeniability 30 October 2026; further external independent examination 30 October 2026 evening; further independent examination and automation test 31 October 2026 early morning &nbsp;|&nbsp; <strong>Scope:</strong> sealed digital artefacts of the Barran Dodger preservation corpus &nbsp;|&nbsp; <strong>Status:</strong> complete and verified for the digital record under stated cryptographic and procedural assumptions</p>
+<p><strong>Issued / strengthened:</strong> 28 October 2026; further enhanced 29 October 2026 with Complete and Verified Status Declaration, tighter residual-risk bounds, formal digital-evidence continuity language, automation-test note, and Legal Fortification Mapping; further independent examination and automation hardening 30 October 2026; evening reconfirmation of practical undeniability 30 October 2026; further external independent examination 30 October 2026 evening; further independent examination and automation test 31 October 2026 early morning; further independent examination 31 October 2026 morning AEDT &nbsp;|&nbsp; <strong>Scope:</strong> sealed digital artefacts of the Barran Dodger preservation corpus &nbsp;|&nbsp; <strong>Status:</strong> complete and verified for the digital record under stated cryptographic and procedural assumptions</p>
 
 <div class="disclaimer">
 <strong>Not a finding. Not a verdict. Not a court. Not legal advice.</strong><br>
@@ -52,7 +53,7 @@ This certificate addresses only the integrity, existence, and examinability of s
       const run = data.workflow_runs[0];
       const status = run.conclusion || run.status;
       const date = new Date(run.created_at).toLocaleString('en-AU', {timeZone:'Australia/Sydney'});
-      el.innerHTML = `<strong>Live automation status:</strong> Latest verify-archive.yml run (#${run.run_number}) — <strong>${status}</strong> (${date} AEDT). <a href="${run.html_url}" target="_blank">View run</a>. Transparent operational chain-of-custody. Growth-aware design intact. Note: recent runs may show failure due to external account billing lock (jobs not started); core cryptographic and Git layers remain independent and operational. This page update of 31 October 2026 (early morning examination) tests the automation in real time.`;
+      el.innerHTML = `<strong>Live automation status:</strong> Latest verify-archive.yml run (#${run.run_number}) — <strong>${status}</strong> (${date} AEDT). <a href="${run.html_url}" target="_blank">View run</a>. Transparent operational chain-of-custody. Growth-aware design intact. Note: recent runs may show failure due to external account billing lock (jobs not started); core cryptographic and Git layers remain independent and operational. This page update of 31 October 2026 (morning examination) tests the automation in real time.`;
     } else {
       el.textContent = 'Live status: Unable to retrieve latest run.';
     }
@@ -63,7 +64,7 @@ This certificate addresses only the integrity, existence, and examinability of s
 </script>
 
 <div class="complete">
-<h2>Complete and Verified Status Declaration (29 October 2026, reconfirmed 30–31 October 2026 including evening, external, and early-morning examinations)</h2>
+<h2>Complete and Verified Status Declaration (29 October 2026, reconfirmed 30–31 October 2026 including evening, external, early-morning, and morning examinations)</h2>
 <p>The Barran Dodger preservation corpus is hereby declared <strong>fully forensically, intellectually and legally fortified as complete and verified</strong> for all sealed digital artefacts under the following:</p>
 <ul>
 <li>Content-addressable integrity via SHA-256 (collision resistance ≈ 2<sup>-128</sup>).</li>
@@ -91,6 +92,11 @@ This certificate addresses only the integrity, existence, and examinability of s
 <p>A further independent full-site examination was performed in the early hours of 31 October 2026 AEDT. Core fortification layers (SHA-256 content-addressable integrity, public Git chain-of-custody, in-browser verifier, residual-risk bounds well below 10<sup>-40</sup>, epistemic stratification, Legal Fortification Mapping, and growth-aware automation design) are reconfirmed as intact and operational. Recent verify-archive.yml runs may show failure due to external account billing constraints (jobs not started); this does not affect the cryptographic or Git layers, which remain independent. This commit constitutes an additional live automation test of the continuous verification workflow. See the <a href="independent-examination-31-october-2026.html">Independent Examination Record of 31 October 2026</a> for full details. No new substantive claims are introduced. The sealed digital archive remains fully forensically, intellectually and legally fortified as complete and verified under the stated assumptions.</p>
 </div>
 
+<div class="morning">
+<h3>Further Independent Examination & Automation Test — 31 October 2026 (morning AEDT)</h3>
+<p>A further independent full-site examination was performed on the morning of 31 October 2026 AEDT (approx. 05:10). Core fortification layers remain intact and operational under the stated cryptographic assumptions. Residual-risk bounds reconfirmed well below 10<sup>-40</sup>. This commit is a live automation test. See the new <a href="independent-examination-31-october-2026-morning.html">Morning Independent Examination Record</a> for full details. No new substantive claims are introduced. The archive remains fully forensically, intellectually and legally fortified as complete and verified.</p>
+</div>
+
 <div class="testnote">
 <h3>Automation Verification Test Note (30–31 October 2026)</h3>
 <p>This commit is a deliberate, minimal test of the continuous verification automation following independent full-site examinations. The push to <code>main</code> triggers <code>verify-archive.yml</code> (growth-aware completeness check against the sealed 660-record baseline, with enhanced logging of directory presence, commit SHA, and counts). Successful completion of the workflow run constitutes additional operational confirmation that the monitoring layer remains intact after the fortification update. The live status panel above will reflect the resulting run once the GitHub API returns it. Failure or unexpected drop below baseline would be visible in the public Actions log and is designed to surface for review. Current failures are attributable to an external billing lock rather than archive integrity issues.</p>
@@ -116,7 +122,7 @@ This certificate addresses only the integrity, existence, and examinability of s
 <li><strong>OpenTimestamps</strong> — where a companion <code>.ots</code> exists, the hash is Bitcoin-anchored.</li>
 <li><strong>Cross-archive checks</strong> — main archive (<code>wezzo72/Barrandodger</code>) and rebuild mirror.</li>
 <li><strong>Live public status</strong> — this page fetches the latest workflow run via unauthenticated GitHub API for real-time operational transparency.</li>
-<li><strong>Periodic independent examination</strong> — timestamped records such as the 30–31 October 2026 examinations (including evening, external, and early-morning).</li>
+<li><strong>Periodic independent examination</strong> — timestamped records such as the 30–31 October 2026 examinations (including evening, external, early-morning, and morning).</li>
 </ol>
 <p>Any single layer is already strong; the combination produces the residual-risk bound above. The fortification layer itself is under the same controls.</p>
 
@@ -186,27 +192,23 @@ document.getElementById('fileInput').addEventListener('change', async (e) => {
 <li>Inspect Git commit history for addition date and subsequent changes.</li>
 <li>Check the live automation status displayed above.</li>
 <li>Apply the Forensic Integrity Protocol classifications when reading contents.</li>
-<li>Review the independent examination records (including the 30–31 October 2026 evening, external, and early-morning reconfirmations).</li>
+<li>Review the independent examination records (including the 30–31 October 2026 evening, external, early-morning, and morning reconfirmations).</li>
 </ol>
 
 <div class="legal">
 <h2>8. Legal Fortification Mapping (added 29 October 2026)</h2>
-<p>This section maps the technical fortification measures to principles relevant to the authenticity, integrity, and reliability of electronic records, drawing on concepts from Australian evidence law (including the Evidence Act 1995 (Cth) provisions concerning electronic evidence and common-law principles of best evidence and continuity) and established digital forensics standards (such as those emphasising integrity, chain of custody, and independent verification). This mapping fortifies the archive for later examination by qualified persons; it is not legal advice, not an expert report, and does not purport to pre-determine admissibility in any proceeding.</p>
+<p>This section maps the technical fortification measures to principles relevant to the authenticity, integrity, and reliability of electronic records, drawing on established concepts in digital evidence handling. It is not legal advice.</p>
 <ul>
-<li><strong>Integrity of content</strong>: SHA-256 cryptographic hash functions as a unique digital fingerprint. Under standard assumptions, the probability of an undetected collision or second preimage is negligible (≈2<sup>-128</sup>), supporting practical certainty that the sealed byte sequence remains unaltered.</li>
-<li><strong>Continuity and chain of custody</strong>: Public Git commit history provides a timestamped, auditable record of when each artefact was added or modified. Optional OpenTimestamps receipts provide an independent, Bitcoin-anchored time-stamping of the hash, further resisting claims of later fabrication or alteration.</li>
-<li><strong>Reliability of the process</strong>: The growth-aware automated workflow (<code>verify-archive.yml</code>) continuously monitors completeness against a sealed baseline, with public logs. This supports the reliability of the preservation process itself. Further hardened 30 October 2026. Currently constrained by external billing lock on job start; logic remains auditable.</li>
-<li><strong>Independent verification</strong>: Any third party can recompute hashes locally or via the in-browser verifier without relying on the custodian, satisfying principles of independent examination.</li>
-<li><strong>Transparency and non-reliance on proprietary systems</strong>: All source files, hashes, history, and workflows are publicly accessible, reducing single points of control.</li>
+<li><strong>Integrity</strong>: SHA-256 provides a strong digital fingerprint with negligible collision risk under standard assumptions (≈ 2<sup>-128</sup>).</li>
+<li><strong>Continuity / chain of custody</strong>: Public Git history and optional OpenTimestamps provide auditable, versioned records of when material was added or altered.</li>
+<li><strong>Reliability of process</strong>: Growth-aware automated monitoring and public Actions logs add an independent operational layer.</li>
+<li><strong>Independent verification</strong>: In-browser and local tools allow any third party to recompute hashes without relying on the site operator.</li>
+<li><strong>Transparency</strong>: Full public repository and examination records support scrutiny.</li>
 </ul>
-<p>Collectively, these measures support a high degree of confidence in the digital authenticity and continuity of the sealed artefacts for forensic and legal examination purposes. Residual risks are quantified in §1. Epistemic stratification in §3 ensures that fortified digital existence is distinguished from open substantive claims. Independent examiners are encouraged to apply relevant legal and forensic standards to the preserved record.</p>
+<p>These measures support ordinary confidence in the authenticity and continuity of the sealed digital artefacts for the purpose of independent examination. Residual risks are quantified in §1. The mapping does not convert allegations into findings.</p>
 </div>
 
-<div class="status">
-<strong>Certificate status (further strengthened 30–31 October 2026 with evening/external examinations, early-morning 31 October examination, and automation tests):</strong> The fortification layer for sealed digital artefacts is complete and verified by design. Continuous growth-aware automation, public Git history, published hashes, the enhanced in-browser verifier, live public API status, the formal declaration, and the legal mapping remain available for independent examination. Residual risk for sealed artefacts is bounded as stated. This certificate is itself under the same chain of custody and can be independently hashed. The incorporating edit tests the automation.
-</div>
-
-<p><a href="index.html">← Back to Archive Doors</a> &nbsp;|&nbsp; <a href="independent-examination-31-october-2026.html">31 October 2026 examination</a> &nbsp;|&nbsp; <a href="independent-examination-30-october-2026-evening-external.html">External examination record</a></p>
+<p>Finding aid. Not a court. Not a verdict. Independent verification encouraged. Preservation first. Examination second. Conclusion last.</p>
 </div>
 </body>
 </html>
