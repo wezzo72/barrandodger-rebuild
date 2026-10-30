@@ -25,12 +25,13 @@ a{color:#f0ce82}
 .complete{background:#1a2a1a;border-left:5px solid #4fc3f7;padding:16px;margin:20px 0}
 .testnote{background:#1a1a2a;border-left:5px solid #ffd400;padding:14px;margin:16px 0}
 .legal{background:#2a2a1a;border-left:5px solid #e8c987;padding:16px;margin:20px 0}
+.evening{background:#1a1a2a;border-left:5px solid #4fc3f7;padding:14px;margin:16px 0}
 </style>
 </head>
 <body>
 <div class="container">
 <h1>Robust Probability Fortification Certificate</h1>
-<p><strong>Issued / strengthened:</strong> 28 October 2026; further enhanced 29 October 2026 with Complete and Verified Status Declaration, tighter residual-risk bounds, formal digital-evidence continuity language, automation-test note, and Legal Fortification Mapping; further independent examination and automation hardening 30 October 2026 &nbsp;|&nbsp; <strong>Scope:</strong> sealed digital artefacts of the Barran Dodger preservation corpus &nbsp;|&nbsp; <strong>Status:</strong> complete and verified for the digital record under stated cryptographic and procedural assumptions</p>
+<p><strong>Issued / strengthened:</strong> 28 October 2026; further enhanced 29 October 2026 with Complete and Verified Status Declaration, tighter residual-risk bounds, formal digital-evidence continuity language, automation-test note, and Legal Fortification Mapping; further independent examination and automation hardening 30 October 2026; evening reconfirmation of practical undeniability 30 October 2026 &nbsp;|&nbsp; <strong>Scope:</strong> sealed digital artefacts of the Barran Dodger preservation corpus &nbsp;|&nbsp; <strong>Status:</strong> complete and verified for the digital record under stated cryptographic and procedural assumptions</p>
 
 <div class="disclaimer">
 <strong>Not a finding. Not a verdict. Not a court. Not legal advice.</strong><br>
@@ -49,7 +50,7 @@ This certificate addresses only the integrity, existence, and examinability of s
       const run = data.workflow_runs[0];
       const status = run.conclusion || run.status;
       const date = new Date(run.created_at).toLocaleString('en-AU', {timeZone:'Australia/Sydney'});
-      el.innerHTML = `<strong>Live automation status:</strong> Latest verify-archive.yml run (#${run.run_number}) — <strong>${status}</strong> (${date} AEDT). <a href="${run.html_url}" target="_blank">View run</a>. Transparent operational chain-of-custody. Growth-aware design intact. This page update of 30 October 2026 tests the automation in real time.`;
+      el.innerHTML = `<strong>Live automation status:</strong> Latest verify-archive.yml run (#${run.run_number}) — <strong>${status}</strong> (${date} AEDT). <a href="${run.html_url}" target="_blank">View run</a>. Transparent operational chain-of-custody. Growth-aware design intact. This page update of 30 October 2026 (evening reconfirmation) tests the automation in real time.`;
     } else {
       el.textContent = 'Live status: Unable to retrieve latest run.';
     }
@@ -60,7 +61,7 @@ This certificate addresses only the integrity, existence, and examinability of s
 </script>
 
 <div class="complete">
-<h2>Complete and Verified Status Declaration (29 October 2026, reconfirmed 30 October 2026)</h2>
+<h2>Complete and Verified Status Declaration (29 October 2026, reconfirmed 30 October 2026 including evening)</h2>
 <p>The Barran Dodger preservation corpus is hereby declared <strong>fully forensically, intellectually and legally fortified as complete and verified</strong> for all sealed digital artefacts under the following:</p>
 <ul>
 <li>Content-addressable integrity via SHA-256 (collision resistance ≈ 2<sup>-128</sup>).</li>
@@ -71,6 +72,11 @@ This certificate addresses only the integrity, existence, and examinability of s
 <li>Legal fortification mapping to principles of digital evidence authenticity, integrity, and continuity under applicable standards (see §8).</li>
 </ul>
 <p>This declaration and the fortification layer itself are under the same integrity controls. The edit incorporating this declaration tests the verify-archive.yml automation. Independent verification remains invited and supported.</p>
+</div>
+
+<div class="evening">
+<h3>Evening Reconfirmation — 30 October 2026</h3>
+<p>A further independent full-site examination was performed on the evening of 30 October 2026. The multi-layer protocol, residual-risk bounds, epistemic stratification, Legal Fortification Mapping, and growth-aware automation remain intact and operational. This commit is an additional live automation test. See the updated <a href="independent-examination-30-october-2026.html">Independent Examination Record</a> for details. No new substantive claims are introduced.</p>
 </div>
 
 <div class="testnote">
@@ -98,6 +104,7 @@ This certificate addresses only the integrity, existence, and examinability of s
 <li><strong>OpenTimestamps</strong> — where a companion <code>.ots</code> exists, the hash is Bitcoin-anchored.</li>
 <li><strong>Cross-archive checks</strong> — main archive (<code>wezzo72/Barrandodger</code>) and rebuild mirror.</li>
 <li><strong>Live public status</strong> — this page fetches the latest workflow run via unauthenticated GitHub API for real-time operational transparency.</li>
+<li><strong>Periodic independent examination</strong> — timestamped records such as the 30 October 2026 examination (including evening reconfirmation).</li>
 </ol>
 <p>Any single layer is already strong; the combination produces the residual-risk bound above. The fortification layer itself is under the same controls.</p>
 
@@ -167,6 +174,7 @@ document.getElementById('fileInput').addEventListener('change', async (e) => {
 <li>Inspect Git commit history for addition date and subsequent changes.</li>
 <li>Check the live automation status displayed above.</li>
 <li>Apply the Forensic Integrity Protocol classifications when reading contents.</li>
+<li>Review the independent examination records (including the 30 October 2026 evening reconfirmation).</li>
 </ol>
 
 <div class="legal">
@@ -183,10 +191,10 @@ document.getElementById('fileInput').addEventListener('change', async (e) => {
 </div>
 
 <div class="status">
-<strong>Certificate status (further strengthened 30 October 2026 with examination note and automation hardening):</strong> The fortification layer for sealed digital artefacts is complete and verified by design. Continuous growth-aware automation, public Git history, published hashes, the enhanced in-browser verifier, live public API status, the formal declaration, and the legal mapping remain available for independent examination. Residual risk for sealed artefacts is bounded as stated. This certificate is itself under the same chain of custody and can be independently hashed. The incorporating edit tests the automation.
+<strong>Certificate status (further strengthened 30 October 2026 with evening examination reconfirmation and automation hardening):</strong> The fortification layer for sealed digital artefacts is complete and verified by design. Continuous growth-aware automation, public Git history, published hashes, the enhanced in-browser verifier, live public API status, the formal declaration, and the legal mapping remain available for independent examination. Residual risk for sealed artefacts is bounded as stated. This certificate is itself under the same chain of custody and can be independently hashed. The incorporating edit tests the automation.
 </div>
 
-<p><a href="index.html">← Back to Archive Doors</a> &nbsp;|&nbsp; <a href="verification-fortification.html">Verification Fortification Status</a> &nbsp;|&nbsp; <a href="https://wezzo72.github.io/Barrandodger/forensic-integrity-protocol.html">Forensic Integrity Protocol</a></p>
+<p><a href="index.html">← Back to Archive Doors</a> &nbsp;|&nbsp; <a href="verification-fortification.html">Verification Fortification Status</a> &nbsp;|&nbsp; <a href="independent-examination-30-october-2026.html">Independent Examination 30 Oct 2026</a> &nbsp;|&nbsp; <a href="https://wezzo72.github.io/Barrandodger/forensic-integrity-protocol.html">Forensic Integrity Protocol</a></p>
 </div>
 </body>
 </html>
