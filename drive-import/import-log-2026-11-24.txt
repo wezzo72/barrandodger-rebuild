@@ -1,0 +1,5 @@
+Imported additional PDFs from richarddrawsstuff@gmail.com Google Drive under drive-import/.
+New files identified: several from root pages including ASIC lookups, ABN details, analysis, Dear Barran letters.
+Skipped already present by Drive ID. No attack-plan titles copied.
+Continuing across folders including Master Archive, Ebidence, etc.
+Shelf: https://wezzo72.github.io/Barrandodger/drive-import/index.html
