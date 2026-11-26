@@ -1,1 +1,66 @@
-JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgaHR0cDovL3d3dy5yZXBvcnRsYWIuY29tCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIgL0Y0IDYgMCBSCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMSAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtQm9sZCAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjIgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago0IDAgb2JqCjw8Ci9CYXNlRm9udCAvVGltZXMtUm9tYW4gL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YzIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNSAwIG9iago8PAovQSA8PAovUyAvVVJJIC9UeXBlIC9BY3Rpb24gL1VSSSAoaHR0cHM6Ly95b3V0dS5iZS9RaDk5dW5tRDRIUSkKPj4gL0JvcmRlciBbIDAgMCAwIF0gL1JlY3QgWyA0NSAxMjAgNTUwLjI3NTYgMjkwIF0gL1N1YnR5cGUgL0xpbmsgL1R5cGUgL0Fubm90Cj4+CmVuZG9iago2IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLU9ibGlxdWUgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0Y0IC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNyAwIG9iago8PAovQW5ub3RzIFsgNSAwIFIgXSAvQ29udGVudHMgMTEgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTAgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIAogIC9UcmFucyA8PAoKPj4gL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjggMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyAxMCAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjkgMCBvYmoKPDwKL0F1dGhvciAoRHIgUmljaGFyZCBXaWxsaWFtIE1jTGVhbiAvIEJhcnJhbiBEb2RnZXIpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjEwMjAxMzM3NTErMDAnMDAnKSAvQ3JlYXRvciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gd3d3LnJlcG9ydGxhYi5jb20pIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MTAyMDEzMzc1MSswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gd3d3LnJlcG9ydGxhYi5jb20pIAogIC9TdWJqZWN0ICh1bnNwZWNpZmllZCkgL1RpdGxlIChDbG9zaW5nIHBlcnNvbmFsIHJlZmxlY3Rpb24gLSBZb3VUdWJlIHZpZGVvKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9Db3VudCAxIC9LaWRzIFsgNyAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjExIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI1MjAKPj4Kc3RyZWFtCkdhdG4qaGZHOEgmQkVdKC8rdF5MXEtRSitLIkVEPjlxMHFGcTtKbytlJSohb0prPj5GSz9xUV5BYGohZT43Iyg2bFNiOzk0LmFAcmNwdC5lRzhDUVEka1txdG89bkgwNEowSVNXdTBoIUFwNGcwOnI7US5TQlpYPjtHaW5HJkI3OWskT0RxYVVlKFRWTyRSUkhWRjtDTS5hOSomRUw+b1glXCJDKVNjdGZjNlxTNFA2NCFvZCg5KFFtTVJhOzlmcms9Z1UrbXBFMyY2NDZIU11WWl1YTSI/VFRnQDBjVzUjVUhucTZmMCZicEJiTF5CKnBeYzRWaFReJCJyO0dCbGppKSRrXXRmOGFsZyhuIVJwVFJzJCJoTD9uIjQhQGJPVEpiPEBgLFVKJ2NKPFMoTE5tUThVOWNbOig5LUw3TSNycUo/I3JsPmxHIlksPkBRa0BfLFooR0oi
+%PDF-1.4
+% ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R /F4 6 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/BaseFont /Times-Roman /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://youtu.be/Qh99unmD4HQ)
+>> /Border [ 0 0 0 ] /Rect [ 45 120 550.2756 290 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+7 0 obj
+<<
+/Annots [ 5 0 R ] /Contents 11 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 10 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+8 0 obj
+<<
+/PageMode /UseNone /Pages 10 0 R /Type /Catalog
+>>
+endobj
+9 0 obj
+<<
+/Author (Dr Richard William McLean / Barran Dodger) /CreationDate (D:20261020133751+00'00') /Creator (ReportLab PDF Library - www.reportlab.com) /Keywords () /ModDate (D:20261020133751+00'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (unspecified) /Title (Closing personal reflection - YouTube video) /Trapped /False
+>>
+endobj
+10 0 obj
+<<
+/Count 1 /Kids [ 7 0 R ] /Type /Pages
+>>
+endobj
+11 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2520
+>>
+stream
+Gatn*hfG8H&BE]K/+t^L\K%*K"ED>9q0qFq;K+e%*+oJk>>FK?qU^A`j!E>7#(&6lSb>94.a@rcp t.eG8CQD$k[qto=nH04J0ISWu0h!Ap4g0:r;Q.SZXP;7GinG&B79k$ODQaUe(FVO$RRHVF;CM.a)*&EL>oX%\B$IScf fc6\S4@64%o d(9(QmMRa>9f rk=gU+mpE3&644IH[WZWYMI?/TTg@0cW5#UHnq6f0&bpJbL^B*p^c4VhT^J"r;GBlji)Dk]Tf8al h)IRpTRs$"hL?n"4!@bOTJb<@` ,UJ'cJ<M(LNmQ8U9c[:(9,L7M3rqJ?#rl>lG"Y,>@Qk@_K*GZ"
